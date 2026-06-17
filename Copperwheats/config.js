@@ -1,0 +1,111 @@
+// config.js - Nardini's Coffee Shop Configuration
+export const siteConfig = {
+    customLogoUrl: "logo.png", // Points directly to your local coffee shop logo
+    businessName: "Copperwheats",
+    businessSub: "by the Ferry Terminal",
+    metaTitle: "Copperwheats Coffee House | Brodick, Arran",
+    contactEmail: "info@copperwheats.co.uk",
+    locationShort: "just opposite from the Ferry Terminal",
+    locationFull: "Brodick Ferry Terminal",
+    themeColors: {
+        espresso: "#2C1A11",
+        roast: "#4A3525",
+        latte: "#8C6A50",
+        creamDark: "#EADBC8",
+        creamLight: "#FAF6F0"
+    },
+    heroSlides: [
+        // {
+        //     imgUrl: "./images/CopperwheatsCoffeeShopOverview.png",
+        //     title: "",
+        //     desc: ""
+        //  },
+        {
+            imgUrl: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=1600&fit=crop&q=80",
+            title: "Top quality coffee from Myrtle",
+            desc: "We procure coffee of the highest quality, to offer the ultimate experience to our customers."
+        },
+        {
+            // Magic Relative Path: Looks in the images folder right next door!
+            imgUrl: "./images/ArranIceCream_WithLogo.png", 
+            title: "Top awarding winning Arran Ice Cream",
+            desc: "What's your favourite? A choice of flavours from the old time favourites to the more exotic."
+        },
+        {
+            imgUrl: "https://images.unsplash.com/photo-1498804103079-a6351b050096?w=1600&fit=crop&q=80",
+            title: "Choose your Coffee or Tea favourite",
+            desc: "Cappuccino, Latte, Flat White, Mocha, Espresso, Guest coffee, and 12 brands of tea."
+        },
+        {
+            imgUrl: "./images/cookiesandcakes.jpg",
+            title: "Beautiful, freshly baked cakes and pastries",
+            desc: "Enjoy your quality time with that perfect accompaniment."
+        },
+        {
+            imgUrl: "./images/coffeesyrups.jpg",
+            title: "Flavour with your favourite syrup",
+            desc: "Add a coffee syrup : Caramel, Coconut, Vanilla, Cinnamon, Honeycomb, Creme Brulee, Gingerbread, Butterscotch and Roasted Hazelnut"
+        }
+    ],
+    homePage: {
+    heroTitle: "The picturesque Island and Copperwheats' welcome you.",
+    heroDesc: "A warm, cozy spot nestled right by the Brodick Ferry Terminal. Perfect for a refreshing break, delicious local treats, or relaxing while you wait for your ship to come in.",
+    highlights: [
+        { icon: "coffee", title: "Premium Coffee & Teas", desc: "Speciality brews, featuring the premium craft flavors of Myrtle alongside a rotating monthly guest coffee." },
+        { icon: "luggage", title: "Left Luggage", desc: "Secure bag storage so you can freely explore Brodick without being weighed down." },
+        { icon: "users", title: "Everyone Welcome", desc: "A fully wheelchair-accessible and spacious layout designed to easily accommodate families and groups." },
+        { icon: "sun", title: "Outdoor Patio Area", desc: "Take in the beautiful island views of Goat Fell across the bay whilst breath in that fresh sea air from our comfortable outdoor seating patio." },
+        { icon: "heart", title: "Dog Friendly", desc: "Four-legged friends are always welcome with a warm smile, fresh water bowls, and of course those doggy treats." },
+        { icon: "wifi", title: "Free Wi-Fi", desc: "Stay connected while you relax; our customer Wi-Fi network password is freely available with our compliments." }
+    ],
+        reviewsHeadline: "Loved by Travellers & Locals",
+        reviewsSub: "Here is what real visitors say on Google Maps after stopping by our shop next to the ferry terminal.",
+        reviewsScoreText: "4.4 / 5.0 Rating",
+        googleReviews: [
+            { initials: "JM", name: "James M.", "badge": "Local Guide", text: "\"The left luggage service here is a complete lifesaver! Dropped our heavy suitcases off secure and safe, allowing us to walk and enjoy Brodick hassle-free before our evening ferry home. Brilliant coffee too!\"" },
+            { initials: "SR", name: "Sarah R.", "badge": "Ferry Passenger", text: "\"Incredible oat milk cappuccino—easily the best specialty coffee I've had on Arran. The atmosphere is lovely and warm, and the staff are wonderfully helpful while you're waiting for boarding to open.\"" },
+            { initials: "DL", name: "David L.", "badge": "Family Traveller", text: "\"Very spacious, clean, and fully wheelchair accessible which made it so easy for our group. Great toasted sandwiches, delicious local ice cream, and exceptionally polite people behind the counter.\"" }
+        ]
+    },
+    aboutPage: {
+        title: "Our Story",
+        subtitle: "What began as the simple dreams of a newly married couple, has blossomed into our family’s greatest pride and joy. We hope you grab a coffee, and wishfully invite you to read 'Our Story'...",
+        
+        storyParagraphs: [
+            "Our story began in the 1990s. As a young couple eager to start a family and a business of our own, we took a leap of faith and opened our very first coffee shop at Brodick Home Farm, nestled right by the castle.",
+            "It was there that we truly learned our trade, looking back now in awe at the fast-paced lessons and passion that fueled those early years.",
+            "That foundation eventually gave us the opportunity to design our flagship coffee shop at the Brodick Ferry Terminal.",
+            "Building it up from a bare, empty shell, we poured our hearts into creating more than just a café. We wanted a place where special memories are made, journeys begin, and travellers feel instantly at home.",
+            "With decades of hard work, persistence, and patience, we have watched our business and our family thrive together. We have been incredibly fortunate to cross paths with so many wonderful customers over the years.",
+            "Every year, we look forward to the magic of the summer months, welcoming back familiar faces to the beautiful island we get to call home."
+        ],
+        features: [
+            { emoji: "🥪", title: "Food & Drinks", desc: "From artisan espresso to freshly pressed hot toasties, house-baked pastries, and authentic Arran ice cream flavours." },
+            { emoji: "🧳", title: "Convenient Services", desc: "Take advantage of our reliable on-site left luggage check to enjoy the island without being weighed down." },
+            { emoji: "♿", title: "Accessibility For All", desc: "Thoughtfully equipped with complete wheelchair access across entries, seating layouts, and washrooms." },
+            { emoji: "🌞", title: "Outdoor balcony", desc: "Imagine sitting on a summers day, as the warm breeze blows, whilst having that morning coffee with views across the bay to Goat Fell, and wondering where it all went wrong! 😉"}
+        ]
+        
+    },
+    servicesPage: {
+        headline: "What We Offer?",
+        sub: "We serve all types of Coffee of course, 12 choices of tea, multi flavoured ice creams, handmade biscuits and cakes, pastries from 10am to 4.30pm, every day.",
+        menuList: [
+            { emoji: "🍦", name: "Ice Cream" },
+            { emoji: "☕", name: "Coffee & Tea" },
+            { emoji: "🥪", name: "Toasties and Panini's" },
+            { emoji: "🍰", name: "Cakes" },
+            { emoji: "🍪", name: "Cookies"},
+            { emoji: "🥧", name: "Pastries & Sausage Rolls" }
+            
+            
+        ]
+    },
+    contactPage: {
+        address : "📍 The Pier, Brodick, Isle of Arran",
+        telephone : "📞 +44 1770 303522",
+        mapUrl : "https://maps.google.com/maps?q=Copperwheats%20Coffee%20House,%20The%20Pier,%20Brodick,%20Isle%20of%20Arran&t=&z=16&ie=UTF8&iwloc=&output=embed",
+        title: "Say Hello",
+        desc: "Have questions about group bookings, dietary adjustments, or our left luggage storage? Drop us a line and we will get back to you within 48 hours. However, feel free to ring us if more urgent."
+    }
+};
