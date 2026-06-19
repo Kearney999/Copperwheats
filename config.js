@@ -119,7 +119,7 @@ export const siteConfig = {
         },
         {
             q: "Do you offer dietary adjustments?",
-            a: "We gladly cater to everyone with dairy-free milk alternatives, gluten-free bakes, and vegan options available daily."
+            a: "We gladly cater to everyone with dairy-free oat milk, small selection of gluten-free bakes and a vegan option is also available daily."
         },
         {
             q: "Can we store our left luggage with you?",

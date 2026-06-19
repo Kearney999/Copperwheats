@@ -997,81 +997,138 @@
 
 
 
-    /* QUESTiONS AND ANSWERS */
-/* Update your .faq-item wrapper */
-.faq-item {
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-    border: 1px solid rgba(110, 93, 79, 0.05);
-    margin-bottom: 1rem;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
+    /* =========================================================================
+       End of the Mobile Media Query
+       ========================================================================= */
+    } /* <-- This bracket closes the mobile media query cleanly! */
 
-/* Style the clickable question bar */
-.faq-question {
-    padding: 1.5rem;
-    color: #4a3b32; /* Rich dark brown header accent color */
-    font-size: 1.2rem;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    list-style: none; /* Hides default browser arrow */
-    user-select: none;
-}
+    /* --- Keep the baseline desktop buffer outside the media query --- */
+    .nav-buffer {
+        height: 90px;
+        display: block;
+    }
 
-/* Hides the default browser triangle on Safari/Firefox */
-.faq-question::-webkit-details-marker {
-    display: none;
-}
+    /* ==========================================================================
+       COPPERWHEATS FAQ SECTION (GLOBAL ACCORDION ENGINE)
+       ========================================================================== */
 
-/* Style the answer container */
-.faq-answer-content {
-    padding: 0 1.5rem 1.5rem 1.5rem;
-    border-top: 1px solid rgba(110, 93, 79, 0.03);
-}
+    .faq-section {
+        padding: 5rem 2rem !important;
+        background-color: #faf6f0 !important; /* Matches clean tan layout background */
+        width: 100% !important;
+        box-sizing: border-box !important;
+        display: block !important;
+    }
 
-.faq-answer {
-    color: #555555;
-    margin: 0;
-    line-height: 1.6;
-}
+    /* Force the container to wrap tight and center itself on desktop views */
+    .faq-container {
+        max-width: 1050px !important; /* Caps width so it never stretches out of control */
+        margin: 0 auto !important; /* Centers it perfectly horizontally */
+        padding: 0 1.5rem !important;
+        box-sizing: border-box !important;
+        display: block !important;
+    }
 
-/* Style the toggle icon */
-.faq-icon {
-    font-size: 1rem;
-    color: #8c6a50;
-    transition: transform 0.3s ease;
-}
+    /* Force the main FAQ title to look balanced */
+    .faq-container h2 {
+        text-align: center !important;
+        font-size: 2.5rem !important;
+        color: #4a3b32 !important;
+        margin-top: 0 !important;
+        margin-bottom: 1rem !important;
+    }
 
-/* --- THE MAGIC ANIMATION STATES --- */
+    /* Center and beautifully pad the subtitle text block */
+    .faq-subtitle {
+        color: #6e5d4f !important;
+        font-size: 1.1rem !important;
+        line-height: 1.6 !important;
+        text-align: center !important;
+        max-width: 600px !important;
+        margin: 0 auto 4rem auto !important;
+    }
 
-/* Highlight the card when it's open */
-.faq-item[open] {
-    box-shadow: 0 6px 16px rgba(140, 106, 80, 0.08);
-    border-color: rgba(140, 106, 80, 0.2);
-}
+    /* Base grid settings (stacks on mobile, switches to columns on laptop) */
+    .faq-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important; /* Single column layout for mobile */
+        gap: 1.5rem !important;
+        align-items: start !important;
+        text-align: left !important;
+        width: 100% !important;
+    }
 
-/* Change the plus to a minus and rotate it when open */
-.faq-item[open] .faq-icon {
-    transform: rotate(45deg);
-    color: #2c1a11;
-}
+    /* Update your .faq-item card wrapper */
+    .faq-item {
+        background: #ffffff !important;
+        border-radius: 12px !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.03) !important;
+        border: 1px solid rgba(110, 93, 79, 0.05) !important;
+        margin-bottom: 0 !important;
+        overflow: hidden !important;
+        transition: all 0.3s ease !important;
+        display: block !important;
+    }
 
-    
+    /* Style the clickable question bar */
+    .faq-question {
+        padding: 1.5rem !important;
+        color: #4a3b32 !important;
+        font-size: 1.15rem !important;
+        font-weight: 600 !important;
+        cursor: pointer !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        list-style: none !important;
+        user-select: none !important;
+    }
 
+    /* Hides default browser triangles */
+    .faq-question::-webkit-details-marker {
+        display: none !important;
+    }
 
-    
-}
+    /* Style the hidden answer box container */
+    .faq-answer-content {
+        padding: 0 1.5rem 1.5rem 1.5rem !important;
+        border-top: 1px solid rgba(110, 93, 79, 0.03) !important;
+        display: block !important;
+    }
 
-/* --- Keep the baseline desktop buffer outside the media query --- */
-.nav-buffer {
-    height: 90px;
-    display: block;
-}
+    .faq-answer {
+        color: #555555 !important;
+        margin: 0 !important;
+        line-height: 1.6 !important;
+        font-size: 1rem !important;
+    }
+
+    /* Style the toggle icon */
+    .faq-icon {
+        font-size: 1rem !important;
+        color: #8c6a50 !important;
+        transition: transform 0.3s ease !important;
+        padding-left: 1rem !important;
+    }
+
+    /* --- CLICK INTERACTIVE STATES --- */
+    .faq-item[open] {
+        box-shadow: 0 6px 16px rgba(140, 106, 80, 0.08) !important;
+        border-color: rgba(140, 106, 80, 0.2) !important;
+    }
+
+    .faq-item[open] .faq-icon {
+        transform: rotate(45deg) !important;
+        color: #2c1a11 !important;
+    }
+
+    /* --- LAPTOP SCREEN RESPONSIVE UPGRADE --- */
+    @media screen and (min-width: 768px) {
+        .faq-grid {
+            grid-template-columns: 1fr 1fr !important; /* Beautiful side-by-side layout on laptops! */
+            gap: 2rem !important;
+        }
+    }
 
  
     
