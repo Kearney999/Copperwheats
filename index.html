@@ -993,7 +993,59 @@
     .contact-section {
     padding-top: 4rem;
     padding-bottom: 1.5rem !important; /* Shrings the dead space beneath the map card */
+    }
+
+
+
+    /* QUESTiONS AND ANSWERS */
+.faq-section {
+    padding: 4rem 2rem;
+    background-color: #faf6f0; /* Matches the clean tan background layout */
 }
+
+.faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-subtitle {
+    color: #6e5d4f;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.faq-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.faq-item {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    border: 1px solid rgba(110, 93, 79, 0.05);
+}
+
+.faq-question {
+    color: #4a3b32; /* Rich dark brown header accent color */
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
+}
+
+.faq-answer {
+    color: #555555;
+    margin: 0;
+    line-height: 1.6;
+}
+
+    
+
+
+    
 }
 
 /* --- Keep the baseline desktop buffer outside the media query --- */
@@ -1001,6 +1053,9 @@
     height: 90px;
     display: block;
 }
+
+ 
+    
     </style>
 </head>
 <body>
@@ -1132,31 +1187,39 @@
             <div class="nav-buffer"></div>
 
 
-            <section id="contact" class="contact-section">
-    <div class="contact-grid-container">
+                <section id="contact" class="contact-section">
+            <div class="contact-grid-container">
         
-        <div class="contact-details-col">
-            <h2>Get in Touch</h2>
-            <p class="contact-item" id="lbl-contact-address">Address</p>
-            <p class="contact-item" id="lbl-contact-telephone">Telephone</p>
-        </div>
+            <div class="contact-details-col">
+                <h2>Get in Touch</h2>
+                <p class="contact-item" id="lbl-contact-address">Address</p>
+                <p class="contact-item" id="lbl-contact-telephone">Telephone</p>
+            </div>
 
-        <div class="contact-map-col">
-            <iframe 
-                id="lbl-contact-map"
-                
-                width="100%" 
-                height="300" 
-                style="border:0; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06);" 
-                allowfullscreen="" 
-                loading="lazy">
-            </iframe>
-        </div>
+            <div class="contact-map-col">
+                <iframe 
+                    id="lbl-contact-map"
+                    
+                    width="100%" 
+                    height="300" 
+                    style="border:0; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06);" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </main-section>
 
     </div>
 </section>
 
-
+<section class="faq-section">
+    <div class="faq-container">
+        <h2 id="faq-title">Questions and Answers</h2>
+        <p id="faq-subtitle" class="faq-subtitle"></p>
+        
+        <div id="faq-grid" class="faq-grid"></div>
+    </div>
+</section>
 
             <section class="container section-padding">
                 <div class="contact-card">
@@ -1399,8 +1462,25 @@
             document.getElementById('lbl-footer-email-link').innerText = config.contactEmail;
             document.getElementById('lbl-footer-copyright').innerHTML = `&copy; 2026 ${config.businessName} ${config.businessSub}. All Rights Reserved. Built by Largs Web Design.`;
 
+            // Hydrate the FAQ Header Text
+                document.getElementById('faq-title').innerText = config.faqSection.title;
+                document.getElementById('faq-subtitle').innerText = config.faqSection.subtitle;
 
-            
+                // Loop through and build the FAQ layout grid dynamically
+                const faqGrid = document.getElementById('faq-grid');
+                if (faqGrid) {
+                    faqGrid.innerHTML = ''; // Clear out placeholders
+                    
+                    config.faqSection.questions.forEach(item => {
+                        const faqBlock = document.createElement('div');
+                        faqBlock.className = 'faq-item';
+                        faqBlock.innerHTML = `
+                            <h3 class="faq-question">🤔 ${item.q}</h3>
+                            <p class="faq-answer">${item.a}</p>
+                        `;
+                        faqGrid.appendChild(faqBlock);
+                    });
+                }
             
             //SKSK08/06/26 ADDED code below
             // =========================================================================
@@ -1457,7 +1537,7 @@
 
                 }, 1000); // Trigger midpoint precisely when opacity zero threshold hits
 
-            }, 10000); // Upped to 10 seconds so users have ample time to read your value pitches!
+            }, 8000); // Upped to 8 seconds so users have ample time to read your value pitches!
 
 
         };

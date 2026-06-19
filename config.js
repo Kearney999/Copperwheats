@@ -107,5 +107,28 @@ export const siteConfig = {
         mapUrl : "https://maps.google.com/maps?q=Copperwheats%20Coffee%20House,%20The%20Pier,%20Brodick,%20Isle%20of%20Arran&t=&z=16&ie=UTF8&iwloc=&output=embed",
         title: "Say Hello",
         desc: "Have questions about group bookings, dietary adjustments, or our left luggage storage? Drop us a line and we will get back to you within 48 hours. However, feel free to ring us if more urgent."
-    }
+    },
+
+    faqSection: {
+    title: "Questions and Answers",
+    subtitle: "Got questions? We've got answers. Here is everything you need to know before stepping off the ferry.",
+    questions: [
+        {
+            q: "Where exactly are you located?",
+            a: "We are located directly by the Brodick Ferry Terminal on the Isle of Arran. It's the perfect first stop for a coffee when you step off the boat, or a comforting treat while you wait to head back to the mainland."
+        },
+        {
+            q: "Do you offer dietary adjustments?",
+            a: "We gladly cater to everyone with dairy-free milk alternatives, gluten-free bakes, and vegan options available daily."
+        },
+        {
+            q: "Can we store our left luggage with you?",
+            a: "Yes! If you are exploring the island before checking into your accommodation or waiting for the ferry after checking out, you can safely leave your bags and luggage with us while you wander."
+        },
+        {
+            q: "Do you take group bookings?",
+            a: "We do! Whether you are walking group conquering Goat Fell, a family gathering, or a tour group, drop us a line via our contact section or give us a call to arrange space for your party."
+        }
+    ]
+}
 };
