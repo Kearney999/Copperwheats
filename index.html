@@ -1130,6 +1130,19 @@
         }
     }
 
+    /* Default for Mobile / Tablets: Center everything smoothly */
+    @media (max-width: 768px) {
+        .contact-details-col a.btn {
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+    }
+
+    /* Laptop mode: Force text inside buttons to stay centered */
+    .contact-details-col a.btn {
+        justify-content: center !important;
+        text-align: center !important;
+    }
  
     
     </style>
@@ -1224,8 +1237,11 @@
 
                     <div style="margin-top: 3rem; text-align: center;">
                         <a href="#" id="btn-review-action-home" class="btn btn-secondary" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem;">
-                            ⭐ Quickly review us yourself
+                            ⭐ Quickly review on Google
                         </a>
+                        <a href="#" id="btn-tripadvisor-action-contact" class="btn btn-secondary" target="_blank" style="margin-top: 0.5rem; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; max-width: 220px; margin-left: auto; margin-right: auto; background-color: #34E0A1; border-color: #34E0A1; color: #000000;">
+                        🦉 Leave a TripAdvisor Review
+                    </a>
                     </div>
                 </div>
             </section>
@@ -1273,10 +1289,19 @@
             <div class="contact-grid-container">
         
             <div class="contact-details-col">
-                <h2>Get in Touch</h2>
-                <p class="contact-item" id="lbl-contact-address">Address</p>
-                <p class="contact-item" id="lbl-contact-telephone">Telephone</p>
+            <h2>Get in Touch</h2>
+            <p class="contact-item" id="lbl-contact-address">Address</p>
+            <p class="contact-item" id="lbl-contact-telephone">Telephone</p>
+    
+            <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; width: 100%;">
+                <a href="#" id="btn-review-action-contact" class="btn btn-secondary" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; max-width: 240px; padding: 0.6rem 1rem; margin-right: auto; margin-left: 0;">
+                    ⭐ A Quick review on Google?
+                </a>
+                <a href="#" id="btn-tripadvisor-action-contact" class="btn btn-secondary" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; max-width: 240px; padding: 0.6rem 1rem; background-color: #34E0A1; border-color: #34E0A1; color: #000000; border-radius: 20px; margin-right: auto; margin-left: 0;">
+                    🦉 Review Us on TripAdvisor
+                </a>
             </div>
+</div>
 
             <div class="contact-map-col">
                 <iframe 
@@ -1290,11 +1315,9 @@
                 </iframe>
             </div>
         </main-section>
-        <a href="#" id="btn-review-action-contact" class="btn btn-secondary" target="_blank" style="margin-top: 0.75rem; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; max-width: 220px; margin-left: auto; margin-right: auto;">
-                        ⭐ A Quick review yourself?
-                    </a>
+        
 
-    </div>
+
 </section>
 
 <section class="faq-section">
@@ -1559,6 +1582,17 @@
             const reviewBtnContact = document.getElementById('btn-review-action-contact');
             if (reviewBtnContact && config.contactPage.googleReviewUrl) {
                 reviewBtnContact.setAttribute('href', config.contactPage.googleReviewUrl);
+            }
+
+            // HYDRATE BOTH NEW TRIPADVISOR LINKS FROM YOUR CONFIG FILE
+            const tripadvisorBtnHome = document.getElementById('btn-tripadvisor-action-home');
+            if (tripadvisorBtnHome && config.contactPage.tripAdvisorUrl) {
+                tripadvisorBtnHome.setAttribute('href', config.contactPage.tripAdvisorUrl);
+            }
+
+            const tripadvisorBtnContact = document.getElementById('btn-tripadvisor-action-contact');
+            if (tripadvisorBtnContact && config.contactPage.tripAdvisorUrl) {
+                tripadvisorBtnContact.setAttribute('href', config.contactPage.tripAdvisorUrl);
             }
 
 
