@@ -56,7 +56,8 @@ export const siteConfig = {
         { icon: "users", title: "Everyone Welcome", desc: "A fully wheelchair-accessible and spacious layout designed to easily accommodate families and groups." },
         { icon: "sun", title: "Outdoor Patio Area", desc: "Take in the beautiful island views of Goat Fell across the bay whilst breath in that fresh sea air from our comfortable outdoor seating patio." },
         { icon: "heart", title: "Dog Friendly", desc: "Four-legged friends are always welcome with a warm smile, fresh water bowls, and of course those doggy treats." },
-        { icon: "wifi", title: "Free Wi-Fi", desc: "Stay connected while you relax; our customer Wi-Fi network password is freely available with our compliments." }
+        { icon: "wifi", title: "Free Wi-Fi", desc: "Stay connected while you relax; our customer Wi-Fi network password is freely available with our compliments." },
+        { icon: "pound", title: "Contactless Payment", desc: "We take contactless payment, apple pay and of course notes and coins are more than welcome." }
     ],
         reviewsHeadline: "Loved by Travellers & Locals",
         reviewsSub: "Here is what real visitors say on Google Maps after stopping by our shop next to the ferry terminal.",
@@ -106,7 +107,8 @@ export const siteConfig = {
         telephone : "📞 +44 1770 303522",
         mapUrl : "https://maps.google.com/maps?q=Copperwheats%20Coffee%20House,%20The%20Pier,%20Brodick,%20Isle%20of%20Arran&t=&z=16&ie=UTF8&iwloc=&output=embed",
         title: "Say Hello",
-        desc: "Have questions about group bookings, dietary adjustments, or our left luggage storage? Drop us a line and we will get back to you within 48 hours. However, feel free to ring us if more urgent."
+        desc: "Have questions about group bookings, dietary adjustments, or our left luggage storage? Drop us a line and we will get back to you within 48 hours. However, feel free to ring us if more urgent.",
+        googleReviewUrl: "https://search.google.com/local/writereview?placeid=ChIJsR7E-07viUgRKh1IqQQ9mAc"
     },
 
     faqSection: {

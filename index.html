@@ -1221,6 +1221,12 @@
                     <p class="section-subtitle" id="lbl-review-subtitle">Subtitle</p>
                     <div class="reviews-grid" id="container-reviews">
                     </div>
+
+                    <div style="margin-top: 3rem; text-align: center;">
+                        <a href="#" id="btn-review-action-home" class="btn btn-secondary" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                            ⭐ Quickly review us yourself
+                        </a>
+                    </div>
                 </div>
             </section>
         </main-section>
@@ -1284,6 +1290,9 @@
                 </iframe>
             </div>
         </main-section>
+        <a href="#" id="btn-review-action-contact" class="btn btn-secondary" target="_blank" style="margin-top: 0.75rem; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; max-width: 220px; margin-left: auto; margin-right: auto;">
+                        ⭐ A Quick review yourself?
+                    </a>
 
     </div>
 </section>
@@ -1305,6 +1314,8 @@
                     <h3 id="lbl-contact-title">Title</h3>
                     <p id="lbl-contact-desc">Description text</p>
                     <a href="#" id="btn-email-action" class="btn btn-primary">Email Us</a>
+
+                    
 
                     <div class="info-strip">
                         <!-- <div class="info-chunk">
@@ -1437,8 +1448,16 @@
                 users: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>`,
                 sun: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`,
                 heart: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>`,
-                wifi: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.94 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>`
+                wifi: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.94 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>`,
+                
+                // THE OFFICIAL GEOMETRIC STERLING POUND ICON
+                pound: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 7a4 4 0 0 0-7.75-1.38A4 4 0 0 0 7 9.5V19h11" />
+                    <path d="M5 14h11" />
+                    <path d="M5 19h14" />
+                </svg>`,
 
+                
             };
 
             config.homePage.highlights.forEach(item => {
@@ -1530,6 +1549,19 @@
             document.getElementById('btn-email-action').setAttribute('href', `mailto:${config.contactEmail}`);
             //document.getElementById('lbl-contact-address').innerText = config.locationFull;
             document.getElementById('lbl-contact-email').innerText = config.contactEmail;
+
+
+            // HYDRATE BOTH ADD NEW GOOGLE REVIEW LINKS FROM YOUR CONFIG FILE
+            const reviewBtnHome = document.getElementById('btn-review-action-home');
+            if (reviewBtnHome && config.contactPage.googleReviewUrl) {
+                reviewBtnHome.setAttribute('href', config.contactPage.googleReviewUrl);
+            }
+            const reviewBtnContact = document.getElementById('btn-review-action-contact');
+            if (reviewBtnContact && config.contactPage.googleReviewUrl) {
+                reviewBtnContact.setAttribute('href', config.contactPage.googleReviewUrl);
+            }
+
+
 
             // Global Footer Block Values
             document.getElementById('lbl-footer-name').innerText = `${config.businessName} ${config.businessSub}`;
