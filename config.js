@@ -76,7 +76,7 @@ export const siteConfig = {
     ],
         reviewsHeadline: "Loved by Travellers & Locals",
         reviewsSub: "Here is what real visitors say on Google Maps after stopping by our shop next to the ferry terminal.",
-        reviewsScoreText: "4.4 / 5.0 Rating",
+        reviewsScoreText: "4.4 / 5.0 Rating (93)",
         googleReviews: [
             { initials: "JM", name: "James M.", "badge": "Local Guide", text: "\"The left luggage service here is a complete lifesaver! Dropped our heavy suitcases off secure and safe, allowing us to walk and enjoy Brodick hassle-free before our evening ferry home. Brilliant coffee too!\"" },
             { initials: "SR", name: "Sarah R.", "badge": "Ferry Passenger", text: "\"Incredible oat milk cappuccino—easily the best specialty coffee I've had on Arran. The atmosphere is lovely and warm, and the staff are wonderfully helpful while you're waiting for boarding to open.\"" },
@@ -139,7 +139,12 @@ export const siteConfig = {
         mapUrl : "https://maps.google.com/maps?q=Copperwheats%20Coffee%20House,%20The%20Pier,%20Brodick,%20Isle%20of%20Arran&t=&z=16&ie=UTF8&iwloc=&output=embed",
         title: "Say Hello",
         desc: "Have questions about group bookings, dietary adjustments, or our left luggage storage? Drop us a line and we will get back to you within 48 hours. However, feel free to ring us if more urgent.",
-        googleReviewUrl: "https://search.google.com/local/writereview?placeid=ChIJsR7E-07viUgRKh1IqQQ9mAc",
+        // The overview tab where people READ existing reviews
+
+        googlePlaceId: "ChIJsR7E-07viUgRKh1IqQQ9mAc", // Example ID
+
+        googleViewReviewsUrl: "https://search.google.com/local/reviews?placeid=",
+        googleWriteReviewUrl: "https://search.google.com/local/writereview?placeid=",
         tripAdvisorUrl: "https://www.tripadvisor.co.uk/UserReviewEdit-g551754-d3649538-Copperwheat_Coffee_House-Brodick_Isle_of_Arran_Scotland.html"
     },
 

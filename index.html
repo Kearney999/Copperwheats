@@ -1236,7 +1236,10 @@
                     <div class="google-summary-badge">
                         <svg class="google-g-icon" viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" /><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" /><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05" /><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335" /></svg>
                         <span class="reviews-rating-stars">★★★★★</span>
-                        <strong id="lbl-review-score">0.0 / 5.0 Rating</strong>
+    
+                        <a href="#" id="link-google-reviews-home" target="_blank">
+                            <strong id="lbl-review-score">0.0 / 5.0 Rating</strong>
+                        </a>
                     </div>
                     <h2 class="section-title" id="lbl-review-title">Reviews</h2>
                     <p class="section-subtitle" id="lbl-review-subtitle">Subtitle</p>
@@ -1402,10 +1405,6 @@
                     
 
                     <div class="info-strip">
-                        <!-- <div class="info-chunk">
-                            <h5>Find Us At</h5>
-                            <p id="lbl-contact-address">Address</p>
-                        </div> -->
                         <div class="info-chunk">
                             <h5>Direct Contact</h5>
                             <p id="lbl-contact-email">Email</p>
@@ -1560,6 +1559,28 @@
             document.getElementById('lbl-review-title').innerText = config.homePage.reviewsHeadline;
             document.getElementById('lbl-review-subtitle').innerText = config.homePage.reviewsSub;
 
+            // HYDRATE THE GOOGLE BADGE CLICKABLE REVIEW LINK
+
+            const placeId = config.contactPage.googlePlaceId;
+            
+            // URL 1: Forces open the direct pop-up form to WRITE a review
+            // const writeReviewUrl = `https://search.google.com/local/writereview?placeid=${placeId}`;
+            const writeReviewUrl = `${config.contactPage.googleWriteReviewUrl}${placeId}`;
+            console.log("MY ABSOLUTE WRITE URL IS:", writeReviewUrl);
+
+            // URL 2: Opens the Google Maps overview page to VIEW existing reviews
+            // const viewReviewsUrl = `https://search.google.com/local/reviews?placeid=${placeId}`;
+            const viewReviewsUrl = `${config.contactPage.googleViewReviewsUrl}${placeId}`;
+
+            const googleBadgeLink = document.getElementById('link-google-reviews-home');
+            // if (googleBadgeLink && config.contactPage && config.contactPage.googleViewReviewsUrl) {
+            //     googleBadgeLink.setAttribute('href', config.contactPage.googleViewReviewsUrl);
+            // }
+
+            if (googleBadgeLink && config.contactPage && viewReviewsUrl) {
+                googleBadgeLink.setAttribute('href', viewReviewsUrl);
+            }
+
             const reviewsContainer = document.getElementById('container-reviews');
             reviewsContainer.innerHTML = '';
             config.homePage.googleReviews.forEach(rev => {
@@ -1652,33 +1673,7 @@
 
 
 
-            // if (config && config.servicesPage && config.servicesPage.openingHours) {
-            //     const hoursData = config.servicesPage.openingHours;
-                
-            //     // 1. Hydrate Header and Subtitle dynamically (fallback to blanks if missing)
-            //     const titleEl = document.getElementById('hours-title');
-            //     const subtitleEl = document.getElementById('hours-subtitle');
-                
-            //     if (titleEl) titleEl.textContent = hoursData.title || "Opening Times";
-            //     if (subtitleEl) subtitleEl.textContent = hoursData.subtitle || "";
-                
-            //     // 2. Hydrate the days of the week dynamically
-            //     const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
-                
-            //     days.forEach(day => {
-            //         const timeCell = document.getElementById(`time-${day}`);
-            //         if (timeCell) {
-            //             // Displays config time, or a custom "Closed" label if the client leaves it out
-            //             timeCell.textContent = hoursData[day] || "Closed";
-            //         }
-            //     });
-            // }
-
-            
-
-
-
-
+      
             // Contact Actions & Node Parameters
             document.getElementById('lbl-contact-address').innerText = config.contactPage.address;
             document.getElementById('lbl-contact-telephone').innerText = config.contactPage.telephone;
@@ -1700,8 +1695,26 @@
 
 
             // =========================================================
-            // HYDRATION LOGIC: GOOGLE REVIEWS
+            // HYDRATION LOGIC: GOOGLE WRITE REVIEWS
             // =========================================================
+            // if (!config.features.showGoogleReviews) {
+            //     // Delete layout nodes completely if turned off
+            //     document.getElementById('btn-google-review-home')?.remove();
+            //     document.getElementById('btn-google-review-contact')?.remove();
+            // } else {
+            //     // If active, safely bind the configuration paths
+            //     const googleHome = document.getElementById('btn-google-review-home');
+            //     if (googleHome && config.contactPage.googleWriteReviewUrl) {
+            //         googleHome.setAttribute('href', config.contactPage.googleWriteReviewUrl);
+            //     }
+            //     const googleContact = document.getElementById('btn-google-review-contact');
+            //     if (googleContact && config.contactPage.googleWriteReviewUrl) {
+            //         googleContact.setAttribute('href', config.contactPage.googleWriteReviewUrl);
+            //     }
+            // }
+
+
+
             if (!config.features.showGoogleReviews) {
                 // Delete layout nodes completely if turned off
                 document.getElementById('btn-google-review-home')?.remove();
@@ -1709,17 +1722,17 @@
             } else {
                 // If active, safely bind the configuration paths
                 const googleHome = document.getElementById('btn-google-review-home');
-                if (googleHome && config.contactPage.googleReviewUrl) {
-                    googleHome.setAttribute('href', config.contactPage.googleReviewUrl);
+                if (googleHome && writeReviewUrl) {
+                    googleHome.setAttribute('href', writeReviewUrl);
                 }
                 const googleContact = document.getElementById('btn-google-review-contact');
-                if (googleContact && config.contactPage.googleReviewUrl) {
-                    googleContact.setAttribute('href', config.contactPage.googleReviewUrl);
+                if (googleContact && writeReviewUrl) {
+                    googleContact.setAttribute('href', writeReviewUrl);
                 }
             }
 
             // =========================================================
-            // HYDRATION LOGIC: TRIPADVISOR REVIEWS
+            // HYDRATION LOGIC: TRIPADVISOR Write REVIEWS
             // =========================================================
             if (!config.features.showTripAdvisor) {
                 // Delete layout nodes completely if turned off
@@ -1746,32 +1759,6 @@
                 document.getElementById('wrapper-reviews-home')?.remove();
                 document.getElementById('wrapper-reviews-contact')?.remove();
             }
-
-
-
-
-
-            // // HYDRATE BOTH ADD NEW GOOGLE REVIEW LINKS FROM YOUR CONFIG FILE
-            // const reviewBtnHome = document.getElementById('btn-google-review-home');
-            // if (reviewBtnHome && config.contactPage.googleReviewUrl) {
-            //     reviewBtnHome.setAttribute('href', config.contactPage.googleReviewUrl);
-            // }
-            // const reviewBtnContact = document.getElementById('btn-google-review-contact');
-            // if (reviewBtnContact && config.contactPage.googleReviewUrl) {
-            //     reviewBtnContact.setAttribute('href', config.contactPage.googleReviewUrl);
-            // }
-
-            // // HYDRATE BOTH NEW TRIPADVISOR LINKS FROM YOUR CONFIG FILE
-            // const tripadvisorBtnHome = document.getElementById('btn-tripadvisor-review-home');
-            // if (tripadvisorBtnHome && config.contactPage.tripAdvisorUrl) {
-            //     tripadvisorBtnHome.setAttribute('href', config.contactPage.tripAdvisorUrl);
-            // }
-
-            // const tripadvisorBtnContact = document.getElementById('btn-tripadvisor-review-contact');
-            // if (tripadvisorBtnContact && config.contactPage.tripAdvisorUrl) {
-            //     tripadvisorBtnContact.setAttribute('href', config.contactPage.tripAdvisorUrl);
-            // }
-
 
 
             // Global Footer Block Values
@@ -1864,7 +1851,7 @@
 
                 }, 1000); // Trigger midpoint precisely when opacity zero threshold hits
 
-            }, 8000); // Upped to 8 seconds so users have ample time to read your value pitches!
+            }, 7000); // Upped to 8 seconds so users have ample time to read your value pitches!
 
 
         };
