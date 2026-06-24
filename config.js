@@ -1,10 +1,11 @@
 // config.js - Nardini's Coffee Shop Configuration
 export const siteConfig = {
+
     customLogoUrl: "logo.png", // Points directly to your local coffee shop logo
     businessName: "Copperwheats",
     businessSub: "by the Ferry Terminal",
     metaTitle: "Copperwheats Coffee House | Brodick, Arran",
-    contactEmail: "info@copperwheats.co.uk",
+    contactEmail: "John.copperwheat69@gmail.com",
     locationShort: "just opposite from the Ferry Terminal",
     locationFull: "Brodick Ferry Terminal",
     themeColors: {
@@ -14,6 +15,20 @@ export const siteConfig = {
         creamDark: "#EADBC8",
         creamLight: "#FAF6F0"
     },
+
+
+    // =========================================================
+    // FEATURE SWITCHES (Turn sections ON [true] or OFF [false])
+    // =========================================================
+    features: {
+        showGoogleReviews: true,
+        showTripAdvisor: true,
+        showOpeningHours: true
+    },
+
+
+
+
     heroSlides: [
         // {
         //     imgUrl: "./images/CopperwheatsCoffeeShopOverview.png",
@@ -22,8 +37,8 @@ export const siteConfig = {
         //  },
         {
             imgUrl: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=1600&fit=crop&q=80",
-            title: "Top quality coffee from Myrtle",
-            desc: "We procure coffee of the highest quality, to offer the ultimate experience to our customers."
+            title: "Premium coffee from Myrtle, est. 1984",
+            desc: "For 20 years, Myrtle has been our signature brand, defined by a single promise: procuring coffee of the highest quality."
         },
         {
             // Magic Relative Path: Looks in the images folder right next door!
@@ -38,7 +53,7 @@ export const siteConfig = {
         },
         {
             imgUrl: "./images/cookiesandcakes.jpg",
-            title: "Beautiful, freshly baked cakes and pastries",
+            title: "Beautiful, freshly baked cakes, cookies, biscuits and pastries",
             desc: "Enjoy your quality time with that perfect accompaniment."
         },
         {
@@ -90,7 +105,24 @@ export const siteConfig = {
     },
     servicesPage: {
         headline: "What We Offer?",
-        sub: "We serve all types of Coffee of course, 12 choices of tea, multi flavoured ice creams, handmade biscuits and cakes, pastries from 10am to 4.30pm, every day.",
+        sub: "We serve all types of Coffee from our signature coffee supplier 'Myrtle', 12 choices of tea, multiple flavoured ice creams, handmade biscuits, cookies, cakes and pastries.",
+        
+        openingHours: {
+
+        title: "Opening Times",
+        subtitle: "Pop in for that 'pick me up', right by the ferry terminal",
+        // Or for a different client: "Our Operating Hours", "Drop by our showroom", etc.
+        
+        monday: "10:00 AM – 4:30 PM",
+        tuesday: "10:00 AM – 4:30 PM",
+        wednesday: "10:00 AM – 4:30 PM",
+        thursday: "10:00 AM – 4:30 PM",
+        friday: "10:00 AM – 4:30 PM",
+        saturday: "10:00 AM – 4:30 PM",
+        sunday: "10:00 AM – 4:30 PM"
+        },
+        
+        
         menuList: [
             { emoji: "🍦", name: "Ice Cream" },
             { emoji: "☕", name: "Coffee & Tea" },
@@ -98,8 +130,7 @@ export const siteConfig = {
             { emoji: "🍰", name: "Cakes" },
             { emoji: "🍪", name: "Cookies"},
             { emoji: "🥧", name: "Pastries & Sausage Rolls" }
-            
-            
+              
         ]
     },
     contactPage: {

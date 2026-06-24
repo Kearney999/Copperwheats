@@ -1152,15 +1152,7 @@
         color: #000000 !important;
     }
     
-    
 
-
-
-
-
-
- 
-    
     </style>
 </head>
 <body>
@@ -1251,11 +1243,11 @@
                     <div class="reviews-grid" id="container-reviews">
                     </div>
 
-                    <div style="margin-top: 3rem; text-align: center;">
-                        <a href="#" id="btn-review-action-home" class="btn btn-secondary" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                    <div id="wrapper-reviews-home" style="margin-top: 3rem; text-align: center;">
+                        <a href="#" id="btn-google-review-home" class="btn btn-secondary" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem;">
                             ⭐ Quickly review on Google
                         </a>
-                        <a href="#" id="btn-tripadvisor-action-home" class="btn btn-secondary" target="_blank" style="margin-top: 0.5rem; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; max-width: 220px; margin-left: auto; margin-right: auto; background-color: #34E0A1; border-color: #34E0A1; color: #000000;">
+                        <a href="#" id="btn-tripadvisor-review-home" class="btn btn-secondary" target="_blank" style="margin-top: 0.5rem; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; max-width: 220px; margin-left: auto; margin-right: auto; background-color: #34E0A1; border-color: #34E0A1; color: #000000;">
                         🦉 Leave a TripAdvisor Review
                     </a>
                     </div>
@@ -1292,6 +1284,58 @@
                     <h2 class="section-title" id="lbl-services-title">Services</h2>
                     <p class="section-subtitle" id="lbl-services-subtitle">Subtitle</p>
                 </div>
+
+            <section id="section-opening-hours" class="hours-section" style="padding: 4rem 1rem; background-color: var(--site-bg-light, #fcfaf7); text-align: center;">
+                <div style="max-width: 500px; margin: 0 auto; background: #ffffff; padding: 2.5rem 2rem; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02);">
+        
+                
+                <h2 id="hours-title" style="font-size: 1.75rem; margin-bottom: 0.5rem; color: #333;"></h2>
+                <p id="hours-subtitle" style="color: #666; font-size: 0.95rem; margin-bottom: 2rem;"></p>
+
+                <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid #f1f1f1;">
+                            <th style="padding: 0.75rem 0; color: #888; font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">Day</th>
+                            <th style="padding: 0.75rem 0; color: #888; font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; text-align: right;">Hours</th>
+                        </tr>
+                    </thead>
+                    <tbody style="color: #444; font-size: 1.05rem;">
+                        <tr style="border-bottom: 1px solid #f9f9f9;">
+                            <td style="padding: 1rem 0; font-weight: 500;">Monday</td>
+                            <td id="time-monday" style="padding: 1rem 0; text-align: right; color: #666;">--</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #f9f9f9;">
+                            <td style="padding: 1rem 0; font-weight: 500;">Tuesday</td>
+                            <td id="time-tuesday" style="padding: 1rem 0; text-align: right; color: #666;">--</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #f9f9f9;">
+                            <td style="padding: 1rem 0; font-weight: 500;">Wednesday</td>
+                            <td id="time-wednesday" style="padding: 1rem 0; text-align: right; color: #666;">--</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #f9f9f9;">
+                            <td style="padding: 1rem 0; font-weight: 500;">Thursday</td>
+                            <td id="time-thursday" style="padding: 1rem 0; text-align: right; color: #666;">--</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #f9f9f9;">
+                            <td style="padding: 1rem 0; font-weight: 500;">Friday</td>
+                            <td id="time-friday" style="padding: 1rem 0; text-align: right; color: #666;">--</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #f9f9f9;">
+                            <td style="padding: 1rem 0; font-weight: 500;">Saturday</td>
+                            <td id="time-saturday" style="padding: 1rem 0; text-align: right; color: #666;">--</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 1rem 0; font-weight: 500;">Sunday</td>
+                            <td id="time-sunday" style="padding: 1rem 0; text-align: right; color: #666;">--</td>
+                        </tr>
+                    </tbody>
+                </table>
+        
+                </div>
+            </section>
+
+
+
                 <div class="services-grid" id="container-services-cards">
                 </div>
             </section>
@@ -1308,12 +1352,13 @@
             <h2>Get in Touch</h2>
             <p class="contact-item" id="lbl-contact-address">Address</p>
             <p class="contact-item" id="lbl-contact-telephone">Telephone</p>
-    
-            <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; width: 100%;">
-                <a href="#" id="btn-review-action-contact" class="btn btn-secondary" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; max-width: 240px; padding: 0.6rem 1rem; margin-right: auto; margin-left: 0;">
+                
+            
+            <div id="wrapper-reviews-contact" style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; width: 100%;">
+                <a href="#" id="btn-google-review-contact" class="btn btn-secondary" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; max-width: 240px; padding: 0.6rem 1rem; margin-right: auto; margin-left: 0;">
                     ⭐ A Quick review on Google?
                 </a>
-                <a href="#" id="btn-tripadvisor-action-contact" class="btn btn-secondary" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; max-width: 240px; padding: 0.6rem 1rem; background-color: #34E0A1; border-color: #34E0A1; color: #000000; border-radius: 20px; margin-right: auto; margin-left: 0;">
+                <a href="#" id="btn-tripadvisor-review-contact" class="btn btn-secondary" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; max-width: 240px; padding: 0.6rem 1rem; background-color: #34E0A1; border-color: #34E0A1; color: #000000; border-radius: 20px; margin-right: auto; margin-left: 0;">
                     🦉 Review Us on TripAdvisor
                 </a>
             </div>
@@ -1572,6 +1617,68 @@
                     </div>`;
             });
 
+
+            // HYDRATE OPENING TIMES FROM CONFIG FILE
+
+            // 1. Grab the section element
+            const hoursSection = document.getElementById('section-opening-hours');
+
+            // 2. Check if the feature toggle is explicitly turned OFF
+            if (config && config.features && config.features.showOpeningHours === false) {
+                if (hoursSection) hoursSection.style.display = 'none';
+            } else {
+                // 3. Otherwise, if it's true (or enabled), show it and fill in the data
+                if (hoursSection) hoursSection.style.display = 'block';
+
+                if (config && config.servicesPage && config.servicesPage.openingHours) {
+                    const hoursData = config.servicesPage.openingHours;
+                    
+                    const titleEl = document.getElementById('hours-title');
+                    const subtitleEl = document.getElementById('hours-subtitle');
+                    if (titleEl) titleEl.textContent = hoursData.title || "Opening Times";
+                    if (subtitleEl) subtitleEl.textContent = hoursData.subtitle || "";
+                    
+                    const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+                    days.forEach(day => {
+                        const timeCell = document.getElementById(`time-${day}`);
+                        if (timeCell) {
+                            timeCell.textContent = hoursData[day] || "Closed";
+                        }
+                    });
+                }
+            }
+
+
+
+
+
+            // if (config && config.servicesPage && config.servicesPage.openingHours) {
+            //     const hoursData = config.servicesPage.openingHours;
+                
+            //     // 1. Hydrate Header and Subtitle dynamically (fallback to blanks if missing)
+            //     const titleEl = document.getElementById('hours-title');
+            //     const subtitleEl = document.getElementById('hours-subtitle');
+                
+            //     if (titleEl) titleEl.textContent = hoursData.title || "Opening Times";
+            //     if (subtitleEl) subtitleEl.textContent = hoursData.subtitle || "";
+                
+            //     // 2. Hydrate the days of the week dynamically
+            //     const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+                
+            //     days.forEach(day => {
+            //         const timeCell = document.getElementById(`time-${day}`);
+            //         if (timeCell) {
+            //             // Displays config time, or a custom "Closed" label if the client leaves it out
+            //             timeCell.textContent = hoursData[day] || "Closed";
+            //         }
+            //     });
+            // }
+
+            
+
+
+
+
             // Contact Actions & Node Parameters
             document.getElementById('lbl-contact-address').innerText = config.contactPage.address;
             document.getElementById('lbl-contact-telephone').innerText = config.contactPage.telephone;
@@ -1590,26 +1697,80 @@
             document.getElementById('lbl-contact-email').innerText = config.contactEmail;
 
 
-            // HYDRATE BOTH ADD NEW GOOGLE REVIEW LINKS FROM YOUR CONFIG FILE
-            const reviewBtnHome = document.getElementById('btn-review-action-home');
-            if (reviewBtnHome && config.contactPage.googleReviewUrl) {
-                reviewBtnHome.setAttribute('href', config.contactPage.googleReviewUrl);
-            }
-            const reviewBtnContact = document.getElementById('btn-review-action-contact');
-            if (reviewBtnContact && config.contactPage.googleReviewUrl) {
-                reviewBtnContact.setAttribute('href', config.contactPage.googleReviewUrl);
+
+
+            // =========================================================
+            // HYDRATION LOGIC: GOOGLE REVIEWS
+            // =========================================================
+            if (!config.features.showGoogleReviews) {
+                // Delete layout nodes completely if turned off
+                document.getElementById('btn-google-review-home')?.remove();
+                document.getElementById('btn-google-review-contact')?.remove();
+            } else {
+                // If active, safely bind the configuration paths
+                const googleHome = document.getElementById('btn-google-review-home');
+                if (googleHome && config.contactPage.googleReviewUrl) {
+                    googleHome.setAttribute('href', config.contactPage.googleReviewUrl);
+                }
+                const googleContact = document.getElementById('btn-google-review-contact');
+                if (googleContact && config.contactPage.googleReviewUrl) {
+                    googleContact.setAttribute('href', config.contactPage.googleReviewUrl);
+                }
             }
 
-            // HYDRATE BOTH NEW TRIPADVISOR LINKS FROM YOUR CONFIG FILE
-            const tripadvisorBtnHome = document.getElementById('btn-tripadvisor-action-home');
-            if (tripadvisorBtnHome && config.contactPage.tripAdvisorUrl) {
-                tripadvisorBtnHome.setAttribute('href', config.contactPage.tripAdvisorUrl);
+            // =========================================================
+            // HYDRATION LOGIC: TRIPADVISOR REVIEWS
+            // =========================================================
+            if (!config.features.showTripAdvisor) {
+                // Delete layout nodes completely if turned off
+                document.getElementById('btn-tripadvisor-review-home')?.remove();
+                document.getElementById('btn-tripadvisor-review-contact')?.remove();
+            } else {
+                // If active, safely bind the configuration paths
+                const taHome = document.getElementById('btn-tripadvisor-review-home');
+                if (taHome && config.contactPage.tripAdvisorUrl) {
+                    taHome.setAttribute('href', config.contactPage.tripAdvisorUrl);
+                }
+                const taContact = document.getElementById('btn-tripadvisor-review-contact');
+                if (taContact && config.contactPage.tripAdvisorUrl) {
+                    taContact.setAttribute('href', config.contactPage.tripAdvisorUrl);
+                }
             }
 
-            const tripadvisorBtnContact = document.getElementById('btn-tripadvisor-action-contact');
-            if (tripadvisorBtnContact && config.contactPage.tripAdvisorUrl) {
-                tripadvisorBtnContact.setAttribute('href', config.contactPage.tripAdvisorUrl);
+            // =========================================================
+            // CONTAINER SAFETY CLEANUP
+            // =========================================================
+            // If a client turns off BOTH switches, erase the parent wrapper frames 
+            // to prevent empty ghost margins/spacing from breaking your layout.
+            if (!config.features.showGoogleReviews && !config.features.showTripAdvisor) {
+                document.getElementById('wrapper-reviews-home')?.remove();
+                document.getElementById('wrapper-reviews-contact')?.remove();
             }
+
+
+
+
+
+            // // HYDRATE BOTH ADD NEW GOOGLE REVIEW LINKS FROM YOUR CONFIG FILE
+            // const reviewBtnHome = document.getElementById('btn-google-review-home');
+            // if (reviewBtnHome && config.contactPage.googleReviewUrl) {
+            //     reviewBtnHome.setAttribute('href', config.contactPage.googleReviewUrl);
+            // }
+            // const reviewBtnContact = document.getElementById('btn-google-review-contact');
+            // if (reviewBtnContact && config.contactPage.googleReviewUrl) {
+            //     reviewBtnContact.setAttribute('href', config.contactPage.googleReviewUrl);
+            // }
+
+            // // HYDRATE BOTH NEW TRIPADVISOR LINKS FROM YOUR CONFIG FILE
+            // const tripadvisorBtnHome = document.getElementById('btn-tripadvisor-review-home');
+            // if (tripadvisorBtnHome && config.contactPage.tripAdvisorUrl) {
+            //     tripadvisorBtnHome.setAttribute('href', config.contactPage.tripAdvisorUrl);
+            // }
+
+            // const tripadvisorBtnContact = document.getElementById('btn-tripadvisor-review-contact');
+            // if (tripadvisorBtnContact && config.contactPage.tripAdvisorUrl) {
+            //     tripadvisorBtnContact.setAttribute('href', config.contactPage.tripAdvisorUrl);
+            // }
 
 
 
