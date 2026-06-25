@@ -5,7 +5,7 @@ export const siteConfig = {
     businessName: "Copperwheats",
     businessSub: "by the Ferry Terminal",
     metaTitle: "Copperwheats Coffee House | Brodick, Arran",
-    contactEmail: "John.copperwheat69@gmail.com",
+    contactEmail: "john.copperwheat69@gmail.com",
     locationShort: "just opposite from the Ferry Terminal",
     locationFull: "Brodick Ferry Terminal",
     themeColors: {
@@ -145,6 +145,7 @@ export const siteConfig = {
 
         googleViewReviewsUrl: "https://search.google.com/local/reviews?placeid=",
         googleWriteReviewUrl: "https://search.google.com/local/writereview?placeid=",
+        
         tripAdvisorUrl: "https://www.tripadvisor.co.uk/UserReviewEdit-g551754-d3649538-Copperwheat_Coffee_House-Brodick_Isle_of_Arran_Scotland.html"
     },
 

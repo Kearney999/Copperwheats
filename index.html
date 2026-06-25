@@ -288,7 +288,7 @@
         /* The master cross-fade keyframe loop */
         @keyframes heroFadeLoop {
             0% {
-                opacity: 1;
+                opacity: 1; 
                 filter: brightness(1);
             }
 
@@ -1564,12 +1564,10 @@
             const placeId = config.contactPage.googlePlaceId;
             
             // URL 1: Forces open the direct pop-up form to WRITE a review
-            // const writeReviewUrl = `https://search.google.com/local/writereview?placeid=${placeId}`;
             const writeReviewUrl = `${config.contactPage.googleWriteReviewUrl}${placeId}`;
             console.log("MY ABSOLUTE WRITE URL IS:", writeReviewUrl);
 
             // URL 2: Opens the Google Maps overview page to VIEW existing reviews
-            // const viewReviewsUrl = `https://search.google.com/local/reviews?placeid=${placeId}`;
             const viewReviewsUrl = `${config.contactPage.googleViewReviewsUrl}${placeId}`;
 
             const googleBadgeLink = document.getElementById('link-google-reviews-home');
@@ -1697,24 +1695,6 @@
             // =========================================================
             // HYDRATION LOGIC: GOOGLE WRITE REVIEWS
             // =========================================================
-            // if (!config.features.showGoogleReviews) {
-            //     // Delete layout nodes completely if turned off
-            //     document.getElementById('btn-google-review-home')?.remove();
-            //     document.getElementById('btn-google-review-contact')?.remove();
-            // } else {
-            //     // If active, safely bind the configuration paths
-            //     const googleHome = document.getElementById('btn-google-review-home');
-            //     if (googleHome && config.contactPage.googleWriteReviewUrl) {
-            //         googleHome.setAttribute('href', config.contactPage.googleWriteReviewUrl);
-            //     }
-            //     const googleContact = document.getElementById('btn-google-review-contact');
-            //     if (googleContact && config.contactPage.googleWriteReviewUrl) {
-            //         googleContact.setAttribute('href', config.contactPage.googleWriteReviewUrl);
-            //     }
-            // }
-
-
-
             if (!config.features.showGoogleReviews) {
                 // Delete layout nodes completely if turned off
                 document.getElementById('btn-google-review-home')?.remove();
@@ -1730,6 +1710,7 @@
                     googleContact.setAttribute('href', writeReviewUrl);
                 }
             }
+
 
             // =========================================================
             // HYDRATION LOGIC: TRIPADVISOR Write REVIEWS
@@ -1810,7 +1791,9 @@
             let currentSlideIndex = 0;
 
             function getBgString(url) {
-                return `linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('${url}')`;
+                // return `linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('${url}')`;
+            // return `linear-gradient(rgba(44, 26, 17, 0.7), rgba(44, 26, 17, 0.7)), url('${url}')`;
+            return `linear-gradient(rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.7)), url('${url}')`;
             }
 
             // Establish the initial static baseline slide on boot
