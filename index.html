@@ -1406,39 +1406,49 @@
 
                     <div class="info-strip">
                         <div class="info-chunk">
+                            <p> If your email is internet based like Gmail or Hotmail etc.</p>
                             <h5>Direct Contact</h5>
                             <p id="lbl-contact-email">Email</p>
                         
-                        
-                        <!-- Below is Message Form currently not activated  -->
-                        <!-- <div class="container" style="max-width: 650px; margin: 2rem auto; padding: 2rem; background: var(--color-white); border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
-                            <h1 style="font-family: var(--font-display); color: var(--color-espresso); font-size: 2.2rem; margin-bottom: 1.5rem; text-align: center;">Or Just Message Copperwheats below</h1>
-    
-                            <form id="contact-form-submit" target="_blank" action="https://formsubmit.co/john.copperwheat69@gmail.com" method="POST" style="display: flex; flex-direction: column; gap: 1.25rem;">
+                            <div class="container" style="max-width: 650px; margin: 2rem auto; padding: 2rem; background: var(--color-white); border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+                                <h1 style="font-family: var(--font-display); color: var(--color-espresso); font-size: 2.2rem; margin-bottom: 1.5rem; text-align: center;">Or just message us below</h1>
                                 
-                                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                                    <div style="flex: 1; min-width: 250px;">
-                                        <input type="text" name="name" placeholder="Full Name" required 
-                                            style="width: 100%; padding: 0.85rem 1rem; border-radius: 8px; border: 1px solid var(--color-cream-dark); font-family: var(--font-body); font-size: 1rem; box-sizing: border-box; background-color: var(--color-cream-light);">
+                                <!-- 1. Removed target="_blank" -->
+                                <form id="contact-form-submit" action="" method="POST" style="display: flex; flex-direction: column; gap: 1.25rem;">
+                                    
+                                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                                        <div style="flex: 1; min-width: 250px;">
+                                            <input type="text" name="name" placeholder="Full Name" required 
+                                                style="width: 100%; padding: 0.85rem 1rem; border-radius: 8px; border: 1px solid var(--color-cream-dark); font-family: var(--font-body); font-size: 1rem; box-sizing: border-box; background-color: var(--color-cream-light);">
+                                        </div>
+                                        <div style="flex: 1; min-width: 250px;">
+                                            <input type="email" name="email" placeholder="Email Address" required 
+                                                style="width: 100%; padding: 0.85rem 1rem; border-radius: 8px; border: 1px solid var(--color-cream-dark); font-family: var(--font-body); font-size: 1rem; box-sizing: border-box; background-color: var(--color-cream-light);">
+                                        </div>
                                     </div>
-                                    <div style="flex: 1; min-width: 250px;">
-                                        <input type="email" name="email" placeholder="Email Address" required 
-                                            style="width: 100%; padding: 0.85rem 1rem; border-radius: 8px; border: 1px solid var(--color-cream-dark); font-family: var(--font-body); font-size: 1rem; box-sizing: border-box; background-color: var(--color-cream-light);">
+
+                                    <div style="width: 100%;">
+                                        <textarea placeholder="Your Message" name="message" rows="7" required 
+                                                style="width: 100%; padding: 1rem; border-radius: 8px; border: 1px solid var(--color-cream-dark); font-family: var(--font-body); font-size: 1rem; box-sizing: border-box; resize: vertical; background-color: var(--color-cream-light); min-height: 150px;"></textarea>
                                     </div>
-                                </div>
 
-                                <div style="width: 100%;">
-                                    <textarea placeholder="Your Message" name="message" rows="7" required 
-                                            style="width: 100%; padding: 1rem; border-radius: 8px; border: 1px solid var(--color-cream-dark); font-family: var(--font-body); font-size: 1rem; box-sizing: border-box; resize: vertical; background-color: var(--color-cream-light); min-height: 150px;"></textarea>
-                                </div>
+                                    <button type="submit" id="form-submit-btn" class="btn btn-primary" 
+                                            style="width: 100%; padding: 1rem; font-size: 1.1rem; font-weight: 600; border-radius: 8px; cursor: pointer;">
+                                        Message Us
+                                    </button>
+                                </form>
 
-                                <button type="submit" class="btn btn-primary" 
-                                        style="width: 100%; padding: 1rem; font-size: 1.1rem; font-weight: 600; border-radius: 8px; cursor: pointer; transition: background-color 0.2s ease;">
-                                    Message Us
-                                </button>
-                            </form>
-                        </div> -->
-                        <!-- Above is Message Form currently not activated  -->
+                                <!-- 2. Hidden Success Message Panel -->
+                                <div id="form-success-message" style="display: none; text-align: center; padding: 2rem 1rem;">
+                                    <div style="font-size: 3rem; margin-bottom: 1rem;">✨</div>
+                                    <h3 style="color: var(--color-espresso); font-family: var(--font-display); margin-bottom: 0.5rem;">Message Sent!</h3>
+                                    <p style="color: #666; font-family: var(--font-body);">Thank you for contacting us. We've received your enquiry and will be in touch shortly.</p>
+                                </div>
+                            </div>
+
+
+
+
                         
                         </div>
                     </div>
@@ -1715,8 +1725,66 @@
             //document.getElementById('lbl-contact-address').innerText = config.locationFull;
             document.getElementById('lbl-contact-email').innerText = config.contactEmail;
 
-            // Dynamically routes the form to the global email configured in config.js
-            document.getElementById('contact-form-submit')?.setAttribute('action', `https://formsubmit.co/${config.contactEmail}`);
+
+            //***************************************************
+            ///Form Submit, Message Me javascript AJAX logic
+            //***************************************************
+            const contactForm = document.getElementById('contact-form-submit');
+            if (contactForm) {
+                // 1. NOTICE THE /ajax/ ADDITION HERE - This fixes the API routing endpoint!
+                contactForm.setAttribute('action', `https://formsubmit.co/ajax/${config.contactEmail}`);
+
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault(); 
+
+                    const submitBtn = document.getElementById('form-submit-btn');
+                    const successMsg = document.getElementById('form-success-message');
+                    
+                    if (submitBtn) {
+                        submitBtn.innerText = "Sending...";
+                        submitBtn.disabled = true;
+                    }
+
+                    // 2. Convert form elements cleanly into a regular JavaScript Object
+                    const formData = new FormData(contactForm);
+                    const object = {};
+                    formData.forEach((value, key) => object[key] = value);
+                    
+                    // 3. Package it into a JSON string payload
+                    const jsonPayload = JSON.stringify(object);
+
+                    // Send the JSON packet to the FormSubmit AJAX backend
+                    fetch(contactForm.action, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: jsonPayload
+                    })
+                    .then(response => response.json()) // FormSubmit responds with a JSON confirmation message
+                    .then(data => {
+                        if (data.success === "true" || data.success === true) {
+                            // Success! Switch out the views
+                            contactForm.style.display = 'none';
+                            successMsg.style.display = 'block';
+                        } else {
+                            alert("Oops! FormSubmit rejected the request: " + data.message);
+                            if (submitBtn) {
+                                submitBtn.innerText = "Message Us";
+                                submitBtn.disabled = false;
+                            }
+                        }
+                    })
+                    .catch(error => {
+                        alert("Oops! There was a network transmission error. Please try again.");
+                        if (submitBtn) {
+                            submitBtn.innerText = "Message Us";
+                            submitBtn.disabled = false;
+                        }
+                    });
+                });
+            }
 
 
             // =========================================================

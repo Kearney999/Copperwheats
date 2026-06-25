@@ -5,8 +5,8 @@ export const siteConfig = {
     businessName: "Copperwheats",
     businessSub: "by the Ferry Terminal",
     metaTitle: "Copperwheats Coffee House | Brodick, Arran",
-    // contactEmail: "john.copperwheat69@gmail.com",
-    contactEmail: "Kearney999@gmail.com",
+    contactEmail: "john.copperwheat69@gmail.com",
+    //contactEmail: "Kearney999@gmail.com",
     locationShort: "just opposite from the Ferry Terminal",
     locationFull: "Brodick Ferry Terminal",
     themeColors: {
