@@ -1354,7 +1354,19 @@
             <div class="contact-details-col">
             <h2>Get in Touch</h2>
             <p class="contact-item" id="lbl-contact-address">Address</p>
-            <p class="contact-item" id="lbl-contact-telephone">Telephone</p>
+            
+                <div style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-top: 0.5rem;">
+                    
+        
+                    <!-- The link wrap logic for mobile dialing -->
+                    
+                    <a href="#" id="lnk-contact-telephone" class="btn btn-secondary" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; max-width: 240px; padding: 0.6rem 1rem; margin-top: 0.5rem; text-decoration: none;">
+                        <span id="lbl-contact-phone-icon"></span>
+                        <span id="lbl-contact-telephone">Loading...</span>
+                    </a>
+                </div>
+
+            <!-- <p class="contact-item" id="lbl-contact-telephone">Telephone</p> -->
                 
             
             <div id="wrapper-reviews-contact" style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; width: 100%;">
@@ -1705,13 +1717,36 @@
 
 
 
-
-
-      
             // Contact Actions & Node Parameters
             document.getElementById('lbl-contact-address').innerText = config.contactPage.address;
-            document.getElementById('lbl-contact-telephone').innerText = config.contactPage.telephone;
-            
+
+            // --- DYNAMIC TELEPHONE BUTTON LOGIC ---
+            if (config.contactPage && config.contactPage.contactTelephone) {
+                const phoneNum = config.contactPage.contactTelephone;
+                
+                // 1. Clean out whitespace for proper native device routing
+                const cleanPhone = phoneNum.replace(/\s+/g, '');
+
+                // 2. Set the custom config icon (or default to 📞 if missing)
+                const phoneIconElement = document.getElementById('lbl-contact-phone-icon');
+                if (phoneIconElement) {
+                    phoneIconElement.innerText = config.contactPage.phoneIcon || "📞";
+                }
+
+                // 3. Update the inner text of the button
+                const phoneTextElement = document.getElementById('lbl-contact-telephone');
+                if (phoneTextElement) {
+                    phoneTextElement.innerText = phoneNum;
+                }
+
+                // 4. Transform the anchor link into a mobile trigger action
+                const phoneLinkElement = document.getElementById('lnk-contact-telephone');
+                if (phoneLinkElement) {
+                    phoneLinkElement.setAttribute('href', `tel:${cleanPhone}`);
+                }
+            }
+
+
             // TARGET THE SRC PROPERTY DIRECTLY FOR THE MAP:
             const mapElement = document.getElementById('lbl-contact-map');
             if (mapElement) {
@@ -1732,7 +1767,7 @@
             const contactForm = document.getElementById('contact-form-submit');
             if (contactForm) {
                 // 1. NOTICE THE /ajax/ ADDITION HERE - This fixes the API routing endpoint!
-                contactForm.setAttribute('action', `https://formsubmit.co/ajax/${config.contactEmail}`);
+                contactForm.setAttribute('action', `https://formsubmit.co/ajax/${config.contactEmailEncrypted}`);
 
                 contactForm.addEventListener('submit', function(e) {
                     e.preventDefault(); 

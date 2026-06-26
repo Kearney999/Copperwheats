@@ -6,6 +6,7 @@ export const siteConfig = {
     businessSub: "by the Ferry Terminal",
     metaTitle: "Copperwheats Coffee House | Brodick, Arran",
     contactEmail: "john.copperwheat69@gmail.com",
+    contactEmailEncrypted: "4d2463d2c6d63e7e6405d18b973cb08c",
     locationShort: "just opposite from the Ferry Terminal",
     locationFull: "Brodick Ferry Terminal",
     themeColors: {
@@ -49,7 +50,7 @@ export const siteConfig = {
         {
             imgUrl: "https://images.unsplash.com/photo-1498804103079-a6351b050096?w=1600&fit=crop&q=80",
             title: "Choose your Coffee or Tea favourite",
-            desc: "Cappuccino, Latte, Flat White, Mocha, Espresso, Guest coffee, and 12 brands of tea."
+            desc: "Cappuccino, Latte, Flat White, Mocha, Espresso, Iced Coffee, Guest coffee, and 12 brands of tea."
         },
         {
             imgUrl: "./images/cookiesandcakes.jpg",
@@ -135,7 +136,9 @@ export const siteConfig = {
     },
     contactPage: {
         address : "📍 The Pier, Brodick, Isle of Arran",
-        telephone : "📞 +44 1770 303522",
+        phoneIcon: "📞",  // Or whatever custom emoji/icon variable the client prefers
+        contactTelephone: "+44 1770 303522",
+        
         mapUrl : "https://maps.google.com/maps?q=Copperwheats%20Coffee%20House,%20The%20Pier,%20Brodick,%20Isle%20of%20Arran&t=&z=16&ie=UTF8&iwloc=&output=embed",
         title: "Say Hello",
         desc: "Have questions about group bookings, dietary adjustments, or our left luggage storage? Drop us a line and we will get back to you within 48 hours. However, feel free to ring us if more urgent.",
