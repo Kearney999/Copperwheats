@@ -3,7 +3,8 @@ export const siteConfig = {
 
     customLogoUrl: "logo.png", // Points directly to your local coffee shop logo
     businessName: "Copperwheats",
-    businessSub: "by the Ferry Terminal",
+    businessSub: "Island views, Premium brews",
+    // businessSub: "by the Ferry Terminal",
     metaTitle: "Copperwheats Coffee House | Brodick, Arran",
     contactEmail: "john.copperwheat69@gmail.com",
     contactEmailEncrypted: "4d2463d2c6d63e7e6405d18b973cb08c",
@@ -24,18 +25,18 @@ export const siteConfig = {
     features: {
         showGoogleReviews: true,
         showTripAdvisor: true,
-        showOpeningHours: true
+        showOpeningHours: true,
+
+        //Images
+        showGoogleReviewsSummaryBoard: true,
+        showCompanyStoryboard: false
     },
 
 
 
 
     heroSlides: [
-        // {
-        //     imgUrl: "./images/CopperwheatsCoffeeShopOverview.png",
-        //     title: "",
-        //     desc: ""
-        //  },
+        
         {
             imgUrl: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=1600&fit=crop&q=80",
             title: "Premium coffee from Myrtle, est. 1984",
@@ -76,7 +77,7 @@ export const siteConfig = {
         { icon: "pound", title: "Payment", desc: "We take contactless payment, apple pay and of course notes and coins are more than welcome." }
     ],
         reviewsHeadline: "Loved by Travellers & Locals",
-        reviewsSub: "Here is what real visitors say on Google Maps after stopping by our shop next to the ferry terminal.",
+        reviewsSub: "Discover authentic guest insights with our Google Reviews",
         reviewsScoreText: "4.4 / 5.0 Rating (93)",
         googleReviews: [
             { initials: "JM", name: "James M.", "badge": "Local Guide", text: "\"The left luggage service here is a complete lifesaver! Dropped our heavy suitcases off secure and safe, allowing us to walk and enjoy Brodick hassle-free before our evening ferry home. Brilliant coffee too!\"" },
@@ -98,7 +99,7 @@ export const siteConfig = {
         ],
         features: [
             { emoji: "🥪", title: "Food & Drinks", desc: "From artisan espresso to freshly pressed hot toasties, house-baked pastries, and authentic Arran ice cream flavours." },
-            { emoji: "🧳", title: "Convenient Services", desc: "Take advantage of our reliable on-site left luggage check to enjoy the island without being weighed down." },
+            { emoji: "🧳", title: "Convenient Services", desc: "Take advantage of our handy on-site left luggage service to enjoy the island without being weighed down." },
             { emoji: "♿", title: "Accessibility For All", desc: "Thoughtfully equipped with complete wheelchair access across entries, seating layouts, and washrooms." },
             { emoji: "🌞", title: "Outdoor balcony", desc: "Imagine sitting on a summers day, as the warm breeze blows, whilst having that morning coffee with views across the bay to Goat Fell, and wondering where it all went wrong! 😉"}
         ]
@@ -139,16 +140,23 @@ export const siteConfig = {
         phoneIcon: "📞",  // Or whatever custom emoji/icon variable the client prefers
         contactTelephone: "+44 1770 303522",
         
+        // 🚀 NEW ADDITIONS FOR AUTOMATED RICH-SEO SCHEMA TRACKING
+        postalCode: "KA27 8AY",
+        locality: "Brodick",
+        region: "Isle of Arran",
+        countryCode: "GB",
+        latitude: "55.5772",
+        longitude: "-5.1385",
+
+
         mapUrl : "https://maps.google.com/maps?q=Copperwheats%20Coffee%20House,%20The%20Pier,%20Brodick,%20Isle%20of%20Arran&t=&z=16&ie=UTF8&iwloc=&output=embed",
         title: "Say Hello",
         desc: "Have questions about group bookings, dietary adjustments, or our left luggage storage? Drop us a line and we will get back to you within 48 hours. However, feel free to ring us if more urgent.",
         // The overview tab where people READ existing reviews
 
         googlePlaceId: "ChIJsR7E-07viUgRKh1IqQQ9mAc", // Example ID
-
         googleViewReviewsUrl: "https://search.google.com/local/reviews?placeid=",
         googleWriteReviewUrl: "https://search.google.com/local/writereview?placeid=",
-        
         tripAdvisorUrl: "https://www.tripadvisor.co.uk/UserReviewEdit-g551754-d3649538-Copperwheat_Coffee_House-Brodick_Isle_of_Arran_Scotland.html"
     },
 

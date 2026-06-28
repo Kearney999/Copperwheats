@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="meta-title">Loading...</title>
+
+    <!-- 🚀 ADD THIS DATA CONTAINER TO CATCH THE INJECTED SEO VALUES -->
+    <script id="seo-schema" type="application/ld+json"></script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -1191,37 +1195,34 @@
 
         <main-section id="section-home">
             <section class="hero-section" id="hero-bg-primary">
-    <div class="hero-bg-secondary" id="hero-bg-secondary"></div>
+            <div class="hero-bg-secondary" id="hero-bg-secondary"></div>
 
-    <div class="container" style="position: relative; z-index: 2;">
-        <div class="hero-content">
-            
-            <div class="hero-logo-box" style="display: flex !important; align-items: center !important; gap: 24px !important; background: rgba(15, 23, 42, 0.4) !important; backdrop-filter: blur(12px) !important; -webkit-backdrop-filter: blur(12px) !important; padding: 16px 28px !important; border-radius: 50px !important; border: 1px solid rgba(255, 255, 255, 0.15) !important; width: fit-content !important; margin-bottom: 2rem !important; position: relative;">
-                
-                <div style="width: 130px; height: 130px; background: rgba(255, 255, 255, 0.05); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255, 255, 255, 0.2); flex-shrink: 0; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4); position: relative; overflow: visible !important;">
-                    <img id="hero-logo-image" src="logo.png" alt="Brand Emblem" 
-                         style="display: block !important; width: 180px !important; height: 180px !important; max-width: none !important; object-fit: contain; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); mix-blend-mode: multiply !important; z-index: 10;">
-                </div>
+            <div class="container" style="position: relative; z-index: 2;">
+                <div class="hero-content">
+                    
+                    <div class="hero-logo-box" style="display: flex !important; align-items: center !important; gap: 24px !important; background: rgba(15, 23, 42, 0.4) !important; backdrop-filter: blur(12px) !important; -webkit-backdrop-filter: blur(12px) !important; padding: 16px 28px !important; border-radius: 50px !important; border: 1px solid rgba(255, 255, 255, 0.15) !important; width: fit-content !important; margin-bottom: 2rem !important; position: relative;">
+                        
+                        <div style="width: 130px; height: 130px; background: rgba(255, 255, 255, 0.05); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255, 255, 255, 0.2); flex-shrink: 0; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4); position: relative; overflow: visible !important;">
+                            <img id="hero-logo-image" src="logo.png" alt="Brand Emblem" 
+                                style="display: block !important; width: 180px !important; height: 180px !important; max-width: none !important; object-fit: contain; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); mix-blend-mode: multiply !important; z-index: 10;">
+                        </div>
 
-                <div style="display: flex !important; flex-direction: column !important; text-align: left !important; line-height: 1.2 !important; white-space: nowrap !important; padding-right: 12px;">
-                    <span id="lbl-hero-logo-main" style="font-family: 'Inter', sans-serif !important; font-size: 1.8rem !important; font-weight: 700 !important; color: #EADBC8 !important; text-transform: none !important; letter-spacing: -0.5px;">Nardini's</span>
-                    <span id="lbl-hero-logo-sub" style="font-family: 'Inter', sans-serif !important; font-size: 1.05rem !important; font-weight: 500 !important; color: #FAF6F0 !important; text-transform: none !important; margin-top: 4px !important; opacity: 0.85;">Coffee Shop</span>
-                </div>
-            </div>
+                        <div style="display: flex !important; flex-direction: column !important; text-align: left !important; line-height: 1.2 !important; white-space: nowrap !important; padding-right: 12px;">
+                            <span id="lbl-hero-logo-main" style="font-family: 'Inter', sans-serif !important; font-size: 1.8rem !important; font-weight: 700 !important; color: #EADBC8 !important; text-transform: none !important; letter-spacing: -0.5px;">Nardini's</span>
+                            <span id="lbl-hero-logo-sub" style="font-family: 'Inter', sans-serif !important; font-size: 1.05rem !important; font-weight: 500 !important; color: #FAF6F0 !important; text-transform: none !important; margin-top: 4px !important; opacity: 0.85;">Coffee Shop</span>
+                        </div>
+                    </div>
 
-            <h1 class="hero-title" id="lbl-hero-title">Title</h1>
-            <p class="hero-desc" id="lbl-hero-desc">Desc</p>
-            
+                    <h1 class="hero-title" id="lbl-hero-title">Title</h1>
+                    <p class="hero-desc" id="lbl-hero-desc">Desc</p>
 
+                    <div class="hero-actions">
+                        <a href="/services" class="btn btn-primary" data-target="services">Menu</a>
+                        <a href="/contact" class="btn btn-secondary" data-target="contact">Find Us</a>
+                    </div>
 
-
-            <div class="hero-actions">
-                <a href="/services" class="btn btn-primary" data-target="services">Menu</a>
-                <a href="/contact" class="btn btn-secondary" data-target="contact">Find Us</a>
-            </div>
-
-        </div> 
-    </div> 
+                </div> 
+            </div> 
 </section>
 
             <section class="quick-highlights">
@@ -1242,7 +1243,26 @@
                         </a>
                     </div>
                     <h2 class="section-title" id="lbl-review-title">Reviews</h2>
-                    <p class="section-subtitle" id="lbl-review-subtitle">Subtitle</p>
+
+                    <!-- 1. Explicitly setting this to 1.5rem cuts the massive CSS default gap in half -->
+                    <p class="section-subtitle" id="lbl-review-subtitle" style="margin-bottom: 1.5rem !important;">
+                        Discover authentic guest insights with our Google Reviews
+                    </p>
+
+                    <div class="section-google-summary" style="width: 100%; padding: 0 !important; text-align: center;">
+                        <div class="google-summary-board" style="margin: 0 auto 1.5rem auto !important; max-width: 600px !important; width: 90% !important;">
+                            
+                            <!-- 2. Set top margin to 0 so it neatly catches the 1.5rem drop from the line above -->
+                            <p class="section-subtitle" id="lbl-summary-board-text" style="margin-top: 0 !important; margin-bottom: 1.5rem !important;">
+                                For a quick overview of our most common visitor feedback we provide a Summary Board
+                            </p>
+                            
+                            <img src="./images/GoogleReviews_SummaryBoard.png" alt="Google Review Summary Board" 
+                                style="display: block !important; width: 100% !important; height: auto !important; border-radius: 12px !important; box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important; object-fit: cover !important;">
+                        </div>
+                    </div>
+                    
+                    
                     <div class="reviews-grid" id="container-reviews">
                     </div>
 
@@ -1263,7 +1283,7 @@
     
     <div class="about-static-media-box" style="width: 100%; padding: 2rem 0 0 0; text-align: center;">
         <div class="about-image-wrapper" style="margin: 0 auto 1.5rem auto !important; max-width: 600px !important; width: 90% !important;">
-            <img src="./images/CopperwheatsCoffeeShopOverview.png" alt="About The Shop" 
+            <img src="./images/CopperwheatsCoffeeShopOverview.png" alt="Storyboard of Copperwheats Coffee Shop in Brodick" 
                  style="display: block !important; width: 100% !important; height: auto !important; border-radius: 12px !important; box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important; object-fit: cover !important;">
         </div>
     </div>
@@ -1366,7 +1386,7 @@
                     </a>
                 </div>
 
-            <!-- <p class="contact-item" id="lbl-contact-telephone">Telephone</p> -->
+            
                 
             
             <div id="wrapper-reviews-contact" style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; width: 100%;">
@@ -1495,6 +1515,81 @@
         const siteConfig = config;
 
 
+        // =========================================================================
+        // LOCAL SEO SCHEMA COMPILER (Defined first so the hydrator can call it)
+        // =========================================================================
+        /**
+         * Compiles and injects the dynamic Local SEO Schema.org data into the document head.
+         * @param {Object} config - The site configuration object (siteConfig)
+         */
+        function populateSchemaSEO(config) {
+            if (!config || !config.contactPage) return;
+
+            const cp = config.contactPage;
+            const sp = config.servicesPage;
+
+            const schemaData = {
+                "@context": "https://schema.org",
+                "@type": "CafeOrCoffeeShop",
+                "name": config.businessName || "Copperwheats",
+                "description": config.homePage?.heroDesc || "Specialty coffee house.",
+                "url": window.location.href,
+                "telephone": cp.contactTelephone || "",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": cp.address ? cp.address.replace("📍", "").trim() : "The Pier",
+                    "addressLocality": cp.locality || "Brodick",
+                    "addressRegion": cp.region || "Isle of Arran",
+                    "postalCode": cp.postalCode || "KA27",
+                    "addressCountry": cp.countryCode || "GB"
+                }
+            };
+
+            if (cp.latitude && cp.longitude) {
+                schemaData.geo = {
+                    "@type": "GeoCoordinates",
+                    "latitude": cp.latitude,
+                    "longitude": cp.longitude
+                };
+            }
+
+            if (sp && sp.openingHours) {
+                const rawHours = sp.openingHours.monday || "10:00 AM – 4:30 PM";
+                const times = rawHours.split(/[–-]/);
+                let opens = "10:00";
+                let closes = "16:30";
+
+                if (times.length === 2) {
+                    const cleanTime = (t) => {
+                        let [time, modifier] = t.trim().split(" ");
+                        let [hours, minutes] = time.split(":");
+                        if (modifier === "PM" && hours !== "12") hours = parseInt(hours, 10) + 12;
+                        if (modifier === "AM" && hours === "12") hours = "00";
+                        return `${String(hours).padStart(2, '0')}:${minutes}`;
+                    };
+                    try {
+                        opens = cleanTime(times[0]);
+                        closes = cleanTime(times[1]);
+                    } catch (e) {}
+                }
+
+                schemaData.openingHoursSpecification = [{
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                    "opens": opens,
+                    "closes": closes
+                }];
+            }
+
+            const schemaElement = document.getElementById('seo-schema');
+            if (schemaElement) {
+                schemaElement.textContent = JSON.stringify(schemaData, null, 2);
+            }
+        }
+
+
+
+
 
         // =========================================================================
         // CONFIGURATION ENGINE CORE
@@ -1553,8 +1648,6 @@
             }
 
 
-
-
             // Dynamic Vector Stamp Graphics Texts
             // Safe Vector Stamp Graphic Text Checks (Prevents script crashes!)
             const logoCenterText = document.getElementById('logo-center-text');
@@ -1607,13 +1700,33 @@
             document.getElementById('lbl-review-title').innerText = config.homePage.reviewsHeadline;
             document.getElementById('lbl-review-subtitle').innerText = config.homePage.reviewsSub;
 
+
+            /// SKSK28/06/26 ADDED code below
+            ///THE PLACE THAT SHOWS THE GOOGLE REVIEWS SUMMARY BOARD
+            // Use querySelector with a dot (.) to target the class instead of an ID
+            const SummaryBoardSection = document.querySelector('.section-google-summary');
+
+            if (config && config.features && config.features.showGoogleReviewsSummaryBoard === false) {
+                if (SummaryBoardSection) {
+                    // Overrides inline '!important' rules on the container
+                    SummaryBoardSection.style.setProperty('display', 'none', 'important');
+                }
+            } else {
+                if (SummaryBoardSection) {
+                    SummaryBoardSection.style.setProperty('display', 'block', 'important');
+                }
+            }
+            /// SKSK28/06/26 ADDED code above
+
+
+
             // HYDRATE THE GOOGLE BADGE CLICKABLE REVIEW LINK
 
             const placeId = config.contactPage.googlePlaceId;
             
             // URL 1: Forces open the direct pop-up form to WRITE a review
             const writeReviewUrl = `${config.contactPage.googleWriteReviewUrl}${placeId}`;
-            console.log("MY ABSOLUTE WRITE URL IS:", writeReviewUrl);
+            // console.log("MY ABSOLUTE WRITE URL IS:", writeReviewUrl);
 
             // URL 2: Opens the Google Maps overview page to VIEW existing reviews
             const viewReviewsUrl = `${config.contactPage.googleViewReviewsUrl}${placeId}`;
@@ -1650,7 +1763,24 @@
             document.getElementById('lbl-about-title').innerText = config.aboutPage.title;
             document.getElementById('lbl-about-subtitle').innerText = config.aboutPage.subtitle;
 
-            
+            /// SKSK28/06/26 ADDED code below
+            ///THE PLACE THAT SHOWS THE GOOGLE REVIEWS SUMMARY BOARD
+            // Use querySelector with a dot (.) to target the class instead of an ID
+            const StoryBoardSection = document.querySelector('.about-static-media-box');
+
+            if (config && config.features && config.features.showCompanyStoryboard === false) {
+                if (StoryBoardSection) {
+                    // Overrides inline '!important' rules on the container
+                    StoryBoardSection.style.setProperty('display', 'none', 'important');
+                }
+            } else {
+                if (StoryBoardSection) {
+                    StoryBoardSection.style.setProperty('display', 'block', 'important');
+                }
+            }
+            /// SKSK28/06/26 ADDED code above
+
+
 
             const aboutParagraphs = document.getElementById('container-about-paragraphs');
             //SKSK15/06/26 REMOVED aboutParagraphs.innerHTML = `<h3>${config.businessName} ${config.businessSub}</h3>`;
@@ -1907,6 +2037,7 @@
                 });
             }
             
+
             //SKSK08/06/26 ADDED code below
             // =========================================================================
             // 🎬 SYNCED CINEMATIC TEXT & BACKGROUND CROSS-FADER
@@ -1966,6 +2097,83 @@
 
             }, 7000); // Upped to 8 seconds so users have ample time to read your value pitches!
 
+
+            // The code that sets up the Schema SEO
+            // --- SCALABLE AGENCY SEO SCHEMA COMPILER ---
+            if (siteConfig.contactPage) {
+                const cp = siteConfig.contactPage;
+                const sp = siteConfig.servicesPage;
+
+                // 1. Establish core baseline details 
+                const schemaData = {
+                    "@context": "https://schema.org",
+                    "@type": "CafeOrCoffeeShop",
+                    "name": siteConfig.businessName || "Copperwheats",
+                    "description": siteConfig.homePage?.heroDesc || "Specialty coffee house right by the ferry terminal.",
+                    "url": window.location.href,
+                    "telephone": cp.contactTelephone || "",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "streetAddress": cp.address ? cp.address.replace("📍", "").trim() : "The Pier",
+                        "addressLocality": cp.locality || "Brodick",
+                        "addressRegion": cp.region || "Isle of Arran",
+                        "postalCode": cp.postalCode || "KA27",
+                        "addressCountry": cp.countryCode || "GB"
+                    }
+                };
+
+                // 2. Add Geolocation Data (if available in the configuration payload)
+                if (cp.latitude && cp.longitude) {
+                    schemaData.geo = {
+                        "@type": "GeoCoordinates",
+                        "latitude": cp.latitude,
+                        "longitude": cp.longitude
+                    };
+                }
+
+                // 3. Dynamic Operating Hours Translation Engine
+                // Pulls from servicesPage.openingHours and normalizes for Schema.org formats
+                if (sp && sp.openingHours) {
+                    const rawHours = sp.openingHours.monday || "10:00 AM – 4:30 PM"; // Fallback safety
+                    
+                    // Split times and parse them into clean 24-hour markers (e.g., "10:00" and "16:30")
+                    const times = rawHours.split(/[–-]/);
+                    let opens = "10:00";
+                    let closes = "16:30";
+
+                    if (times.length === 2) {
+                        const cleanTime = (t) => {
+                            let [time, modifier] = t.trim().split(" ");
+                            let [hours, minutes] = time.split(":");
+                            if (modifier === "PM" && hours !== "12") hours = parseInt(hours, 10) + 12;
+                            if (modifier === "AM" && hours === "12") hours = "00";
+                            return `${String(hours).padStart(2, '0')}:${minutes}`;
+                        };
+                        try {
+                            opens = cleanTime(times[0]);
+                            closes = cleanTime(times[1]);
+                        } catch (e) {
+                            // Keep default backups if string splitting behaves unexpectedly
+                        }
+                    }
+
+                    schemaData.openingHoursSpecification = [{
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                        "opens": opens,
+                        "closes": closes
+                    }];
+                }
+
+                // 4. Safely package and push into the DOM target element
+                const schemaElement = document.getElementById('seo-schema');
+                if (schemaElement) {
+                    schemaElement.textContent = JSON.stringify(schemaData, null, 2);
+                }
+            }
+
+            // 🚀 Clean, readable, and perfectly isolated!
+            populateSchemaSEO(config);
 
         };
 
@@ -2049,6 +2257,7 @@
             navigateToPage(routes[currentPath] || 'home');
         });
     
+       
     </script>
 </body>
 </html>
