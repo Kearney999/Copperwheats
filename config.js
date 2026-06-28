@@ -29,7 +29,7 @@ export const siteConfig = {
 
         //Images
         showGoogleReviewsSummaryBoard: true,
-        showCompanyStoryboard: false
+        showCompanyStoryboard: true
     },
 
 
