@@ -148,6 +148,10 @@ export const siteConfig = {
         latitude: "55.5772",
         longitude: "-5.1385",
 
+        // 🚀 NEW RICH RESULTS ADDITIONS
+        featuredImage: "https://www.copperwheats.co.uk/images/CopperwheatsCoffeeShopOverview.png", // Update to a live full URL once deployed
+        priceRange: "£",
+        servesCuisine: "Coffee, Cafe, Pastries, Bakery, Ice Cream, Sandwiches, Toasties, Light Bites, Scottish, British, Vegetarian options, Gluten-free options, Vegan options",
 
         mapUrl : "https://maps.google.com/maps?q=Copperwheats%20Coffee%20House,%20The%20Pier,%20Brodick,%20Isle%20of%20Arran&t=&z=16&ie=UTF8&iwloc=&output=embed",
         title: "Say Hello",

@@ -1535,6 +1535,13 @@
                 "description": config.homePage?.heroDesc || "Specialty coffee house.",
                 "url": window.location.href,
                 "telephone": cp.contactTelephone || "",
+
+                // 🚀 1. INJECT UNIQUE CUISINE SPECIALTIES (Default backup if missing)
+                "servesCuisine": cp.servesCuisine || "Coffee, Cafe",
+                
+                // 🚀 2. INJECT STANDARDIZED PRICE SELECTION (Default backup if missing)
+                "priceRange": cp.priceRange || "££",
+
                 "address": {
                     "@type": "PostalAddress",
                     "streetAddress": cp.address ? cp.address.replace("📍", "").trim() : "The Pier",
