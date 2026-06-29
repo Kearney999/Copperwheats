@@ -149,7 +149,7 @@ export const siteConfig = {
         longitude: "-5.1385",
 
         // 🚀 NEW RICH RESULTS ADDITIONS
-        featuredImage: "https://www.copperwheats.co.uk/images/CopperwheatsCoffeeShopOverview.png", // Update to a live full URL once deployed
+        featuredImage: "https://www.copperwheats.co.uk/images/CopperwheatCoffeeShop_Shopfront.jpg", // Update to a live full URL once deployed
         priceRange: "£",
         servesCuisine: "Coffee, Cafe, Pastries, Bakery, Ice Cream, Sandwiches, Toasties, Light Bites, Scottish, British, Vegetarian options, Gluten-free options, Vegan options",
 
