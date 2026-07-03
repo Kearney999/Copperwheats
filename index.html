@@ -2270,98 +2270,98 @@
         });
     
 
-        // ==========================================
-        // CENTRALIZED SLIDE CONTROLLER (SCOPE FIXED)
-        // ==========================================
-        window.changeSlide = function(direction) {
-            // 1. Grab reference layout elements
-            const bgPrimary = document.getElementById('hero-bg-primary');
-            const bgSecondary = document.getElementById('hero-bg-secondary');
-            const lblTitle = document.getElementById('lbl-hero-title');
-            const lblDesc = document.getElementById('lbl-hero-desc');
-            const heroContentBox = document.querySelector('.hero-content');
+        // // ==========================================
+        // // CENTRALIZED SLIDE CONTROLLER (SCOPE FIXED)
+        // // ==========================================
+        // window.changeSlide = function(direction) {
+        //     // 1. Grab reference layout elements
+        //     const bgPrimary = document.getElementById('hero-bg-primary');
+        //     const bgSecondary = document.getElementById('hero-bg-secondary');
+        //     const lblTitle = document.getElementById('lbl-hero-title');
+        //     const lblDesc = document.getElementById('lbl-hero-desc');
+        //     const heroContentBox = document.querySelector('.hero-content');
             
-            // 2. Fetch the slide list cleanly from your top-level siteConfig
-            const slidesList = window.siteConfig?.heroSlides || [];
-            const totalSlides = slidesList.length;
-            if (totalSlides === 0 || !bgPrimary || !bgSecondary) return;
+        //     // 2. Fetch the slide list cleanly from your top-level siteConfig
+        //     const slidesList = window.siteConfig?.heroSlides || [];
+        //     const totalSlides = slidesList.length;
+        //     if (totalSlides === 0 || !bgPrimary || !bgSecondary) return;
 
-            // 3. Track the active slide position safely in global window memory
-            if (typeof window.mySwipeIndex === 'undefined') {
-                window.mySwipeIndex = 0;
-            }
+        //     // 3. Track the active slide position safely in global window memory
+        //     if (typeof window.mySwipeIndex === 'undefined') {
+        //         window.mySwipeIndex = 0;
+        //     }
 
-            // 4. Increment/Decrement with mathematical wrapping
-            window.mySwipeIndex = (window.mySwipeIndex + direction + totalSlides) % totalSlides;
-            const nextSlide = slidesList[window.mySwipeIndex];
+        //     // 4. Increment/Decrement with mathematical wrapping
+        //     window.mySwipeIndex = (window.mySwipeIndex + direction + totalSlides) % totalSlides;
+        //     const nextSlide = slidesList[window.mySwipeIndex];
 
-            // Helper matching your background filter layout
-            const getBgString = (url) => `linear-gradient(rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.7)), url("${url}")`;
+        //     // Helper matching your background filter layout
+        //     const getBgString = (url) => `linear-gradient(rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.7)), url("${url}")`;
 
-            // 5. Fire the visual cross-fade layout sequence
-            if (heroContentBox) heroContentBox.classList.add('fade-out');
-            bgSecondary.style.backgroundImage = getBgString(nextSlide.imgUrl);
+        //     // 5. Fire the visual cross-fade layout sequence
+        //     if (heroContentBox) heroContentBox.classList.add('fade-out');
+        //     bgSecondary.style.backgroundImage = getBgString(nextSlide.imgUrl);
 
-            setTimeout(() => {
-                bgSecondary.style.opacity = "1";
-                if (lblTitle) lblTitle.innerText = nextSlide.title;
-                if (lblDesc) lblDesc.innerText = nextSlide.desc;
+        //     setTimeout(() => {
+        //         bgSecondary.style.opacity = "1";
+        //         if (lblTitle) lblTitle.innerText = nextSlide.title;
+        //         if (lblDesc) lblDesc.innerText = nextSlide.desc;
 
-                setTimeout(() => {
-                    bgPrimary.style.backgroundImage = getBgString(nextSlide.imgUrl);
-                    bgSecondary.style.opacity = "0";
-                    if (heroContentBox) heroContentBox.classList.remove('fade-out');
-                }, 1500);
-            }, 1000);
-        };
+        //         setTimeout(() => {
+        //             bgPrimary.style.backgroundImage = getBgString(nextSlide.imgUrl);
+        //             bgSecondary.style.opacity = "0";
+        //             if (heroContentBox) heroContentBox.classList.remove('fade-out');
+        //         }, 1500);
+        //     }, 1000);
+        // };
 
-        // ==========================================
-        // UNIFIED GHOST SWIPE ENGINE (TOUCH & MOUSE)
-        // ==========================================
-        const heroSection = document.querySelector('.hero-section');
-        let isDragging = false;
-        let startX = 0;
-        const swipeThreshold = 50; 
+        // // ==========================================
+        // // UNIFIED GHOST SWIPE ENGINE (TOUCH & MOUSE)
+        // // ==========================================
+        // const heroSection = document.querySelector('.hero-section');
+        // let isDragging = false;
+        // let startX = 0;
+        // const swipeThreshold = 50; 
 
-        if (heroSection) {
-            // Touch Screen Listeners (Mobile)
-            heroSection.addEventListener('touchstart', (e) => {
-                startX = e.changedTouches[0].screenX;
-            }, { passive: true });
+        // if (heroSection) {
+        //     // Touch Screen Listeners (Mobile)
+        //     heroSection.addEventListener('touchstart', (e) => {
+        //         startX = e.changedTouches[0].screenX;
+        //     }, { passive: true });
 
-            heroSection.addEventListener('touchend', (e) => {
-                const endX = e.changedTouches[0].screenX;
-                handleSwipeDirection(startX, endX);
-            }, { passive: true });
+        //     heroSection.addEventListener('touchend', (e) => {
+        //         const endX = e.changedTouches[0].screenX;
+        //         handleSwipeDirection(startX, endX);
+        //     }, { passive: true });
 
-            // Mouse Drag Listeners (Desktop)
-            heroSection.addEventListener('mousedown', (e) => {
-                isDragging = true;
-                startX = e.screenX;
-                if(e.target.tagName !== 'A' && e.target.tagName !== 'BUTTON') {
-                    e.preventDefault(); 
-                }
-            });
+        //     // Mouse Drag Listeners (Desktop)
+        //     heroSection.addEventListener('mousedown', (e) => {
+        //         isDragging = true;
+        //         startX = e.screenX;
+        //         if(e.target.tagName !== 'A' && e.target.tagName !== 'BUTTON') {
+        //             e.preventDefault(); 
+        //         }
+        //     });
 
-            window.addEventListener('mouseup', (e) => {
-                if (!isDragging) return;
-                isDragging = false;
-                const endX = e.screenX;
-                handleSwipeDirection(startX, endX);
-            });
-        }
+        //     window.addEventListener('mouseup', (e) => {
+        //         if (!isDragging) return;
+        //         isDragging = false;
+        //         const endX = e.screenX;
+        //         handleSwipeDirection(startX, endX);
+        //     });
+        // }
 
-        // Processing Controller
-        function handleSwipeDirection(start, end) {
-            const diff = start - end;
-            if (Math.abs(diff) > swipeThreshold) {
-                if (diff > 0) {
-                    window.changeSlide(1);  // Swiped Left -> Next
-                } else {
-                    window.changeSlide(-1); // Swiped Right -> Previous
-                }
-            }
-        }
+        // // Processing Controller
+        // function handleSwipeDirection(start, end) {
+        //     const diff = start - end;
+        //     if (Math.abs(diff) > swipeThreshold) {
+        //         if (diff > 0) {
+        //             window.changeSlide(1);  // Swiped Left -> Next
+        //         } else {
+        //             window.changeSlide(-1); // Swiped Right -> Previous
+        //         }
+        //     }
+        // }
        
     </script>
 </body>
