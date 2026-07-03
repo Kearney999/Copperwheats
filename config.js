@@ -1,8 +1,6 @@
 // config.js - Nardini's Coffee Shop Configuration
-
 export const siteConfig = 
 {
-
 
     customLogoUrl: "logo.png", // Points directly to your local coffee shop logo
     businessName: "Copperwheats",
