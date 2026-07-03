@@ -264,7 +264,7 @@
 
         /* --- HERO AREA --- */
 
-        /*SKSK07/06/26 ADDED code below for transitional hero panel*/
+        /* for transitional hero panel*/
         .hero-section {
             position: relative;
             height: 100vh;
@@ -316,7 +316,7 @@
             }
         }
 
-        /*SKSK08/06/26 ADDED code below*/
+        
         /* Smoothly handles the text dip during image transitions */
         .hero-content {
             transition: opacity 1.0s ease-in-out, transform 1.0s ease-in-out;
@@ -942,6 +942,8 @@
         text-align: center !important;
     }
 
+    
+
     /* --- 5. Base Structural Layouts --- */
     .section-title {
         font-size: 2.4rem !important;
@@ -1200,6 +1202,8 @@
         <main-section id="section-home">
             <section class="hero-section" id="hero-bg-primary">
             <div class="hero-bg-secondary" id="hero-bg-secondary"></div>
+            
+
 
             <div class="container" style="position: relative; z-index: 2;">
                 <div class="hero-content">
@@ -1225,7 +1229,9 @@
                         <a href="/contact" class="btn btn-secondary" data-target="contact">Find Us</a>
                     </div>
 
+                    
                 </div> 
+                 
             </div> 
 </section>
 
@@ -1615,7 +1621,7 @@
 
             // Global Metadata & Typography
             document.getElementById('meta-title').innerText = config.metaTitle;
-            //SKSK07/06/26 REMOVED document.getElementById('hero-bg-target').style.backgroundImage = `linear-gradient(rgba(44, 26, 17, 0.7), rgba(44, 26, 17, 0.7)), url('${config.heroImageUrl}')`;
+            
 
             // Application Brand Text Slots
             document.getElementById('lbl-logo-main').innerText = config.businessName;
@@ -1711,7 +1717,7 @@
             document.getElementById('lbl-review-subtitle').innerText = config.homePage.reviewsSub;
 
 
-            /// SKSK28/06/26 ADDED code below
+            
             ///THE PLACE THAT SHOWS THE GOOGLE REVIEWS SUMMARY BOARD
             // Use querySelector with a dot (.) to target the class instead of an ID
             const SummaryBoardSection = document.querySelector('.section-google-summary');
@@ -1726,7 +1732,7 @@
                     SummaryBoardSection.style.setProperty('display', 'block', 'important');
                 }
             }
-            /// SKSK28/06/26 ADDED code above
+            
 
 
 
@@ -1773,7 +1779,7 @@
             document.getElementById('lbl-about-title').innerText = config.aboutPage.title;
             document.getElementById('lbl-about-subtitle').innerText = config.aboutPage.subtitle;
 
-            /// SKSK28/06/26 ADDED code below
+            
             ///THE PLACE THAT SHOWS THE GOOGLE REVIEWS SUMMARY BOARD
             // Use querySelector with a dot (.) to target the class instead of an ID
             const StoryBoardSection = document.querySelector('.about-static-media-box');
@@ -1788,12 +1794,12 @@
                     StoryBoardSection.style.setProperty('display', 'block', 'important');
                 }
             }
-            /// SKSK28/06/26 ADDED code above
+            
 
 
 
             const aboutParagraphs = document.getElementById('container-about-paragraphs');
-            //SKSK15/06/26 REMOVED aboutParagraphs.innerHTML = `<h3>${config.businessName} ${config.businessSub}</h3>`;
+            
             config.aboutPage.storyParagraphs.forEach(text => {
                 aboutParagraphs.innerHTML += `<p class="about-p">${text}</p>`;
             });
@@ -2049,7 +2055,7 @@
             }
             
 
-            //SKSK08/06/26 ADDED code below
+            
             // =========================================================================
             // 🎬 SYNCED CINEMATIC TEXT & BACKGROUND CROSS-FADER
             // =========================================================================
@@ -2269,6 +2275,87 @@
         });
     
        
+
+
+
+        // ==========================================
+        // 1. Existing Slider Variables & Logic
+        // ==========================================
+        let currentSlideIndex = 0;
+        // ... your other existing setup variables ...
+
+        // ==========================================
+        // CENTRALIZED SLIDE ENGINE
+        // ==========================================
+        function changeSlide(direction) {
+            // 1. Clear the correct timer variable
+            if (typeof heroInterval !== 'undefined') {
+                clearInterval(heroInterval);
+            }
+            
+            // 2. Fetch the slides safely
+            const totalSlides = heroImages.length;
+            if (totalSlides === 0) return;
+
+            // 3. Increment/Decrement with mathematical wrapping
+            currentHeroIndex = (currentHeroIndex + direction + totalSlides) % totalSlides;
+            
+            // 4. Trigger your original cross-fade renderer
+            renderHero(currentHeroIndex);
+
+            // 5. Restart the cycle using your exact global variable name
+            heroInterval = setInterval(() => changeSlide(1), 7000);
+        }
+
+        // ==========================================
+        // UNIFIED GHOST SWIPE ENGINE (TOUCH & MOUSE)
+        // ==========================================
+        // Targets the main container element you defined on line 268
+        const heroSection = document.querySelector('.hero-section');
+        let isDragging = false;
+        let startX = 0;
+        const swipeThreshold = 50; 
+
+        // Touch Screen Listeners (Mobile)
+        heroSection.addEventListener('touchstart', (e) => {
+            startX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        heroSection.addEventListener('touchend', (e) => {
+            const endX = e.changedTouches[0].screenX;
+            handleSwipeDirection(startX, endX);
+        }, { passive: true });
+
+        // Mouse Drag Listeners (Desktop)
+        heroSection.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.screenX;
+            // Stops the browser from accidentally highlighting your text blocks while dragging
+            if(e.target.tagName !== 'A' && e.target.tagName !== 'BUTTON') {
+                e.preventDefault(); 
+            }
+        });
+
+        window.addEventListener('mouseup', (e) => {
+            if (!isDragging) return;
+            isDragging = false;
+            const endX = e.screenX;
+            handleSwipeDirection(startX, endX);
+        });
+
+        // Processing Controller
+        function handleSwipeDirection(start, end) {
+            const diff = start - end;
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    changeSlide(1);  // Swiped Left -> Next
+                } else {
+                    changeSlide(-1); // Swiped Right -> Previous
+                }
+            }
+        };
+
+
     </script>
 </body>
 </html>

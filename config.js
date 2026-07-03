@@ -1,9 +1,10 @@
 // config.js - Nardini's Coffee Shop Configuration
-export const siteConfig = {
+export const siteConfig = 
+{
 
     customLogoUrl: "logo.png", // Points directly to your local coffee shop logo
     businessName: "Copperwheats",
-    businessSub: "Island views, Premium brews",
+    businessSub: "Fantastic hosts, premium roasts",
     // businessSub: "by the Ferry Terminal",
     metaTitle: "Copperwheats Coffee House | Brodick, Arran",
     contactEmail: "john.copperwheat69@gmail.com",
@@ -11,11 +12,11 @@ export const siteConfig = {
     locationShort: "just opposite from the Ferry Terminal",
     locationFull: "Brodick Ferry Terminal",
     themeColors: {
-        espresso: "#2C1A11",
-        roast: "#4A3525",
-        latte: "#8C6A50",
-        creamDark: "#EADBC8",
-        creamLight: "#FAF6F0"
+        textDark: "#2C1A11",
+        darkNeutral: "#4A3525",
+        midNeutral: "#8C6A50",
+        lightNeutral: "#EADBC8",
+        background: "#FAF6F0"
     },
 
 
@@ -158,32 +159,37 @@ export const siteConfig = {
         desc: "Have questions about group bookings, dietary adjustments, or our left luggage storage? Drop us a line and we will get back to you within 48 hours. However, feel free to ring us if more urgent.",
         // The overview tab where people READ existing reviews
 
-        googlePlaceId: "ChIJsR7E-07viUgRKh1IqQQ9mAc", // Example ID
+        googlePlaceId: "ChIJsR7E-07viUgRKh1IqQQ9mAc", // Copperwheats PlaceID
         googleViewReviewsUrl: "https://search.google.com/local/reviews?placeid=",
         googleWriteReviewUrl: "https://search.google.com/local/writereview?placeid=",
-        tripAdvisorUrl: "https://www.tripadvisor.co.uk/UserReviewEdit-g551754-d3649538-Copperwheat_Coffee_House-Brodick_Isle_of_Arran_Scotland.html"
-    },
-
-    faqSection: {
-    title: "Questions and Answers",
-    subtitle: "Got questions? We've got answers. Here is everything you need to know before stepping off the ferry.",
-    questions: [
-        {
-            q: "Where exactly are you located?",
-            a: "We are located directly by the Brodick Ferry Terminal on the Isle of Arran. It's the perfect first stop for a coffee when you step off the boat, or a comforting treat while you wait to head back to the mainland."
-        },
-        {
-            q: "Do you offer dietary adjustments?",
-            a: "We gladly cater to everyone with dairy-free oat milk, small selection of gluten-free bakes and a vegan option is also available daily."
-        },
-        {
-            q: "Can we store our left luggage with you?",
-            a: "Yes! If you are exploring the island before checking into your accommodation or waiting for the ferry after checking out, you can safely leave your bags and luggage with us while you wander."
-        },
-        {
-            q: "Do you take group bookings?",
-            a: "We do! Whether you are walking group conquering Goat Fell, a family gathering, or a tour group, drop us a line via our contact section or give us a call to arrange space for your party."
+        tripAdvisorUrl: "https://www.tripadvisor.co.uk/UserReviewEdit-g551754-d3649538-Copperwheat_Coffee_House-Brodick_Isle_of_Arran_Scotland.html",
+        
+        faqSection: {
+            title: "Questions and Answers",
+            subtitle: "Got questions? We've got answers. Here is everything you need to know before stepping off the ferry.",
+            questions: [
+                {
+                    q: "Where exactly are you located?",
+                    a: "We are located directly by the Brodick Ferry Terminal on the Isle of Arran. It's the perfect first stop for a coffee when you step off the boat, or a comforting treat while you wait to head back to the mainland."
+                },
+                {
+                    q: "Do you offer dietary adjustments?",
+                    a: "We gladly cater to everyone with dairy-free oat milk, small selection of gluten-free bakes and a vegan option is also available daily."
+                },
+                {
+                    q: "Can we store our left luggage with you?",
+                    a: "Yes! If you are exploring the island before checking into your accommodation or waiting for the ferry after checking out, you can safely leave your bags and luggage with us while you wander."
+                },
+                {
+                    q: "Do you take group bookings?",
+                    a: "We do! Whether you are walking group conquering Goat Fell, a family gathering, or a tour group, drop us a line via our contact section or give us a call to arrange space for your party."
+                }
+            ]
         }
-    ]
-}
+    }, // <-- Closes contactPage cleanly
+
+    // ☕ THE FIXED FOOTER BLOCK (Added at the main configuration level)
+    footer: {
+        Tagline: "Relax in a great atmosphere, with friendly staff, "
+    }
 };
