@@ -1514,6 +1514,7 @@
 
         // Add this line immediately beneath your import statement!
         // It maps the configuration settings directly into your slideshow script engines.
+        window.siteConfig = config;  // This line pushes it onto the global window dashboard!
         const siteConfig = config;
 
 
@@ -2270,32 +2271,34 @@
     
 
         // ==========================================
-        // CENTRALIZED SLIDE CONTROLLER (INTEGRATED)
+        // CENTRALIZED SLIDE CONTROLLER (SCOPE FIXED)
         // ==========================================
-        function changeSlide(direction) {
-            // 1. Grab reference elements matching your setup
+        window.changeSlide = function(direction) {
+            // 1. Grab reference layout elements
             const bgPrimary = document.getElementById('hero-bg-primary');
             const bgSecondary = document.getElementById('hero-bg-secondary');
             const lblTitle = document.getElementById('lbl-hero-title');
             const lblDesc = document.getElementById('lbl-hero-desc');
             const heroContentBox = document.querySelector('.hero-content');
             
-            // 2. Fetch the template's slides list safely from the imported config
-            const slidesList = siteConfig?.heroSlides || [];
+            // 2. Fetch the slide list cleanly from your top-level siteConfig
+            const slidesList = window.siteConfig?.heroSlides || [];
             const totalSlides = slidesList.length;
             if (totalSlides === 0 || !bgPrimary || !bgSecondary) return;
 
-            // 3. Clear the main loop interval to avoid overlapping double jumps
-            // Note: If you assigned your setInterval to a global variable (e.g., heroInterval), clear it here.
+            // 3. Track the active slide position safely in global window memory
+            if (typeof window.mySwipeIndex === 'undefined') {
+                window.mySwipeIndex = 0;
+            }
 
-            // 4. Update the actual index tracked by your code engine
-            currentSlideIndex = (currentSlideIndex + direction + totalSlides) % totalSlides;
-            const nextSlide = slidesList[currentSlideIndex];
+            // 4. Increment/Decrement with mathematical wrapping
+            window.mySwipeIndex = (window.mySwipeIndex + direction + totalSlides) % totalSlides;
+            const nextSlide = slidesList[window.mySwipeIndex];
 
-            // Helper function matching your core layout builder
+            // Helper matching your background filter layout
             const getBgString = (url) => `linear-gradient(rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.7)), url("${url}")`;
 
-            // 5. Fire your template's visual cross-fade sequence
+            // 5. Fire the visual cross-fade layout sequence
             if (heroContentBox) heroContentBox.classList.add('fade-out');
             bgSecondary.style.backgroundImage = getBgString(nextSlide.imgUrl);
 
@@ -2310,7 +2313,7 @@
                     if (heroContentBox) heroContentBox.classList.remove('fade-out');
                 }, 1500);
             }, 1000);
-        }
+        };
 
         // ==========================================
         // UNIFIED GHOST SWIPE ENGINE (TOUCH & MOUSE)
@@ -2353,9 +2356,9 @@
             const diff = start - end;
             if (Math.abs(diff) > swipeThreshold) {
                 if (diff > 0) {
-                    changeSlide(1);  // Swiped Left -> Next
+                    window.changeSlide(1);  // Swiped Left -> Next
                 } else {
-                    changeSlide(-1); // Swiped Right -> Previous
+                    window.changeSlide(-1); // Swiped Right -> Previous
                 }
             }
         }
