@@ -2268,6 +2268,97 @@
             navigateToPage(routes[currentPath] || 'home');
         });
     
+
+        // ==========================================
+        // CENTRALIZED SLIDE CONTROLLER (INTEGRATED)
+        // ==========================================
+        function changeSlide(direction) {
+            // 1. Grab reference elements matching your setup
+            const bgPrimary = document.getElementById('hero-bg-primary');
+            const bgSecondary = document.getElementById('hero-bg-secondary');
+            const lblTitle = document.getElementById('lbl-hero-title');
+            const lblDesc = document.getElementById('lbl-hero-desc');
+            const heroContentBox = document.querySelector('.hero-content');
+            
+            // 2. Fetch the template's slides list safely from the imported config
+            const slidesList = siteConfig?.heroSlides || [];
+            const totalSlides = slidesList.length;
+            if (totalSlides === 0 || !bgPrimary || !bgSecondary) return;
+
+            // 3. Clear the main loop interval to avoid overlapping double jumps
+            // Note: If you assigned your setInterval to a global variable (e.g., heroInterval), clear it here.
+
+            // 4. Update the actual index tracked by your code engine
+            currentSlideIndex = (currentSlideIndex + direction + totalSlides) % totalSlides;
+            const nextSlide = slidesList[currentSlideIndex];
+
+            // Helper function matching your core layout builder
+            const getBgString = (url) => `linear-gradient(rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.7)), url("${url}")`;
+
+            // 5. Fire your template's visual cross-fade sequence
+            if (heroContentBox) heroContentBox.classList.add('fade-out');
+            bgSecondary.style.backgroundImage = getBgString(nextSlide.imgUrl);
+
+            setTimeout(() => {
+                bgSecondary.style.opacity = "1";
+                if (lblTitle) lblTitle.innerText = nextSlide.title;
+                if (lblDesc) lblDesc.innerText = nextSlide.desc;
+
+                setTimeout(() => {
+                    bgPrimary.style.backgroundImage = getBgString(nextSlide.imgUrl);
+                    bgSecondary.style.opacity = "0";
+                    if (heroContentBox) heroContentBox.classList.remove('fade-out');
+                }, 1500);
+            }, 1000);
+        }
+
+        // ==========================================
+        // UNIFIED GHOST SWIPE ENGINE (TOUCH & MOUSE)
+        // ==========================================
+        const heroSection = document.querySelector('.hero-section');
+        let isDragging = false;
+        let startX = 0;
+        const swipeThreshold = 50; 
+
+        if (heroSection) {
+            // Touch Screen Listeners (Mobile)
+            heroSection.addEventListener('touchstart', (e) => {
+                startX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            heroSection.addEventListener('touchend', (e) => {
+                const endX = e.changedTouches[0].screenX;
+                handleSwipeDirection(startX, endX);
+            }, { passive: true });
+
+            // Mouse Drag Listeners (Desktop)
+            heroSection.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                startX = e.screenX;
+                if(e.target.tagName !== 'A' && e.target.tagName !== 'BUTTON') {
+                    e.preventDefault(); 
+                }
+            });
+
+            window.addEventListener('mouseup', (e) => {
+                if (!isDragging) return;
+                isDragging = false;
+                const endX = e.screenX;
+                handleSwipeDirection(startX, endX);
+            });
+        }
+
+        // Processing Controller
+        function handleSwipeDirection(start, end) {
+            const diff = start - end;
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    changeSlide(1);  // Swiped Left -> Next
+                } else {
+                    changeSlide(-1); // Swiped Right -> Previous
+                }
+            }
+        }
        
     </script>
 </body>
