@@ -109,7 +109,7 @@
                     </p>
 
                     <div class="section-google-summary" style="width: 100%; padding: 0 !important; text-align: center;">
-                        <div class="google-summary-board" style="margin: 0 auto 1.5rem auto !important; max-width: 600px !important; width: 90% !important;">
+                        <div class="google-summary-board" style="margin: 0 auto 1.5rem auto !important; max-width: 1000px !important; width: 90% !important;">
                             
                             <!-- 2. Set top margin to 0 so it neatly catches the 1.5rem drop from the line above -->
                             <p class="section-subtitle" id="lbl-summary-board-text" style="margin-top: 0 !important; margin-bottom: 1.5rem !important;">
@@ -141,13 +141,15 @@
     <div class="nav-buffer"></div>
     
     <div class="about-static-media-box" style="width: 100%; padding: 2rem 0 0 0; text-align: center;">
-        <div class="about-image-wrapper" style="margin: 0 auto 1.5rem auto !important; max-width: 600px !important; width: 90% !important;">
-            <img src="./images/CopperwheatsCoffeeShopOverview.png" alt="Storyboard of Copperwheats Coffee Shop in Brodick" 
-                 style="display: block !important; width: 100% !important; height: auto !important; border-radius: 12px !important; box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important; object-fit: cover !important;">
+        <!-- 1. Changed bottom margin from 1.5rem to 0 -->
+        <div class="about-image-wrapper" style="margin: 0 auto 0 auto !important; max-width: 1000px !important; width: 90% !important;">
+            <img src="./images/Storyboard.png" alt="Storyboard of business" 
+                style="display: block !important; width: 100% !important; height: auto !important; border-radius: 12px !important; box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important; object-fit: cover !important;">
         </div>
     </div>
 
-    <section class="container section-padding">
+    <!-- 2. Added inline style to override/reduce the heavy top padding from 'section-padding' -->
+    <section class="container section-padding" style="padding-top: 1rem !important;">
         <div class="text-center">
             <h2 class="section-title" id="lbl-about-title">Title</h2>
             <p class="section-subtitle" id="lbl-about-subtitle">Subtitle</p>
