@@ -32,7 +32,7 @@ export const siteConfig =
         //Images
         showGoogleReviewsSummaryBoard: true,
         showCompanyStoryboard: true,
-        showMenu: true // Set to false to instantly hide the menu across the site
+        showMenu: false // Set to false to instantly hide the menu across the site
     },
 
 
