@@ -8,6 +8,11 @@
         window.siteConfig = config;  // This line pushes it onto the global window dashboard!
         const siteConfig = config;
 
+        // At the very top of script.js
+        const basePath = window.location.hostname.includes('github.io') 
+        ? `/${config.repositoryName}` 
+        : '';
+
 
         // =========================================================================
         // LOCAL SEO SCHEMA COMPILER (Defined first so the hydrator can call it)
@@ -168,6 +173,7 @@
             highlightsContainer.innerHTML = '';
 
             // Define Inline SVG lookup mappings corresponding to keys
+            // Got them from this website https://lucide.dev/icons/
             const vectorIcons = {
                 coffee: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"></path><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"></path><line x1="6" y1="2" x2="6" y2="4"></line><line x1="10" y1="2" x2="10" y2="4"></line><line x1="14" y1="2" x2="14" y2="4"></line></svg>`,
                 luggage: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 20V8a2 2 0 0 0-2-2h-3V4a2 2 0 0 0-2-2h-3a2 2 0 0 0-2 2v2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2z"></path><path d="M7 6h10"></path></svg>`,
@@ -315,6 +321,20 @@
                         <h3>${item.name}</h3>
                     </div>`;
             });
+
+
+            // --- TOGGLE MENU VISIBILITY ---
+            // Run this directly right after the HTML elements are drawn so it targets it accurately
+            const menuSection = document.querySelector('.menu-download-container');
+
+            if (menuSection) {
+                // Making sure it matches your specific layout config nested path: config.features.showMenu
+                if (config.features && config.features.showMenu) {
+                    menuSection.style.display = 'block'; // Shows the menu block
+                } else {
+                    menuSection.style.display = 'none';  // Hides and collapses the space completely
+                }
+            };	
 
 
             // HYDRATE OPENING TIMES FROM CONFIG FILE
@@ -731,11 +751,10 @@
                 const targetPage = targetAttr.getAttribute('data-target');
                 const href = targetAttr.getAttribute('href');
 
-                try 
-                {
-                    if (window.location.protocol !== 'file:') 
-                    {
-                        window.history.pushState({ page: targetPage }, '', href);
+                try {
+                    if (window.location.protocol !== 'file:') {
+                        // Prefix the href path with your dynamic basePath variable!
+                        window.history.pushState({ page: targetPage }, '', `${basePath}${href}`);
                     }
                 } catch (error) {
                     console.warn("Routing engine history stack pushState fallback triggered safely.", error);

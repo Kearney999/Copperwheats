@@ -1,10 +1,11 @@
 // config.js - Nardini's Coffee Shop Configuration
 export const siteConfig = 
 {
+    repositoryName: 'Copperwheats', //This is where the files sit.
 
     customLogoUrl: "logo.png", // Points directly to your local coffee shop logo
     businessName: "Copperwheats",
-    businessSub: "Fantastic hosts, premium roasts",
+    businessSub: "Brilliant hosts, premium roasts",
     // businessSub: "by the Ferry Terminal",
     metaTitle: "Copperwheats Coffee House | Brodick, Arran",
     contactEmail: "john.copperwheat69@gmail.com",
@@ -30,7 +31,8 @@ export const siteConfig =
 
         //Images
         showGoogleReviewsSummaryBoard: true,
-        showCompanyStoryboard: true
+        showCompanyStoryboard: true,
+        showMenu: true // Set to false to instantly hide the menu across the site
     },
 
 
@@ -69,12 +71,12 @@ export const siteConfig =
     heroTitle: "The picturesque Island and Copperwheats' welcome you.",
     heroDesc: "A warm, cozy spot nestled right by the Brodick Ferry Terminal. Perfect for a refreshing break, delicious local treats, or relaxing while you wait for your ship to come in.",
     highlights: [
-        { icon: "coffee", title: "Premium Coffee & Teas", desc: "Speciality brews, featuring the premium craft flavors of Myrtle alongside a rotating monthly guest coffee." },
+        { icon: "coffee", title: "Premium Coffee & Teas", desc: "Specialty brews, featuring the premium craft flavours of Myrtle alongside a rotating monthly guest coffee." },
         { icon: "luggage", title: "Left Luggage", desc: "Secure bag storage so you can freely explore Brodick without being weighed down." },
-        { icon: "users", title: "Everyone Welcome", desc: "A fully wheelchair-accessible and spacious layout designed to easily accommodate families and groups." },
+        { icon: "users", title: "Everyone Welcome", desc: "A fully wheelchair-accessible cafe and spacious layout designed to easily accommodate families and groups." },
         { icon: "sun", title: "Outdoor Patio Area", desc: "Take in the beautiful island views of Goat Fell across the bay whilst breath in that fresh sea air from our comfortable outdoor seating patio." },
-        { icon: "heart", title: "Dog Friendly", desc: "Four-legged friends are always welcome with a warm smile, fresh water bowls, and of course those doggy treats." },
-        { icon: "wifi", title: "Free Wi-Fi", desc: "Stay connected while you relax; our customer Wi-Fi network password is freely available with our compliments." },
+        { icon: "heart", title: "Dog Friendly", desc: "Four-legged friends are always welcome in our cafe with a warm smile, fresh water bowls, and of course those doggy treats." },
+        { icon: "wifi", title: "Free Wi-Fi", desc: "Stay connected while you relax; our cafe Wi-Fi network password is freely available with our compliments." },
         { icon: "pound", title: "Payment", desc: "We take contactless payment, apple pay and of course notes and coins are more than welcome." }
     ],
         reviewsHeadline: "Loved by Travellers & Locals",
@@ -91,7 +93,7 @@ export const siteConfig =
         subtitle: "What began as the simple dreams of a newly married couple, has blossomed into our family’s greatest pride and joy. We hope you grab a coffee, and wishfully invite you to read 'Our Story'...",
         
         storyParagraphs: [
-            "Our story began in the 1990s. As a young couple eager to start a family and a business of our own, we took a leap of faith and opened our very first coffee shop at Brodick Home Farm, nestled right by the castle.",
+            "Our story began in the 1990s. As a young couple eager to start a family and a business of our own, we took a leap of faith and opened our very first cafe at Brodick Home Farm, nestled right by the castle.",
             "It was there that we truly learned our trade, looking back now in awe at the fast-paced lessons and passion that fueled those early years.",
             "That foundation eventually gave us the opportunity to design our flagship coffee shop at the Brodick Ferry Terminal.",
             "Building it up from a bare, empty shell, we poured our hearts into creating more than just a café. We wanted a place where special memories are made, journeys begin, and travellers feel instantly at home.",
