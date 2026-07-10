@@ -103,13 +103,12 @@
                 transform: translateY(-2px);
             }
 
-        /* --- SPA ROUTING VIEW STATES --- */
+        /* Update this in style.css if your content sections are hidden! */
         main-section {
-            display: none;
-            opacity: 0;
-            transform: translateY(15px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
+            display: block !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            }
 
             main-section.active {
                 display: block;

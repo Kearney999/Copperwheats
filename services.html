@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="meta-title">Loading...</title>
+
+    <!-- ☕ COPPERWHEATS CUSTOM FAVICON INJECTION -->
+    <link rel="icon" type="image/png" href="./favicon.png" sizes="150x150">
+    <link rel="apple-touch-icon" href="./favicon.png">
+
+    <!-- 🚀 ADD THIS DATA CONTAINER TO CATCH THE INJECTED SEO VALUES -->
+    <script id="seo-schema" type="application/ld+json"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <header class="header-sticky">
+        <div class="container nav-container">
+
+
+        <a href="/" class="brand-logo" data-target="home" style="display: inline-flex !important; align-items: center !important; gap: 55px !important; text-decoration: none !important;">
+            <svg id="nav-logo-vector" class="logo-graphic" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+            </svg>
+
+            <img id="nav-logo-image" src="" alt="Logo" 
+            style="display: none; height: 5em; width: auto; object-fit: contain; margin-bottom: 10px;">
+    
+        <div class="logo-text">
+            <span id="lbl-logo-main">Copperwheats</span>
+            <span id="lbl-logo-sub">by the Ferry Terminal</span>
+        </div>
+        </a>
+
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="./index.html" class="nav-link">Home</a></li>
+                    <li><a href="./about.html" class="nav-link">About</a></li>
+                    <li><a href="./services.html" class="nav-link">Services</a></li>
+                    <li><a href="./contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+
+        
+
+        
+
+        <main-section id="section-services">
+            <div class="nav-buffer"></div>
+            <section class="container section-padding">
+                <div class="text-center">
+                    <h2 class="section-title" id="lbl-services-title">Services</h2>
+                    <p class="section-subtitle" id="lbl-services-subtitle">Subtitle</p>
+                </div>
+
+                <div class="menu-download-container" style="width: 100%; padding: 2rem 0; text-align: center;">
+                    <h2 class="section-title" style="margin-bottom: 0.5rem;">Our Menu</h2>
+                    <p class="section-subtitle" style="margin-bottom: 2rem; color: #64748b;">Click the preview below to view or download our full menu</p>
+                    
+                    <a href="./menu.pdf" target="_blank" rel="noopener noreferrer" class="menu-pdf-link" style="display: inline-block; width: 90%; max-width: 800px; text-decoration: none;">
+                        <div class="menu-preview-wrapper" style="position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.12); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                            
+                            <img src="./images/menu-preview.png" alt="Menu Preview" 
+                                style="display: block; width: 100%; height: auto; object-fit: cover;">
+                                
+                            <div class="menu-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(31, 21, 16, 0.08); transition: background 0.3s ease;"></div>
+                        </div>
+                    </a>
+                </div>
+
+
+
+
+            <section id="section-opening-hours" class="hours-section" style="padding: 4rem 1rem; background-color: var(--site-bg-light, #fcfaf7); text-align: center;">
+                <div style="max-width: 500px; margin: 0 auto; background: #ffffff; padding: 2.5rem 2rem; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.02);">
+        
+                
+                <h2 id="hours-title" style="font-size: 1.75rem; margin-bottom: 0.5rem; color: #333;"></h2>
+                <p id="hours-subtitle" style="color: #666; font-size: 0.95rem; margin-bottom: 2rem;"></p>
+
+                <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid #f1f1f1;">
+                            <th style="padding: 0.75rem 0; color: #888; font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">Day</th>
+                            <th style="padding: 0.75rem 0; color: #888; font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; text-align: right;">Hours</th>
+                        </tr>
+                    </thead>
+                    <tbody style="color: #444; font-size: 1.05rem;">
+                        <tr style="border-bottom: 1px solid #f9f9f9;">
+                            <td style="padding: 1rem 0; font-weight: 500;">Monday</td>
+                            <td id="time-monday" style="padding: 1rem 0; text-align: right; color: #666;">--</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #f9f9f9;">
+                            <td style="padding: 1rem 0; font-weight: 500;">Tuesday</td>
+                            <td id="time-tuesday" style="padding: 1rem 0; text-align: right; color: #666;">--</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #f9f9f9;">
+                            <td style="padding: 1rem 0; font-weight: 500;">Wednesday</td>
+                            <td id="time-wednesday" style="padding: 1rem 0; text-align: right; color: #666;">--</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #f9f9f9;">
+                            <td style="padding: 1rem 0; font-weight: 500;">Thursday</td>
+                            <td id="time-thursday" style="padding: 1rem 0; text-align: right; color: #666;">--</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #f9f9f9;">
+                            <td style="padding: 1rem 0; font-weight: 500;">Friday</td>
+                            <td id="time-friday" style="padding: 1rem 0; text-align: right; color: #666;">--</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #f9f9f9;">
+                            <td style="padding: 1rem 0; font-weight: 500;">Saturday</td>
+                            <td id="time-saturday" style="padding: 1rem 0; text-align: right; color: #666;">--</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 1rem 0; font-weight: 500;">Sunday</td>
+                            <td id="time-sunday" style="padding: 1rem 0; text-align: right; color: #666;">--</td>
+                        </tr>
+                    </tbody>
+                </table>
+        
+                </div>
+            </section>
+
+
+
+                <div class="services-grid" id="container-services-cards">
+                </div>
+            </section>
+        </main-section>
+
+        
+        
+
+
+</section>
+
+<section class="faq-section">
+    <div class="faq-container">
+        <h2 id="faq-title">Questions and Answers</h2>
+        <p id="faq-subtitle" class="faq-subtitle"></p>
+        
+        <div id="faq-grid" class="faq-grid"></div>
+    </div>
+</section>
+
+            <section class="container section-padding">
+                <div class="contact-card">
+                    <div class="contact-icon-wrap">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    </div>
+                    <h3 id="lbl-contact-title">Title</h3>
+                    <p id="lbl-contact-desc">Description text</p>
+                    <a href="#" id="btn-email-action" class="btn btn-primary">Email Us</a>
+
+                    
+
+                    <div class="info-strip">
+                        <div class="info-chunk">
+                            <p> If your email is internet based like Gmail or Hotmail etc.</p>
+                            <h5>Direct Contact</h5>
+                            <p id="lbl-contact-email">Email</p>
+                        
+                            <div class="container" style="max-width: 650px; margin: 2rem auto; padding: 2rem; background: var(--color-white); border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+                                <h1 style="font-family: var(--font-display); color: var(--color-espresso); font-size: 2.2rem; margin-bottom: 1.5rem; text-align: center;">Or just message us below</h1>
+                                
+                                <!-- 1. Removed target="_blank" -->
+                                <form id="contact-form-submit" action="" method="POST" style="display: flex; flex-direction: column; gap: 1.25rem;">
+                                    
+                                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                                        <div style="flex: 1; min-width: 250px;">
+                                            <input type="text" name="name" placeholder="Full Name" required 
+                                                style="width: 100%; padding: 0.85rem 1rem; border-radius: 8px; border: 1px solid var(--color-cream-dark); font-family: var(--font-body); font-size: 1rem; box-sizing: border-box; background-color: var(--color-cream-light);">
+                                        </div>
+                                        <div style="flex: 1; min-width: 250px;">
+                                            <input type="email" name="email" placeholder="Email Address" required 
+                                                style="width: 100%; padding: 0.85rem 1rem; border-radius: 8px; border: 1px solid var(--color-cream-dark); font-family: var(--font-body); font-size: 1rem; box-sizing: border-box; background-color: var(--color-cream-light);">
+                                        </div>
+                                    </div>
+
+                                    <div style="width: 100%;">
+                                        <textarea placeholder="Your Message" name="message" rows="7" required 
+                                                style="width: 100%; padding: 1rem; border-radius: 8px; border: 1px solid var(--color-cream-dark); font-family: var(--font-body); font-size: 1rem; box-sizing: border-box; resize: vertical; background-color: var(--color-cream-light); min-height: 150px;"></textarea>
+                                    </div>
+
+                                    <button type="submit" id="form-submit-btn" class="btn btn-primary" 
+                                            style="width: 100%; padding: 1rem; font-size: 1.1rem; font-weight: 600; border-radius: 8px; cursor: pointer;">
+                                        Message Us
+                                    </button>
+                                </form>
+
+                                <!-- 2. Hidden Success Message Panel -->
+                                <div id="form-success-message" style="display: none; text-align: center; padding: 2rem 1rem;">
+                                    <div style="font-size: 3rem; margin-bottom: 1rem;">✨</div>
+                                    <h3 style="color: var(--color-espresso); font-family: var(--font-display); margin-bottom: 0.5rem;">Message Sent!</h3>
+                                    <p style="color: #666; font-family: var(--font-body);">Thank you for contacting us. We've received your enquiry and will be in touch shortly.</p>
+                                </div>
+                            </div>
+
+
+
+
+                        
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main-section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h4 id="lbl-footer-name">Name</h4>
+                    <p id="lbl-footer-tagline">Tagline</p>
+                </div>
+                <div class="footer-meta">
+                    <p>Designed for your journey.</p>
+                    <p>Enquiries: <a href="#" id="lbl-footer-email-link">Email</a></p>
+                </div>
+            </div>
+            <div class="copyright" id="lbl-footer-copyright">&copy; Copyright</div>
+        </div>
+    </footer>
+
+    <script type="module" src="./script.js"></script>
+</body>
+</html>
