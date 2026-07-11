@@ -1,12 +1,20 @@
 // config.js - Nardini's Coffee Shop Configuration
 export const siteConfig = 
 {
+
+    navLabels: {
+        "index.html": "Home",
+        "about.html": "Our Story",
+        "services.html": "The Cafe",
+        "contact.html": "Location"
+    },
+
     repositoryName: 'Copperwheats', //This is where the files sit.
 
     customLogoUrl: "logo.png", // Points directly to your local coffee shop logo
     businessName: "Copperwheats",
     businessSub: "Brilliant hosts, premium roasts",
-    // businessSub: "by the Ferry Terminal",
+    
     metaTitle: "Copperwheats Coffee House | Brodick, Arran",
     contactEmail: "john.copperwheat69@gmail.com",
     contactEmailEncrypted: "4d2463d2c6d63e7e6405d18b973cb08c",
@@ -69,7 +77,7 @@ export const siteConfig =
     ],
     homePage: {
     heroTitle: "The picturesque Island and Copperwheats' welcome you.",
-    heroDesc: "A warm, cozy spot nestled right by the Brodick Ferry Terminal. Perfect for a refreshing break, delicious local treats, or relaxing while you wait for your ship to come in.",
+    heroDesc: "Top-rated speciality cafe in Brodick, Isle of Arran. Enjoy expert coffee, fresh bakes, homemade cakes and convenient left luggage storage right by the Arran ferry.",
     highlights: [
         { icon: "coffee", title: "Premium Coffee & Teas", desc: "Specialty brews, featuring the premium craft flavours of Myrtle alongside a rotating monthly guest coffee." },
         { icon: "luggage", title: "Left Luggage", desc: "Secure bag storage so you can freely explore Brodick without being weighed down." },
