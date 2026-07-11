@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Homepage -->
   <url>
-    <loc>https://www.yourdomain.com/</loc>
+    <loc>https://www.copperwheats.co.uk/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -10,7 +10,7 @@
   
   <!-- About Page -->
   <url>
-    <loc>https://www.yourdomain.com/about.html</loc>
+    <loc>https://www.copperwheats.co.uk/about.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -18,7 +18,7 @@
   
   <!-- Services / Menu Page -->
   <url>
-    <loc>https://www.yourdomain.com/services.html</loc>
+    <loc>https://www.copperwheats.co.uk//services.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -26,7 +26,7 @@
   
   <!-- Contact / Find Us Page -->
   <url>
-    <loc>https://www.yourdomain.com/contact.html</loc>
+    <loc>https://www.copperwheats.co.uk/contact.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
