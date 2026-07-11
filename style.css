@@ -117,7 +117,6 @@
             }
 
         /* --- BRAND BRANDING LOGO COMPONENT --- */
-        
         /* 1. This forces the logo image and text to sit side-by-side in a row */
         .brand-logo {
             display: flex !important;

@@ -497,11 +497,10 @@ function hydrateTemplateEngine(config) {
 }
 
 // =========================================================================
-// RUN ENGINE ON PAGE LOAD & AUTO-HIGHLIGHT NAV
+// RUN ENGINE ON PAGE LOAD & AUTO-HIGHLIGHT NAV & DYNAMIC LABELS
 // =========================================================================
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Fire your template content injector engine instantly
-    // Your defensive 'if' checks inside here will automatically handle what page it's on!
     hydrateTemplateEngine(siteConfig);
 
     // 2. Multi-Page Active Highlighting Engine
@@ -516,4 +515,20 @@ document.addEventListener('DOMContentLoaded', () => {
             link.classList.remove('active');
         }
     });
+
+    // 3. SCALABLE NAVIGATION LABEL TRANSLATION ENGINE
+    // Checks your config.js and automatically swaps out labels for main nav AND hero buttons
+    if (siteConfig.navLabels) {
+        // Target BOTH main navbar links and buttons inside the hero container
+        document.querySelectorAll('.nav-link, .hero-actions .btn').forEach(link => {
+            const href = link.getAttribute('href') || '';
+            // Extract the filename from the link (e.g., "./services.html" becomes "services.html")
+            const fileName = href.split('/').pop(); 
+            
+            // If this file name exists in your config settings, rewrite the text dynamically!
+            if (fileName && siteConfig.navLabels[fileName]) {
+                link.innerText = siteConfig.navLabels[fileName];
+            }
+        });
+    }
 });
