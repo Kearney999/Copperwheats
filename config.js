@@ -1,32 +1,33 @@
-// config.js - Nardini's Coffee Shop Configuration
+// config.js - The Three Reasons Restaurant & Pub Configuration
 export const siteConfig = 
 {
-    
+    theme: "fun.css",  //choices are found in the styles folder
 
     navLabels: {
         "index.html": "Home",
         "about.html": "Our Story",
-        "services.html": "The Cafe",
-        "contact.html": "Location"
+        "services.html": "Menu",
+        "contact.html": "Find us"
     },
 
-    theme: "coffee.css",  //choices are found in the styles folder
+    repositoryName: 'TheThreeReasons', //This is where the files sit.
+
+    customLogoUrl: "logo.png", 
+    businessName: "The Three Reasons",
+    businessSub: "Good Drink, Good Meal, Good Times!",
+    metaTitle: "The Three Reasons Pub | Largs, Ayrshire, Scotland",
+    contactEmail: "info@thethreereasonslargs.co.uk",
+    contactEmailEncrypted: "5e3574e3d7e74f8f7516e29ca84dc19d",
+    locationShort: "Opposite the pier",
+    locationFull: "14 Gallowgate Street, Largs, KA30 8LX",
     
-    customLogoUrl: "logo.png", // Points directly to your local coffee shop logo
-    businessName: "Copperwheats",
-    businessSub: "Brilliant hosts, premium roasts",
-    
-    metaTitle: "Copperwheats Coffee House | Brodick, Arran",
-    contactEmail: "john.copperwheat69@gmail.com",
-    contactEmailEncrypted: "4d2463d2c6d63e7e6405d18b973cb08c",
-    locationShort: "just opposite from the Ferry Terminal",
-    locationFull: "Brodick Ferry Terminal",
+    // 🎨 REFINED BRAND COLOR SCHEMA (Based on back-glass design)
     themeColors: {
-        textDark: "#2C1A11",
-        darkNeutral: "#4A3525",
-        midNeutral: "#8C6A50",
-        lightNeutral: "#EADBC8",
-        background: "#FAF6F0"
+        textDark: "#2d1f21",       // Deep charcoal-purple for high-contrast, elegant body text
+        darkNeutral: "#8f444e",    // The core brand Purple from your back-glass
+        midNeutral: "#070706",     // Softened Sage-Olive that pairs beautifully with white/cream
+        lightNeutral: "#faeaae",   // The signature Cream for warm container blocks and cards
+        background: "#fdfcf9"      // A soft, premium off-white canvas that makes the brand colors pop
     },
 
     logoSettings: {
@@ -38,7 +39,7 @@ export const siteConfig =
         imageWidth: "125px",      /* The width of the actual image logo inside */
         imageHeight: "125px",      /* The height of the actual image logo inside */
         // 🌟 PRECISION NUDGING: Centering coordinates controlled by config
-        imageTop: "48%",
+        imageTop: "57%",
         imageLeft: "49%"
     },
 
@@ -46,176 +47,157 @@ export const siteConfig =
     // FEATURE SWITCHES (Turn sections ON [true] or OFF [false])
     // =========================================================
     features: {
-        showGoogleReviews: true,
-        showTripAdvisor: true,
-        showOpeningHours: true,
-
-        //Images
-        showGoogleReviewsSummaryBoard: true,
-        showCompanyStoryboard: true,
-        showMenu: false // Set to false to instantly hide the menu across the site
+        showGoogleReviews: true, //Show Goole Reviews buttons
+        showTripAdvisor: true, //Shw TripAdvisor buttons
+        showOpeningHours: true, //Show Opening Hours
+        showGoogleReviewsSummaryBoard: true, //Show or Hide the SumamryBoard
+        showCompanyStoryboard: true, //Show or Hide the Storyboard
+        showMenu: true // Set to false to instantly hide the menu across the site
     },
 
-
-
-
     heroSlides: [
-        
         {
-            imgUrl: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=1600&fit=crop&q=80",
-            title: "Premium coffee from Myrtle, est. 1984",
-            desc: "For 20 years, Myrtle has been our signature brand, defined by a single promise: procuring coffee of the highest quality."
+            imgUrl: "https://images.unsplash.com/photo-1544148103-0773bf10d330?w=1600&fit=crop&q=80",
+            title: "Exceptional Meals Cooked Fresh Daily",
+            desc: "From hearty pub favourites to modern kitchen creations, we pride ourselves on serving up premium quality comfort food on the Largs coast."
         },
         {
-            // Magic Relative Path: Looks in the images folder right next door!
-            imgUrl: "./images/ArranIceCream_WithLogo.png", 
-            title: "Top awarding winning Arran Ice Cream",
-            desc: "What's your favourite? A choice of flavours from the old time favourites to the more exotic."
+            imgUrl: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1600&fit=crop&q=80",
+            title: "Our Famous Traditional Sunday Roast",
+            desc: "Fluffy Yorkshire puddings, perfectly roasted potatoes, rich homemade gravy, and served with a smile."
         },
         {
-            imgUrl: "https://images.unsplash.com/photo-1498804103079-a6351b050096?w=1600&fit=crop&q=80",
-            title: "Choose your Coffee or Tea favourite",
-            desc: "Cappuccino, Latte, Flat White, Mocha, Espresso, Iced Coffee, Guest coffee, and 12 brands of tea."
+            imgUrl: "./images/GuestRealAles_33Percent.png",
+            title: "Rotating Guest Real Ales brewed locally",
+            desc: "We maintain a guest ale rotation from local breweries from Isle Of Arran, Kelburn, Orkney, Skye and many others over the years"
         },
         {
-            imgUrl: "./images/cookiesandcakes.jpg",
-            title: "Beautiful, freshly baked cakes, cookies, biscuits and pastries",
-            desc: "Enjoy your quality time with that perfect accompaniment."
+            imgUrl: "https://images.unsplash.com/photo-1571613316887-6f8d5cbf7ef7?w=1600&fit=crop&q=80",
+            title: "A Proud Family Legacy Since 2014",
+            desc: "Pouring great pints, serving outstanding food, and maintaining the highest standards in North Ayrshire."
         },
         {
-            imgUrl: "./images/coffeesyrups.jpg",
-            title: "Flavour with your favourite syrup",
-            desc: "Add a coffee syrup : Caramel, Coconut, Vanilla, Cinnamon, Honeycomb, Creme Brulee, Gingerbread, Butterscotch and Roasted Hazelnut"
+            imgUrl: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600&fit=crop&q=80",
+            title: "A Warm Coastal Welcome For Everyone",
+            desc: "Whether you are a local regular or a day-tripper arriving on the coast, Stewart and the team treat you like family."
+        },
+        {
+            imgUrl: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1600&fit=crop&q=80",
+            title: "Relax in a Great Seafront Atmosphere",
+            desc: "Unwind with our exceptional selection of cold draft premium beers, guest ales, fine regional malt whiskies, and crisp gins."
+        }
+        ,
+        {
+            imgUrl: "./images/QuizNight_TheThreeReasons.png",
+            title: "Quiz Night every Monday night",
+            desc: ""
         }
     ],
-
-    
-
     homePage: {
-    heroTitle: "The picturesque Island and Copperwheats' welcome you.",
-    heroDesc: "Coffee | Cafe : Top-rated true barrista poured speciality coffee shop by the Brodick Ferry, Isle of Arran. Enjoy premium coffee, fresh bakes, luxury cakes and convenient, secure, left luggage storage right by the Arran ferry.",
-    highlights: [
-        { icon: "coffee", title: "Premium Coffee & Teas", desc: "Specialty brews, featuring the premium craft flavours of Myrtle alongside a rotating monthly guest coffee." },
-        { icon: "luggage", title: "Left Luggage", desc: "Secure bag storage so you can freely explore Brodick without being weighed down." },
-        { icon: "users", title: "Everyone Welcome", desc: "A fully wheelchair-accessible cafe and spacious layout designed to easily accommodate families and groups." },
-        { icon: "sun", title: "Outdoor Patio Area", desc: "Take in the beautiful island views of Goat Fell across the bay whilst breath in that fresh sea air from our comfortable outdoor seating patio." },
-        { icon: "heart", title: "Dog Friendly", desc: "Four-legged friends are always welcome in our cafe with a warm smile, fresh water bowls, and of course those doggy treats." },
-        { icon: "wifi", title: "Free Wi-Fi", desc: "Stay connected while you relax; our cafe Wi-Fi network password is freely available with our compliments." },
-        { icon: "pound", title: "Payment", desc: "We take contactless payment, apple pay and of course notes and coins are more than welcome." }
-    ],
-        reviewsHeadline: "Loved by Travellers & Locals",
-        reviewsSub: "Discover authentic guest insights with our Google Reviews",
-        reviewsScoreText: "4.4 / 5.0 Rating (93)",
+        heroTitle: "Welcome to The Three Reasons Restaurant & Pub.",
+        heroDesc: "A bustling, cozy seafront tavern nestled right on Gallowgate Street in Largs. Established in 2014, we are renowned for exceptional daily meals, welcoming community atmosphere, and legendary weekend roasts.",
+        highlights: [
+            { icon: "utensils", title: "Exceptional Meals", desc: "A robust menu filled with hearty, locally sourced pub classics and chef specials designed to hit the spot." },
+            { icon: "star", title: "Legendary Roasts", desc: "Join us for our famous traditional roasts, complete with all the classic trimmings and a deep, savory homemade gravy." },
+            { icon: "users", title: "Family Tradition", desc: "A proudly independent free house with hospitality knowledge passed down through generations, maintaining exceptional standards for locals and visitors alike." },
+            { icon: "martini", title: "Premium Gantry", desc: "A wide selection of rotating real ales, crisp cold lagers, artisan Scottish gins, and exceptional malt whiskies." },
+            { icon: "heart", title: "Dog Friendly Bar", desc: "Four-legged friends are always welcome in our front bar section with a fresh bowl of water and a warm smile." },
+            { icon: "wifi", title: "Free Customer Wi-Fi", desc: "Stay fully connected while you dine; our high-speed guest network password is completely complimentary." },
+            { icon: "pound", title: "Payment", desc: "We accept all major contactless providers, Apple Pay, Google Pay, as well as traditional notes and coins." }
+        ],
+        reviewsHeadline: "Loved by Locals & Day-Trippers",
+        reviewsSub: "Discover authentic guest insights left by our visitors on Google Reviews",
+        reviewsScoreText: "4.6 / 5.0 Rating (1,097)",
         googleReviews: [
-            { initials: "JM", name: "James M.", "badge": "Local Guide", text: "\"The left luggage service here is a complete lifesaver! Dropped our heavy suitcases off secure and safe, allowing us to walk and enjoy Brodick hassle-free before our evening ferry home. Brilliant coffee too!\"" },
-            { initials: "SR", name: "Sarah R.", "badge": "Ferry Passenger", text: "\"Incredible oat milk cappuccino—easily the best specialty coffee I've had on Arran. The atmosphere is lovely and warm, and the staff are wonderfully helpful while you're waiting for boarding to open.\"" },
-            { initials: "DL", name: "David L.", "badge": "Family Traveller", text: "\"Very spacious, clean, and fully wheelchair accessible which made it so easy for our group. Great toasted sandwiches, delicious local ice cream, and exceptionally polite people behind the counter.\"" }
+            { initials: "AM", name: "Andrew M.", "badge": "Local Guide", text: "\"The exceptional meals here never disappoint. The steak pie is legendary, the pastry is light, and the service is fast and friendly even when they are packed on a busy days.\"" },
+            { initials: "HC", name: "Helen C.", "badge": "Family Diner", text: "\"Brought the family in for their traditional Sunday roast and it was easily the best we've had in Ayrshire. Lovely Yorkies and the beef melted in your mouth.\"" },
+        { initials: "GR", name: "Graham R.", "badge": "Regular", text: "\"A proper pub with restaurant-standard food. we can boast being the very best restaurant of 35 in Largs as rated by visitors kind enough to leave a review on Tripadvisor. Thank you!\"" }
         ]
     },
     aboutPage: {
         title: "Our Story",
-        subtitle: "What began as the simple dreams of a newly married couple, has blossomed into our family’s greatest pride and joy. We hope you grab a coffee, and wishfully invite you to read 'Our Story'...",
-        
+        subtitle: "Established in 2014, our diner represents a proud family legacy of coastal hospitality, great company, and exceptional cooking...",
         storyParagraphs: [
-            "Our story began in the 1990s. As a young couple eager to start a family and a business of our own, we took a leap of faith and opened our very first cafe at Brodick Home Farm, nestled right by the castle.",
-            "It was there that we truly learned our trade, looking back now in awe at the fast-paced lessons and passion that fueled those early years.",
-            "That foundation eventually gave us the opportunity to design our flagship coffee shop at the Brodick Ferry Terminal.",
-            "Building it up from a bare, empty shell, we poured our hearts into creating more than just a café. We wanted a place where special memories are made, journeys begin, and travellers feel instantly at home.",
-            "With decades of hard work, persistence, and patience, we have watched our business and our family thrive together. We have been incredibly fortunate to cross paths with so many wonderful customers over the years.",
-            "Every year, we look forward to the magic of the summer months, welcoming back familiar faces to the beautiful island we get to call home."
+            "The story of The Three Reasons is rooted deeply in a passion for authentic Scottish hospitality. Established in 2014, the pub was built on the foundation of providing a vibrant community hub where exceptional meals and perfectly poured drinks meet.",
+            "Today, the venue is solely run by owner Stewart Grant, who proudly follows in the footsteps of his locally well known publican and father, Colin. Carrying forward decades of family insight, standards, and dedication, Stewart has cemented the pub's reputation as a must-visit destination on the Largs front.",
+            "We believe that a great pub relies on consistency: local ingredients handled with care, and an unyielding commitment to making every single day-tripper and local resident feel instantly at home.",
+            "From our kitchen's famous traditional roasts to our signature daily specials, every dish represents our family's pride in serving the best that Ayrshire has to offer.",
+            "We look forward to welcoming you through our doors to share in the lively chatter, exceptional food, and beautiful coastal views we get to look out on every day."
         ],
         features: [
-            { emoji: "🥪", title: "Food & Drinks", desc: "From artisan espresso to freshly pressed hot toasties, house-baked pastries, and authentic Arran ice cream flavours." },
-            { emoji: "🧳", title: "Convenient Services", desc: "Take advantage of our handy on-site left luggage service to enjoy the island without being weighed down." },
-            { emoji: "♿", title: "Accessibility For All", desc: "Thoughtfully equipped with complete wheelchair access across entries, seating layouts, and washrooms." },
-            { emoji: "🌞", title: "Outdoor balcony", desc: "Imagine sitting on a summers day, as the warm breeze blows, whilst having that morning coffee with views across the bay to Goat Fell, and wondering where it all went wrong! 😉"}
+            { emoji: "🥩", title: "Exceptional Dining", desc: "A diverse menu highlighting premium beef burgers, homemade steakpies using the best ingredients from A.D. Paton Est 1840, and excellent vegetarian alternatives." },
+            { emoji: "🍺", title: "Seafront Bar Atmosphere", desc: "The perfect spot to unwind with a cold pint or sample an exceptional malt whisky after walking the promenade." },
+            { emoji: "🤝", title: "A True Family Business", desc: "Solely run by Stewart Grant, delivering a personalized level of service that treats every single customer like an old friend." },
+            { emoji: "🌅", title: "Beautiful Largs Location", desc: "Perfectly placed right against the scenic promenade, providing a warm refuge and a fantastic meal whatever the Scottish weather brings."}
         ]
-        
     },
     servicesPage: {
         headline: "What We Offer?",
-        sub: "We serve all types of Coffee from our signature coffee supplier 'Myrtle', 12 choices of tea, multiple flavoured ice creams, handmade biscuits, cookies, cakes and pastries.",
-        
+        sub: "We serve an extensive menu of hearty traditional pub food, premium chef specials, artisan desserts, children's portions, and a fully stocked gantry of draft beers, wines, and spirits.",
         openingHours: {
-
-        title: "Opening Times",
-        subtitle: "Pop in for that 'pick me up', right by the ferry terminal",
-        // Or for a different client: "Our Operating Hours", "Drop by our showroom", etc.
-        
-        monday: "10:00 AM – 4:30 PM",
-        tuesday: "10:00 AM – 4:30 PM",
-        wednesday: "10:00 AM – 4:30 PM",
-        thursday: "10:00 AM – 4:30 PM",
-        friday: "10:00 AM – 4:30 PM",
-        saturday: "10:00 AM – 4:30 PM",
-        sunday: "10:00 AM – 4:30 PM"
+            title: "Operating Hours",
+            subtitle: "Open daily for exceptional lunches, dinners finish at 7pm, and selection of traditional pub drinks",
+            monday: "11:00 AM – 12:00 PM",
+            tuesday: "11:00 AM – 12:00 PM",
+            wednesday: "11:00 AM – 12:00 PM",
+            thursday: "11:00 AM – 12:00 PM",
+            friday: "11:00 AM – 12:00 AM",
+            saturday: "11:00 AM – 12:00 AM",
+            sunday: "12:30 PM – 10:30 PM"
         },
-        
-        
         menuList: [
-            { emoji: "🍦", name: "Ice Cream" },
-            { emoji: "☕", name: "Coffee & Tea" },
-            { emoji: "🥪", name: "Toasties and Panini's" },
-            { emoji: "🍰", name: "Cakes" },
-            { emoji: "🍪", name: "Cookies"},
-            { emoji: "🥧", name: "Pastries & Sausage Rolls" }
-              
+            { emoji: "🥩", name: "Traditional Roasts" },
+            { emoji: "🍔", name: "Gourmet Burgers & Steaks" },
+            { emoji: "🥧", name: "Homemade Scottish Steak Pies" },
+            { emoji: "🍺", name: "Real Ales & Lagers" },
+            { emoji: "🍷", name: "Fine Wines & Malt Whiskies" },
+            { emoji: "🧒", name: "Kids' Portions" }
         ]
     },
     contactPage: {
-        address : "📍 The Pier, Brodick, Isle of Arran",
-        phoneIcon: "📞",  // Or whatever custom emoji/icon variable the client prefers
-        contactTelephone: "+44 1770 303522",
-        
-        // 🚀 NEW ADDITIONS FOR AUTOMATED RICH-SEO SCHEMA TRACKING
-        postalCode: "KA27 8AY",
-        locality: "Brodick",
-        region: "Isle of Arran",
+        address : "📍 14 Gallowgate Street, Largs, North Ayrshire",
+        phoneIcon: "📞",
+        contactTelephone: "+44 1475 672330",
+        postalCode: "KA30 8LX",
+        locality: "Largs",
+        region: "North Ayrshire",
         countryCode: "GB",
-        latitude: "55.5772",
-        longitude: "-5.1385",
-
-        // 🚀 NEW RICH RESULTS ADDITIONS
-        featuredImage: "https://www.copperwheats.co.uk/images/CopperwheatCoffeeShop_Shopfront.jpg", // Update to a live full URL once deployed
-        priceRange: "£",
-        servesCuisine: "Coffee, Cafe, Pastries, Bakery, Ice Cream, Sandwiches, Toasties, Light Bites, Scottish, British, Vegetarian options, Gluten-free options, Vegan options",
-
-        mapUrl : "https://maps.google.com/maps?q=Copperwheats%20Coffee%20House,%20The%20Pier,%20Brodick,%20Isle%20of%20Arran&t=&z=16&ie=UTF8&iwloc=&output=embed",
-        title: "Say Hello",
-        desc: "Have questions about group bookings, dietary adjustments, or our left luggage storage? Drop us a line and we will get back to you within 48 hours. However, feel free to ring us if more urgent.",
-        // The overview tab where people READ existing reviews
-
-        googlePlaceId: "ChIJsR7E-07viUgRKh1IqQQ9mAc", // Copperwheats PlaceID
+        latitude: "55.7944",
+        longitude: "-4.8692",
+        featuredImage: "https://www.thethreereasonslargs.co.uk/images/threereasons_frontage.jpg", 
+        priceRange: "££",
+        servesCuisine: "Bar, Pub, Traditional Pub Food, British, Scottish, Roasts, Burgers, Steaks, Vegetarian options, Gluten-free options",
+        mapUrl : "https://maps.google.com/maps?q=The%20Three%20Reasons,%2014%20Gallowgate%20Street,%20Largs&t=&z=16&ie=UTF8&iwloc=&output=embed",
+        title: "Get In Touch",
+        desc: "Planning a large family gathering, looking to secure a table for our famous weekend roast, or have a question about our options? Give Stewart and the team a ring or send an email, and we will be glad to help.",
+        googlePlaceId: "ChIJXXvw3wG5iUgRKaCJ0OPH6oI", 
         googleViewReviewsUrl: "https://search.google.com/local/reviews?placeid=",
         googleWriteReviewUrl: "https://search.google.com/local/writereview?placeid=",
-        tripAdvisorUrl: "https://www.tripadvisor.co.uk/UserReviewEdit-g551754-d3649538-Copperwheat_Coffee_House-Brodick_Isle_of_Arran_Scotland.html",
-        
+        tripAdvisorUrl: "https://www.tripadvisor.co.uk/UserReviewEdit-g551771-d7236393-The_Three_Reasons-Largs_North_Ayrshire_Ayrshire_Scotland.html",
         faqSection: {
-            title: "Questions and Answers",
-            subtitle: "Got questions? We've got answers. Here is everything you need to know before stepping off the ferry.",
+            title: "Frequently Asked Questions",
+            subtitle: "Everything you need to know about dining, drinking, and visiting us on the Largs coast.",
             questions: [
                 {
-                    q: "Where exactly are you located?",
-                    a: "We are located directly by the Brodick Ferry Terminal on the Isle of Arran. It's the perfect first stop for a coffee when you step off the boat, or a comforting treat while you wait to head back to the mainland."
+                    q: "When do you serve your traditional roasts?",
+                    a: "Our famous traditional roasts are prepared fresh every weekend, featuring premium cuts of meat, large Yorkshire puddings, and rich gravy. We recommend coming down early as it's a firm local favourite!"
                 },
                 {
-                    q: "Do you offer dietary adjustments?",
-                    a: "We gladly cater to everyone with dairy-free oat milk, small selection of gluten-free bakes and a vegan option is also available daily."
+                    q: "Are dogs allowed inside the venue?",
+                    a: "Yes! Well-behaved four-legged friends are warmly welcome in our main front bar area. We have fresh water bowls and a treat ready behind the counter."
                 },
                 {
-                    q: "Can we store our left luggage with you?",
-                    a: "Yes! If you are exploring the island before checking into your accommodation or waiting for the ferry after checking out, you can safely leave your bags and luggage with us while you wander."
+                    q: "Do we need to book a table for dinner?",
+                    a: "We always keep space open for walk-ins in our lively bar area, but if you are bringing a large group or planning a family dinner on the weekend, we highly recommend calling ahead to reserve a table."
                 },
                 {
-                    q: "Do you take group bookings?",
-                    a: "We do! Whether you are walking group conquering Goat Fell, a family gathering, or a tour group, drop us a line via our contact section or give us a call to arrange space for your party."
+                    q: "Do you cater to dietary requirements and allergies?",
+                    a: "Absolutely. Our menu features clearly marked vegetarian, vegan, and gluten-free choices. Please inform your server of any severe allergies before ordering so our kitchen team can take maximum care."
                 }
             ]
         }
-    }, // <-- Closes contactPage cleanly
-
-    // ☕ THE FIXED FOOTER BLOCK (Added at the main configuration level)
+    },
     footer: {
-        Tagline: "Relax in a great atmosphere, with friendly staff, "
+        Tagline: "Relax in a great atmosphere, with exceptional food and traditional hospitality under the care of Stewart Grant."
     }
 };
