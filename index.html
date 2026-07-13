@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Put this near the top of your head section -->
+    <link rel="preload" href="logo.png" as="image" type="image/png">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="meta-title">Loading...</title>
@@ -20,15 +23,15 @@
 </head>
 <body>
 
-    <!-- THE SPLASH SCREEN -->
-    <div id="site-splash-screen" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #0f172a; z-index: 99999; display: flex; align-items: center; justify-content: center; transition: opacity 0.8s ease, visibility 0.8s ease;">
-    
-        <!-- Added a smooth scaling transition directly to the splash frame anchor -->
-        <div id="splash-logo-frame" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0; position: relative; overflow: visible !important; transition: transform 2.0s cubic-bezier(0.25, 1, 0.5, 1);">
+    <!-- The Fullscreen Splash Screen Overlay -->
+    <div id="site-splash-screen" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #0f172a; z-index: 99999; display: flex; align-items: center; justify-content: center; transition: background 0.8s ease, opacity 0.6s ease, visibility 0.8s ease;">
+        
+        <!-- 🌟 PRE-SIZED ANCHOR: Added a default fallback width/height matching your 120px frame so it doesn't flicker while JS fires -->
+        <div id="splash-logo-frame" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0; position: relative; overflow: visible !important; width: 120px; height: 120px; border-radius: 50%; transform: scale(12.2); transition: transform 3.0s cubic-bezier(0.25, 1, 0.5, 1);">
             
-            <!-- 🌟 REMOVED mix-blend-mode so the graphic renders in brilliant full color -->
+            <!-- 🌟 PRE-SIZED IMAGE: Added fallback dimensions matching your config defaults -->
             <img id="splash-logo-image" src="logo.png" alt="Brand Emblem" 
-                style="display: block !important; max-width: none !important; object-fit: contain; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 10;">
+                style="display: block !important; width: 120px; height: 120px; max-width: none !important; object-fit: contain; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 10;">
         </div>
     </div>
 

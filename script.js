@@ -205,22 +205,35 @@ function hydrateTemplateEngine(config) {
             splashImg.style.left = settings.imageLeft || "50%";
 
             // 2. 🌟 INITIAL IMPACT: Force the logo to start massive when the page instantly loads
-            splashFrame.style.transform = "scale(42.2)"; 
+            splashFrame.style.transform = "scale(5.0)"; 
         }
 
-        // 3. THE GRAND REVEAL: Smoothly shrink the logo and vanish the screen
-        if (splashScreen && splashFrame) {
-            // Tiny 100ms delay ensures the browser registers the "large" size first
-            setTimeout(() => {
-                // Shrink the logo down into its normal dimensions smoothly
-                splashFrame.style.transform = "scale(1)"; 
-            }, 100);
+        // 3. THE GRAND REVEAL: Smoothly shrink the logo and cross-dissolve into the website
+        if (splashScreen && splashFrame && splashImg) {
+            
+            // 🌟 THE STUTTER CURE: Wait for the browser to fully paint the massive initial state 
+            // before changing the transform value, guaranteeing a buttery-smooth start.
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    splashFrame.style.transform = "scale(0.3)"; 
+                });
+            });
 
-            // Wait for the shrink movement to establish, then fade out the screen overlay background
+            // STEP A: Drop the dark background wall first to reveal the website underneath.
             setTimeout(() => {
-                splashScreen.style.opacity = "0";
+                splashScreen.style.background = "transparent";
+            }, 2200); 
+
+            // STEP B: Melt the full-color splash logo into the website logo hiding directly behind it
+            setTimeout(() => {
+                splashFrame.style.transition = "opacity 0.6s ease, transform 3.0s cubic-bezier(0.25, 1, 0.5, 1)";
+                splashFrame.style.opacity = "0";
+            }, 2300); 
+
+            // STEP C: Completely vanish the container from the workspace so it doesn't block clicks
+            setTimeout(() => {
                 splashScreen.style.visibility = "hidden";
-            }, 2200); // Stays on screen just long enough to enjoy the full animation cycle 
+            }, 2900); 
         }
     } catch (e) {
         console.error("Splash scale routine failed:", e);
@@ -636,4 +649,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    
 });
