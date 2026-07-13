@@ -1,0 +1,798 @@
+/* =========================================================================
+   --- THE VIBRANT & FUN DESIGN ENGINE STYLESHEET ---
+   ========================================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Quicksand:wght@400;500;700&display=swap');
+
+:root {
+    /* --- Playful Candy & Warm Palette --- */
+    --color-espresso: #2D221E;
+    --color-roast: #5A443B;
+    --color-latte: #A67C65;
+    --color-cream-dark: #F7E6D4;
+    --color-cream-light: #FFFBF7;
+    --color-white: #FFFFFF;
+    --color-gold: #FFC93C;
+    /* --color-accent-fun: #FF6F61; Vibrant playful coral popping accent */
+    --color-accent-fun: #5d3167; /* Vibrant playful coral popping accent */
+
+    /* --- Friendly Rounded Typography --- */
+    --font-display: 'Fredoka', sans-serif; /* Super friendly, soft-rounded headlines */
+    --font-body: 'Quicksand', sans-serif;  /* Highly readable, rounded body text */
+    
+    /* --- Bouncy & Elastic Transitions --- */
+    --transition-smooth: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Gives a delicious custom elastic bounce */
+    --max-width: 1200px;
+    --fun-radius: 24px;   /* Consistent chunky rounded corner blueprint */
+    --pill-radius: 60px;  /* Pill elements radius */
+}
+
+/* --- BASE STYLES --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    background-color: var(--color-cream-light);
+    color: var(--color-espresso);
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section-padding {
+    padding: 6rem 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.section-title {
+    font-family: var(--font-display);
+    font-size: 3.25rem;
+    color: var(--color-espresso);
+    margin-bottom: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: var(--color-latte);
+    max-width: 600px;
+    margin: 0 auto 4rem auto;
+    font-weight: 500;
+}
+
+/* --- DYNAMIC BOUNCY UI COMPONENTS --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.1rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: var(--pill-radius);
+    transition: var(--transition-smooth);
+    cursor: pointer;
+    border: none;
+    gap: 0.6rem;
+    box-shadow: 0 6px 0px rgba(45, 34, 30, 0.15); /* Dynamic 3D bottom edge */
+}
+
+.btn-primary {
+    background-color: var(--color-accent-fun);
+    color: var(--color-white);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-espresso);
+    color: var(--color-white);
+    transform: translateY(-4px) scale(1.03); /* Pops forward elastically */
+    box-shadow: 0 12px 20px rgba(255, 111, 97, 0.3);
+}
+
+.btn-secondary {
+    background-color: var(--color-cream-dark);
+    color: var(--color-espresso);
+    border: 2px dashed var(--color-latte); /* Whimsical dashed look */
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-white);
+    border-style: solid;
+    border-color: var(--color-accent-fun);
+    color: var(--color-accent-fun);
+    transform: translateY(-4px) scale(1.03);
+}
+
+main-section {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* --- IDENTITY BRAND LOGO REGION --- */
+.brand-logo {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 0px !important;
+    text-decoration: none !important;
+    flex-shrink: 0 !important;
+}
+
+.logo-text {
+    display: flex !important;
+    flex-direction: column !important;
+    text-transform: none !important;
+    text-align: left !important;
+    margin-left: -45px !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+}
+
+#lbl-logo-main {
+    font-family: var(--font-display) !important;
+    font-size: 1.6rem !important;
+    font-weight: 700 !important;
+    color: var(--color-accent-fun) !important; /* Logo pops with friendly color */
+    text-transform: none !important;
+    line-height: 1.1 !important;
+}
+
+#lbl-logo-sub {
+    font-family: var(--font-body) !important;
+    font-size: 0.85rem !important;
+    font-weight: 700 !important;
+    color: var(--color-latte) !important;
+    text-transform: none !important;
+    margin-top: 2px !important;
+    letter-spacing: 0.5px;
+}
+
+/* --- HEADER NAVIGATION LINK PILLS --- */
+.header-sticky {
+    position: fixed;
+    top: 15px; /* Floats slightly away from the ceiling like a friendly capsule */
+    left: 20px;
+    right: 20px;
+    background-color: rgba(255, 251, 247, 0.9);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    z-index: 1000;
+    border: 2px solid var(--color-cream-dark);
+    border-radius: var(--pill-radius);
+    box-shadow: 0 8px 30px rgba(90, 68, 59, 0.06);
+    transition: var(--transition-smooth);
+}
+
+.nav-container {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100%;
+    padding: 0.5rem 1.5rem !important;
+}
+
+.nav-menu {
+    display: flex !important;
+    gap: 12px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: nowrap !important; 
+    overflow: hidden !important;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--color-roast);
+    font-size: 0.95rem;
+    font-weight: 700;
+    position: relative;
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--pill-radius);
+    transition: var(--transition-smooth);
+}
+
+.nav-link:hover {
+    color: var(--color-accent-fun);
+    background-color: var(--color-cream-dark);
+}
+
+.nav-link::after {
+    display: none; /* Completely drops the boring straight line active underline marker */
+}
+
+.nav-link.active {
+    color: var(--color-white) !important;
+    background-color: var(--color-espresso); /* Active pages become localized button shapes */
+}
+
+/* --- HERO AREA CAPTURES --- */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    min-height: 750px;
+    display: flex;
+    align-items: center;
+    color: var(--color-white);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    overflow: hidden;
+    border-bottom-left-radius: 40px; /* Playful curved structural canvas bottom cutouts */
+    border-bottom-right-radius: 40px;
+}
+
+.hero-bg-secondary {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    z-index: 1;
+}
+
+.hero-content {
+    transition: opacity 1.0s ease-in-out, transform 1.0s ease-in-out;
+    opacity: 1;
+    z-index: 2;
+}
+
+.hero-content.fade-out {
+    opacity: 0 !important;
+    transform: translateY(-20px) scale(0.98);
+}
+
+.hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.75rem, 6vw, 4.75rem);
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: 1.75rem;
+    line-height: 1.15;
+    text-shadow: 0 4px 12px rgba(45, 34, 30, 0.4);
+}
+
+.hero-desc {
+    font-family: var(--font-body);
+    font-size: clamp(1.15rem, 2vw, 1.4rem);
+    color: var(--color-cream-light);
+    max-width: 650px;
+    margin: 0 auto 3rem auto;
+    line-height: 1.6;
+    font-weight: 500;
+    text-shadow: 0 2px 8px rgba(45, 34, 30, 0.4);
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1.25rem;
+    justify-content: center;
+}
+
+.hero-actions .btn-secondary {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--color-white);
+    border: 2px solid var(--color-white);
+}
+
+.hero-actions .btn-secondary:hover {
+    background-color: var(--color-white);
+    color: var(--color-accent-fun);
+}
+
+/* --- CLOUD-LIKE HIGHLIGHT ROW --- */
+.quick-highlights {
+    background-color: var(--color-cream-dark);
+    padding: 4rem 0;
+    position: relative;
+}
+
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+}
+
+.highlight-item {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+    background: var(--color-white);
+    padding: 1.5rem;
+    border-radius: var(--fun-radius);
+    box-shadow: 0 8px 0px rgba(90, 68, 59, 0.05); /* Fun 3D layout blocks */
+    transition: var(--transition-smooth);
+}
+
+.highlight-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 20px rgba(90, 68, 59, 0.08);
+}
+
+.highlight-icon {
+    background: var(--color-cream-light);
+    padding: 0.9rem;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-accent-fun);
+    transition: var(--transition-smooth);
+}
+
+.highlight-item:hover .highlight-icon {
+    transform: scale(1.2) rotate(-8deg); /* Energetic twist action */
+}
+
+.highlight-text h4 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+    color: var(--color-espresso);
+}
+
+.highlight-text p {
+    font-size: 0.95rem;
+    color: var(--color-roast);
+}
+
+/* --- SOCIAL PROOF PLUSH REVIEWS ROW --- */
+.reviews-section {
+    background-color: var(--color-white);
+    padding: 6rem 0;
+}
+
+.google-summary-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: var(--color-cream-light);
+    padding: 0.85rem 1.75rem;
+    border-radius: var(--pill-radius);
+    margin-bottom: 2rem;
+    border: 2px dashed var(--color-cream-dark);
+}
+
+.reviews-rating-stars {
+    color: var(--color-gold);
+    letter-spacing: 3px;
+    font-size: 1.1rem;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+.review-card {
+    background: var(--color-cream-light);
+    border-radius: var(--fun-radius);
+    padding: 2.5rem 2rem;
+    border: 2px solid transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 10px 25px rgba(90, 68, 59, 0.03);
+    transition: var(--transition-smooth);
+}
+
+.review-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    border-color: var(--color-cream-dark);
+    box-shadow: 0 20px 40px rgba(166, 124, 101, 0.1);
+}
+
+.reviewer-avatar {
+    width: 46px;
+    height: 46px;
+    background: var(--color-accent-fun);
+    border-radius: 16px; /* Playful squircle shape style blueprints */
+    font-family: var(--font-display);
+    color: var(--color-white);
+    font-weight: 700;
+}
+
+.reviewer-name {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+}
+
+.review-text {
+    font-size: 1rem;
+    color: var(--color-roast);
+    line-height: 1.6;
+}
+
+/* --- ABOUT LAYOUT SPLITS --- */
+.about-layout {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-story h3 {
+    font-family: var(--font-display);
+    font-size: 2.75rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-espresso);
+}
+
+#container-about-paragraphs {
+    max-width: 750px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+}
+
+.about-p {
+    font-size: 1.05rem;
+    color: var(--color-roast);
+}
+
+.features-box {
+    background-color: var(--color-white);
+    border-radius: var(--fun-radius);
+    padding: 3rem;
+    box-shadow: 0 20px 40px rgba(90, 68, 59, 0.04);
+    border: 3px solid var(--color-cream-dark);
+}
+
+.feature-row {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.feature-badge {
+    font-size: 2.5rem;
+    transition: var(--transition-smooth);
+}
+
+.feature-row:hover .feature-badge {
+    transform: scale(1.3) rotate(15deg);
+}
+
+.feature-info h4 {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-espresso);
+}
+
+/* --- CARD CAROUSEL GRIDS (SERVICES) --- */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.service-card {
+    background-color: var(--color-white);
+    border-radius: var(--fun-radius);
+    padding: 3rem 2rem;
+    text-align: center;
+    transition: var(--transition-smooth);
+    border: 3px solid var(--color-cream-dark);
+    position: relative;
+}
+
+.service-card:hover {
+    transform: translateY(-10px) rotate(1deg); /* Whimsical slight lean on active hover cards */
+    border-color: var(--color-accent-fun);
+    box-shadow: 0 24px 35px rgba(255, 111, 97, 0.12);
+}
+
+.service-emoji {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    transition: var(--transition-smooth);
+}
+
+.service-card:hover .service-emoji {
+    transform: scale(1.25) rotate(-10deg) translateY(-5px);
+}
+
+.service-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    color: var(--color-espresso);
+    font-weight: 700;
+}
+
+/* --- SYSTEM HUB CONTACT CARDS --- */
+.contact-card {
+    max-width: 750px;
+    margin: 0 auto;
+    background-color: var(--color-white);
+    border-radius: var(--fun-radius);
+    padding: 4rem 3rem;
+    text-align: center;
+    box-shadow: 0 30px 60px rgba(90, 68, 59, 0.06);
+    border: 4px solid var(--color-cream-dark);
+}
+
+.contact-icon-wrap {
+    width: 90px;
+    height: 90px;
+    background-color: var(--color-cream-dark);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2.5rem auto;
+    color: var(--color-accent-fun);
+    transition: var(--transition-smooth);
+}
+
+.contact-card:hover .contact-icon-wrap {
+    transform: scale(1.1) rotate(360deg); /* Playful spinning tracking loop on interactives */
+}
+
+.contact-card h3 {
+    font-family: var(--font-display);
+    font-size: 2.75rem;
+    margin-bottom: 1rem;
+}
+
+.contact-card p {
+    color: var(--color-roast);
+    max-width: 480px;
+    margin: 0 auto 2.5rem auto;
+    font-size: 1.1rem;
+}
+
+.info-strip {
+    display: flex;
+    justify-content: center;
+    gap: 3.5rem;
+    margin-top: 3.5rem;
+    padding-top: 2.5rem;
+    border-top: 2px dashed var(--color-cream-dark);
+}
+
+.info-chunk h5 {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    text-transform: none;
+    letter-spacing: 0px;
+    color: var(--color-accent-fun);
+    margin-bottom: 0.4rem;
+}
+
+.info-chunk p {
+    font-size: 1.1rem;
+    color: var(--color-espresso);
+    font-weight: 700;
+}
+
+/* --- SPLIT DESKTOP LOCATION MAP MAPS --- */
+.contact-grid-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 20px;
+}
+
+.contact-details-col, 
+.contact-map-col {
+    flex: 1;
+    width: 50%;
+}
+
+.contact-map-col iframe {
+    border-radius: var(--fun-radius) !important;
+    border: 4px solid var(--color-cream-dark) !important;
+    box-shadow: 0 15px 35px rgba(90, 68, 59, 0.05);
+}
+
+/* --- GLOBAL ACCORDION EXTENSION CARDS (FAQ) --- */
+.faq-section {
+    padding: 5rem 2rem !important;
+    background-color: var(--color-cream-light) !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    display: block !important;
+}
+
+.faq-container {
+    max-width: 1050px !important;
+    margin: 0 auto !important;
+    padding: 0 1.5rem !important;
+    box-sizing: border-box !important;
+    display: block !important;
+}
+
+.faq-container h2 {
+    font-family: var(--font-display) !important;
+    text-align: center !important;
+    font-size: 2.75rem !important;
+    color: var(--color-espresso) !important;
+    margin-bottom: 1rem !important;
+}
+
+.faq-subtitle {
+    color: var(--color-latte) !important;
+    font-size: 1.15rem !important;
+    text-align: center !important;
+    max-width: 600px !important;
+    margin: 0 auto 4rem auto !important;
+}
+
+.faq-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1.75rem !important;
+    width: 100% !important;
+}
+
+.faq-item {
+    background: var(--color-white) !important;
+    border-radius: var(--fun-radius) !important;
+    box-shadow: 0 6px 0px var(--color-cream-dark) !important; /* Playful 3D block effects */
+    border: 2px solid var(--color-cream-dark) !important;
+    overflow: hidden !important;
+    transition: var(--transition-smooth) !important;
+}
+
+.faq-question {
+    padding: 1.5rem !important;
+    color: var(--color-espresso) !important;
+    font-family: var(--font-display) !important;
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+.faq-icon {
+    font-size: 1.25rem !important;
+    color: var(--color-accent-fun) !important;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+.faq-item[open] {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(166, 124, 101, 0.08) !important;
+    border-color: var(--color-accent-fun) !important;
+}
+
+.faq-item[open] .faq-icon {
+    transform: rotate(135deg) !important; /* Fun extra twist */
+    color: var(--color-espresso) !important;
+}
+
+/* --- FOOTER REGION --- */
+.footer {
+    background-color: var(--color-espresso);
+    color: var(--color-cream-light);
+    padding: 5rem 0 3rem 0;
+    margin-top: auto;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+}
+
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 2.5rem;
+    border-bottom: 2px dashed rgba(247, 230, 212, 0.15);
+    margin-bottom: 2.5rem;
+}
+
+.footer-brand h4 {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    margin-bottom: 0.25rem;
+    color: var(--color-accent-fun);
+}
+
+/* =========================================================================
+   RESPONSIVE UMBRELLA MEDIA QUERIES (768px and down Mobile Scaling)
+   ========================================================================= */
+@media (max-width: 1024px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .reviews-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .about-layout { grid-template-columns: 1fr; gap: 3rem; }
+}
+
+@media (max-width: 768px) {
+    .header-sticky {
+        top: 0;
+        left: 0;
+        right: 0;
+        border-radius: 0;
+        border-width: 0 0 3px 0;
+    }
+
+    .nav-container {
+        padding: 12px 10px !important;
+        flex-direction: column !important;
+        gap: 0.75rem !important;
+    }
+
+    .nav-menu {
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+        gap: 0.5rem 0.75rem !important;
+    }
+
+    .nav-link {
+        padding: 0.4rem 0.8rem !important;
+        font-size: 0.9rem;
+    }
+
+    .nav-buffer { height: 150px !important; }
+
+    .hero-section {
+        padding: 3rem 0 4rem 0 !important;
+        height: auto !important;
+        min-height: auto !important;
+        border-bottom-left-radius: 24px;
+        border-bottom-right-radius: 24px;
+    }
+
+    .hero-title { font-size: 2rem !important; margin-top: 8rem !important; }
+    .hero-desc { font-size: 1.05rem !important; }
+    
+    .hero-actions {
+        flex-direction: column !important;
+        max-width: 280px !important;
+        margin: 2rem auto 0 auto !important;
+    }
+
+    .section-title { font-size: 2.5rem !important; }
+    .highlights-grid { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
+    .info-strip { flex-direction: column !important; gap: 1.5rem !important; }
+    .footer-grid { flex-direction: column !important; gap: 2rem !important; }
+    .contact-grid-container { flex-direction: column !important; text-align: center !important; }
+    .contact-details-col, .contact-map-col { width: 100% !important; }
+    .contact-details-col a.btn { margin-left: auto !important; margin-right: auto !important; }
+}
+
+@media screen and (min-width: 768px) {
+    .faq-grid { grid-template-columns: 1fr 1fr !important; gap: 2rem !important; }
+}
+
+.nav-buffer {
+    height: 110px;
+    display: block;
+}
+
+.contact-details-col a.btn-tripadvisor:hover {
+    background-color: #2bc48c !important;
+    transform: translateY(-4px) scale(1.03);
+    color: #000000 !important;
+}
