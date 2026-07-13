@@ -1,21 +1,22 @@
 
         /* --- CORE DESIGN ENGINE VARIABLES (Hydrated by JSON) --- */
-        :root {
-            --color-espresso: #2C1A11;
-            --color-roast: #4A3525;
-            --color-latte: #8C6A50;
-            --color-cream-dark: #EADBC8;
-            --color-cream-light: #FAF6F0;
-            --color-white: #FFFFFF;
-            --color-gold: #F1C40F;
-            --font-display: 'Cormorant Garamond', serif;
-            --font-body: 'Plus Jakarta Sans', sans-serif;
+       :root {
+            /* --- COLOR PALETTE (FUNCTIONAL BRAND NAMES) --- */
+            --color-primary: #2C1A11;        /* The dominant signature brand color (former espresso) */
+            --color-secondary: #4A3525;      /* Supporting brand color for headings/accents (former roast) */
+            --color-accent: #8C6A50;         /* Call-to-actions, borders, highlights (former latte) */
+            --color-accent-subtle: #EADBC8;  /* Light background blocks, badges, dividers (former cream-dark) */
+            --color-bg-light: #FAF6F0;       /* Global website background canvas (former cream-light) */
+            --color-bg-white: #FFFFFF;       /* Pure white card backgrounds & text overrides */
+            --color-star-rating: #F1C40F;    /* Specifically for Google reviews & ratings highlights */
+
+            /* --- TYPOGRAPHY BLUEPRINTS --- */
+            --font-display: 'Cormorant Garamond', serif; /* Large stylised headlines */
+            --font-body: 'Plus Jakarta Sans', sans-serif;    /* Clean, highly readable interface/paragraph text */
+
+            /* --- SYSTEM STRUCTURAL CONTROLS --- */
             --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             --max-width: 1200px;
-
-            /* ... your colors ... */
-            --font-body: 'Inter', sans-serif;
-            --font-display: 'Inter', sans-serif;
         }
 
         /* --- BASE STYLES --- */
@@ -28,8 +29,8 @@
         html, body {
             overflow-x: hidden;
             scroll-behavior: smooth;
-            background-color: var(--color-cream-light);
-            color: var(--color-espresso);
+            background-color: var(--color-bg-light);
+            color: var(--color-primary);
             font-family: var(--font-body);
             line-height: 1.6;
         }
@@ -51,14 +52,14 @@
         .section-title {
             font-family: var(--font-display);
             font-size: 3rem;
-            color: var(--color-espresso);
+            color: var(--color-primary);
             margin-bottom: 1rem;
             font-weight: 700;
         }
 
         .section-subtitle {
             font-size: 1.1rem;
-            color: var(--color-latte);
+            color: var(--color-accent);
             max-width: 600px;
             margin: 0 auto 4rem auto;
             font-weight: 400;
@@ -81,25 +82,25 @@
         }
 
         .btn-primary {
-            background-color: var(--color-espresso);
-            color: var(--color-cream-light);
+            background-color: var(--color-primary);
+            color: var(--color-bg-light);
         }
 
             .btn-primary:hover {
-                background-color: var(--color-latte);
+                background-color: var(--color-accent);
                 transform: translateY(-2px);
                 box-shadow: 0 10px 20px rgba(74, 53, 37, 0.15);
             }
 
         .btn-secondary {
             background-color: transparent;
-            color: var(--color-espresso);
-            border: 2px solid var(--color-espresso);
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
         }
 
             .btn-secondary:hover {
-                background-color: var(--color-espresso);
-                color: var(--color-cream-light);
+                background-color: var(--color-primary);
+                color: var(--color-bg-light);
                 transform: translateY(-2px);
             }
 
@@ -145,7 +146,7 @@
             font-family: 'Inter', sans-serif !important;
             font-size: 1.5rem !important;
             font-weight: 700 !important;
-            color: var(--color-roast) !important;
+            color: var(--color-secondary) !important;
             /*color: #2563EB !important; /* Electric Blue */
             text-transform: none !important;
             line-height: 1.1 !important;
@@ -155,7 +156,7 @@
             font-family: 'Inter', sans-serif !important;
             font-size: 0.8rem !important;
             font-weight: 500 !important;
-            color: var(--color-latte) !important;
+            color: var(--color-accent) !important;
             text-transform: none !important;
             margin-top: 1px !important;
         }
@@ -204,7 +205,7 @@
 
         .nav-link {
             text-decoration: none;
-            color: var(--color-roast);
+            color: var(--color-secondary);
             font-size: 0.95rem;
             font-weight: 500;
             position: relative;
@@ -213,7 +214,7 @@
         }
 
             .nav-link:hover {
-                color: var(--color-espresso);
+                color: var(--color-primary);
             }
 
             .nav-link::after {
@@ -223,12 +224,12 @@
                 left: 0;
                 width: 0;
                 height: 2px;
-                background-color: var(--color-latte);
+                background-color: var(--color-accent);
                 transition: var(--transition-smooth);
             }
 
             .nav-link.active {
-                color: var(--color-espresso);
+                color: var(--color-primary);
                 font-weight: 600;
             }
 
@@ -251,7 +252,7 @@
             min-height: 750px;
             display: flex;
             align-items: center;
-            color: var(--color-white);
+            color: var(--color-bg-white);
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
@@ -323,11 +324,11 @@
         }
 
             .hero-logo-box .logo-text {
-                color: var(--color-white);
+                color: var(--color-bg-white);
             }
 
                 .hero-logo-box .logo-text span {
-                    color: var(--color-cream-dark);
+                    color: var(--color-accent-subtle);
                 }
 
         /* --- CLEANED HERO TYPOGRAPHY TIMELINES --- */
@@ -335,7 +336,7 @@
             font-family: var(--font-display);
             font-size: clamp(2.5rem, 6vw, 4.5rem);
             font-weight: 700;
-            color: var(--color-white);
+            color: var(--color-bg-white);
             margin-bottom: 1.5rem;
             line-height: 1.1;
             letter-spacing: -0.02em;
@@ -358,13 +359,13 @@
         }
 
             .hero-actions .btn-secondary {
-                color: var(--color-white);
-                border-color: var(--color-white);
+                color: var(--color-bg-white);
+                border-color: var(--color-bg-white);
             }
 
                 .hero-actions .btn-secondary:hover {
-                    background-color: var(--color-white);
-                    color: var(--color-espresso);
+                    background-color: var(--color-bg-white);
+                    color: var(--color-primary);
                 }
 
 
@@ -374,7 +375,7 @@
 
         /* --- HIGHLIGHT ROW --- */
         .quick-highlights {
-            background-color: var(--color-cream-dark);
+            background-color: var(--color-accent-subtle);
             padding: 3rem 0;
         }
 
@@ -391,30 +392,30 @@
         }
 
         .highlight-icon {
-            background: var(--color-white);
+            background: var(--color-bg-white);
             padding: 0.75rem;
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: 0 4px 10px rgba(74, 53, 37, 0.05);
-            color: var(--color-espresso);
+            color: var(--color-primary);
         }
 
         .highlight-text h4 {
             font-size: 1.1rem;
             margin-bottom: 0.25rem;
-            color: var(--color-espresso);
+            color: var(--color-primary);
         }
 
         .highlight-text p {
             font-size: 0.9rem;
-            color: var(--color-roast);
+            color: var(--color-secondary);
         }
 
         /* --- SOCIAL PROOF REVIEWS ROW --- */
         .reviews-section {
-            background-color: var(--color-white);
+            background-color: var(--color-bg-white);
             padding: 6rem 0;
         }
 
@@ -422,7 +423,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.75rem;
-            background: var(--color-cream-light);
+            background: var(--color-bg-light);
             padding: 0.75rem 1.5rem;
             border-radius: 50px;
             margin-bottom: 1.5rem;
@@ -448,7 +449,7 @@
         }
 
         .review-card {
-            background: var(--color-cream-light);
+            background: var(--color-bg-light);
             border-radius: 20px;
             padding: 2rem;
             border: 1px solid rgba(74, 53, 37, 0.04);
@@ -479,14 +480,14 @@
         .reviewer-avatar {
             width: 40px;
             height: 40px;
-            background: var(--color-cream-dark);
+            background: var(--color-accent-subtle);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
             font-size: 0.9rem;
-            color: var(--color-espresso);
+            color: var(--color-primary);
         }
 
         .reviewer-name {
@@ -496,12 +497,12 @@
 
         .reviewer-meta {
             font-size: 0.75rem;
-            color: var(--color-latte);
+            color: var(--color-accent);
         }
 
         .review-text {
             font-size: 0.95rem;
-            color: var(--color-roast);
+            color: var(--color-secondary);
             font-style: italic;
             line-height: 1.5;
         }
@@ -542,11 +543,11 @@
 
         .about-p {
             margin-bottom: 1.5rem;
-            color: var(--color-roast);
+            color: var(--color-secondary);
         }
 
         .features-box {
-            background-color: var(--color-white);
+            background-color: var(--color-bg-white);
             border-radius: 24px;
             padding: 3rem;
             box-shadow: 0 20px 40px rgba(74, 53, 37, 0.03);
@@ -571,12 +572,12 @@
         .feature-info h4 {
             font-size: 1.2rem;
             margin-bottom: 0.5rem;
-            color: var(--color-espresso);
+            color: var(--color-primary);
         }
 
         .feature-info p {
             font-size: 0.95rem;
-            color: var(--color-roast);
+            color: var(--color-secondary);
         }
 
         /* --- GRID CONTAINER CARDS --- */
@@ -587,7 +588,7 @@
         }
 
         .service-card {
-            background-color: var(--color-white);
+            background-color: var(--color-bg-white);
             border-radius: 20px;
             padding: 2.5rem 2rem;
             text-align: center;
@@ -604,7 +605,7 @@
                 left: 0;
                 width: 100%;
                 height: 4px;
-                background-color: var(--color-cream-dark);
+                background-color: var(--color-accent-subtle);
                 transition: var(--transition-smooth);
             }
 
@@ -614,7 +615,7 @@
             }
 
                 .service-card:hover::before {
-                    background-color: var(--color-latte);
+                    background-color: var(--color-accent);
                 }
 
         .service-emoji {
@@ -630,7 +631,7 @@
 
         .service-card h3 {
             font-size: 1.25rem;
-            color: var(--color-espresso);
+            color: var(--color-primary);
             font-weight: 600;
         }
 
@@ -638,7 +639,7 @@
         .contact-card {
             max-width: 700px;
             margin: 0 auto;
-            background-color: var(--color-white);
+            background-color: var(--color-bg-white);
             border-radius: 32px;
             padding: 4rem;
             text-align: center;
@@ -649,13 +650,13 @@
         .contact-icon-wrap {
             width: 80px;
             height: 80px;
-            background-color: var(--color-cream-light);
+            background-color: var(--color-bg-light);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 2rem auto;
-            color: var(--color-latte);
+            color: var(--color-accent);
         }
 
         .contact-card h3 {
@@ -665,7 +666,7 @@
         }
 
         .contact-card p {
-            color: var(--color-roast);
+            color: var(--color-secondary);
             max-width: 480px;
             margin: 0 auto 2.5rem auto;
             font-size: 1.05rem;
@@ -684,21 +685,21 @@
             font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: var(--color-latte);
+            color: var(--color-accent);
             margin-bottom: 0.25rem;
         }
 
         .info-chunk p {
             font-size: 1rem;
-            color: var(--color-espresso);
+            color: var(--color-primary);
             margin: 0;
             font-weight: 500;
         }
 
         /* --- FOOTER REGION --- */
         .footer {
-            background-color: var(--color-espresso);
-            color: var(--color-cream-light);
+            background-color: var(--color-primary);
+            color: var(--color-bg-light);
             padding: 4rem 0 3rem 0;
             margin-top: auto;
             border-top: 1px solid rgba(255,255,255,0.05);
@@ -730,13 +731,13 @@
         }
 
             .footer-meta a {
-                color: var(--color-cream-dark);
+                color: var(--color-accent-subtle);
                 text-decoration: none;
                 transition: var(--transition-smooth);
             }
 
                 .footer-meta a:hover {
-                    color: var(--color-white);
+                    color: var(--color-bg-white);
                 }
 
         .copyright {

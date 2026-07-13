@@ -16,9 +16,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" id="theme-stylesheet" href="./styles/coffee.css">
 </head>
 <body>
+
+    <!-- THE SPLASH SCREEN -->
+    <div id="site-splash-screen" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #0f172a; z-index: 99999; display: flex; align-items: center; justify-content: center; transition: opacity 0.8s ease, visibility 0.8s ease;">
+    
+        <!-- Added a smooth scaling transition directly to the splash frame anchor -->
+        <div id="splash-logo-frame" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0; position: relative; overflow: visible !important; transition: transform 2.0s cubic-bezier(0.25, 1, 0.5, 1);">
+            
+            <!-- 🌟 REMOVED mix-blend-mode so the graphic renders in brilliant full color -->
+            <img id="splash-logo-image" src="logo.png" alt="Brand Emblem" 
+                style="display: block !important; max-width: none !important; object-fit: contain; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 10;">
+        </div>
+    </div>
 
     <header class="header-sticky">
         <div class="container nav-container">
@@ -32,8 +44,8 @@
             style="display: none; height: 5em; width: auto; object-fit: contain; margin-bottom: 10px;">
     
         <div class="logo-text">
-            <span id="lbl-logo-main">Copperwheats</span>
-            <span id="lbl-logo-sub">by the Ferry Terminal</span>
+            <span id="lbl-logo-main">Logo Main</span>
+            <span id="lbl-logo-sub">Logo Sub</span>
         </div>
         </a>
 
@@ -59,17 +71,20 @@
                 <div class="hero-content">
                     
                     <div class="hero-logo-box" style="display: flex !important; align-items: center !important; gap: 24px !important; background: rgba(15, 23, 42, 0.4) !important; backdrop-filter: blur(12px) !important; -webkit-backdrop-filter: blur(12px) !important; padding: 16px 28px !important; border-radius: 50px !important; border: 1px solid rgba(255, 255, 255, 0.15) !important; width: fit-content !important; margin-bottom: 2rem !important; position: relative;">
-                        
-                        <div style="width: 130px; height: 130px; background: rgba(255, 255, 255, 0.05); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255, 255, 255, 0.2); flex-shrink: 0; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4); position: relative; overflow: visible !important;">
-                            <img id="hero-logo-image" src="logo.png" alt="Brand Emblem" 
-                                style="display: block !important; width: 180px !important; height: 180px !important; max-width: none !important; object-fit: contain; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); mix-blend-mode: multiply !important; z-index: 10;">
-                        </div>
+    
+            <!-- 🌟 Cleaned frame wrapper with the exact id targeted by the script -->
+            <div id="hero-logo-frame" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0; position: relative; overflow: visible !important;">
+                
+                <!-- 🌟 Cleaned image element. Sizing & positioning will be handled by the engine -->
+                <img id="hero-logo-image" src="logo.png" alt="Brand Emblem" 
+                    style="display: block !important; max-width: none !important; object-fit: contain; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); mix-blend-mode: multiply !important; z-index: 10;">
+            </div>
 
-                        <div style="display: flex !important; flex-direction: column !important; text-align: left !important; line-height: 1.2 !important; white-space: nowrap !important; padding-right: 12px;">
-                            <span id="lbl-hero-logo-main" style="font-family: 'Inter', sans-serif !important; font-size: 1.8rem !important; font-weight: 700 !important; color: #EADBC8 !important; text-transform: none !important; letter-spacing: -0.5px;">Nardini's</span>
-                            <span id="lbl-hero-logo-sub" style="font-family: 'Inter', sans-serif !important; font-size: 1.05rem !important; font-weight: 500 !important; color: #FAF6F0 !important; text-transform: none !important; margin-top: 4px !important; opacity: 0.85;">Coffee Shop</span>
-                        </div>
-                    </div>
+            <div style="display: flex !important; flex-direction: column !important; text-align: left !important; line-height: 1.2 !important; white-space: nowrap !important; padding-right: 12px;">
+                <span id="lbl-hero-logo-main" style="font-family: 'Inter', sans-serif !important; font-size: 1.8rem !important; font-weight: 700 !important; color: #EADBC8 !important; text-transform: none !important; letter-spacing: -0.5px;">Hero Main</span>
+                <span id="lbl-hero-logo-sub" style="font-family: 'Inter', sans-serif !important; font-size: 1.05rem !important; font-weight: 500 !important; color: #FAF6F0 !important; text-transform: none !important; margin-top: 4px !important; opacity: 0.85;">Hero Sub</span>
+            </div>
+            </div>
 
                     <h1 class="hero-title" id="lbl-hero-title">Title</h1>
                     <p class="hero-desc" id="lbl-hero-desc">Desc</p>
@@ -80,7 +95,7 @@
                     </div>
                 </div> 
             </div> 
-</section>
+            </section>
 
             <section class="quick-highlights">
                 <div class="container">

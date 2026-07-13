@@ -80,6 +80,18 @@ function populateSchemaSEO(config) {
 // CONFIGURATION ENGINE CORE (Hydrates active DOM elements safely)
 // =========================================================================
 function hydrateTemplateEngine(config) {
+
+    // --- DYNAMIC THEME ENGINE SWITCHER ---
+    if (config.theme) {
+        const themeLink = document.getElementById('theme-stylesheet');
+        if (themeLink) {
+            // Updated to point directly inside the new styles/ subfolder
+            themeLink.setAttribute('href', `./styles/${config.theme}`);
+        }
+    }
+
+
+
     // Apply Custom Stylesheets dynamically via CSS variables
     const root = document.documentElement;
     root.style.setProperty('--color-espresso', config.themeColors.textDark);
@@ -132,6 +144,91 @@ function hydrateTemplateEngine(config) {
     const lblHeroDesc = document.getElementById('lbl-hero-desc');
     if (lblHeroDesc) lblHeroDesc.innerText = config.homePage.heroDesc;
 
+    // --- DIRECT CONFIG BRAND LOGO LAYOUT CONTROLLER ---
+    try {
+        const logoFrame = document.getElementById('hero-logo-frame');
+        const logoImg = document.getElementById('hero-logo-image');
+        
+        // Target your imported configuration object directly
+        const settings = siteConfig?.logoSettings;
+
+        if (logoFrame && logoImg && settings) {
+            
+            // 1. Process the Backdrop Frame Blueprint
+            if (settings.showFrame) {
+                logoFrame.style.display = "flex";
+
+                
+                logoFrame.style.setProperty('width', settings.frameWidth, 'important');
+                logoFrame.style.setProperty('height', settings.frameHeight, 'important');
+                logoFrame.style.setProperty('border-radius', settings.frameRadius, 'important');
+                
+                // Re-apply core translucent appearance rules
+                logoFrame.style.background = "rgba(255, 255, 255, 0.05)";
+                logoFrame.style.border = "1px solid rgba(255, 255, 255, 0.2)";
+                logoFrame.style.boxShadow = "0 8px 32px 0 rgba(0, 0, 0, 0.4)";
+            } else {
+                // Completely strip visual frame rules if toggled off
+                logoFrame.style.background = "transparent";
+                logoFrame.style.border = "none";
+                logoFrame.style.boxShadow = "none";
+                logoFrame.style.setProperty('width', 'auto', 'important');
+                logoFrame.style.setProperty('height', 'auto', 'important');
+            }
+
+            // 2. Process the Inner Image Dimensions
+            logoImg.style.setProperty('width', settings.imageWidth, 'important');
+            logoImg.style.setProperty('height', settings.imageHeight, 'important');
+            // 🌟 Dynamic centering rules driven entirely by the configuration file
+            logoImg.style.top = settings.imageTop || "50%";
+            logoImg.style.left = settings.imageLeft || "50%";
+        }
+    } catch (e) {
+        console.error("Layout engine encountered a brand asset configuration error:", e);
+    }
+
+    try {
+        const splashScreen = document.getElementById('site-splash-screen');
+        const splashFrame = document.getElementById('splash-logo-frame');
+        const splashImg = document.getElementById('splash-logo-image');
+        const settings = siteConfig?.logoSettings;
+
+        if (splashFrame && splashImg && settings) {
+            // 1. Anchor the base sizes to your config layout rules
+            splashFrame.style.setProperty('width', settings.frameWidth, 'important');
+            splashFrame.style.setProperty('height', settings.frameHeight, 'important');
+            splashFrame.style.setProperty('border-radius', settings.frameRadius, 'important');
+            
+            splashImg.style.setProperty('width', settings.imageWidth, 'important');
+            splashImg.style.setProperty('height', settings.imageHeight, 'important');
+            splashImg.style.top = settings.imageTop || "50%";
+            splashImg.style.left = settings.imageLeft || "50%";
+
+            // 2. 🌟 INITIAL IMPACT: Force the logo to start massive when the page instantly loads
+            splashFrame.style.transform = "scale(42.2)"; 
+        }
+
+        // 3. THE GRAND REVEAL: Smoothly shrink the logo and vanish the screen
+        if (splashScreen && splashFrame) {
+            // Tiny 100ms delay ensures the browser registers the "large" size first
+            setTimeout(() => {
+                // Shrink the logo down into its normal dimensions smoothly
+                splashFrame.style.transform = "scale(1)"; 
+            }, 100);
+
+            // Wait for the shrink movement to establish, then fade out the screen overlay background
+            setTimeout(() => {
+                splashScreen.style.opacity = "0";
+                splashScreen.style.visibility = "hidden";
+            }, 2200); // Stays on screen just long enough to enjoy the full animation cycle 
+        }
+    } catch (e) {
+        console.error("Splash scale routine failed:", e);
+    }
+
+
+
+
     // Highlights Generator
     const highlightsContainer = document.getElementById('container-highlights');
     if (highlightsContainer) {
@@ -144,6 +241,11 @@ function hydrateTemplateEngine(config) {
             heart: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>`,
             wifi: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.94 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>`,
             pound: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 7a4 4 0 0 0-7.75-1.38A4 4 0 0 0 7 9.5V19h11" /><path d="M5 14h11" /><path d="M5 19h14" /></svg>`,
+        
+            // --- NEW PUB-SPECIFIC ADDITIONS ---
+            utensils: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path><path d="M7 2v20"></path><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path></svg>`,
+            star: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>`,
+            martini: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"></path><path d="m21 3-9 9-9-9Z"></path><path d="M3 14h18"></path></svg>`
         };
         config.homePage.highlights.forEach(item => {
             highlightsContainer.innerHTML += `
@@ -261,14 +363,17 @@ function hydrateTemplateEngine(config) {
 
         // Inject dynamic relative PDF Menu button right inside the layout if turned on
         if (config.features && config.features.showMenu) {
-            const repoPath = window.location.hostname.includes('github.io') ? `/${config.repositoryName}` : '';
             const menuContainer = document.querySelector('.menu-download-container');
             if (menuContainer) {
                 menuContainer.style.display = 'block';
-                // Safe relative fallbacks pointing directly to your images root asset directory
+                // Safe relative path pointing directly to your images root asset directory
                 const pdfLink = menuContainer.querySelector('a');
-                if (pdfLink) pdfLink.setAttribute('href', `${repoPath}/images/menu.pdf`);
+                if (pdfLink) pdfLink.setAttribute('href', './images/menu.pdf');
             }
+        } else {
+            // Optional: hides the container if showMenu is turned off in config
+            const menuContainer = document.querySelector('.menu-download-container');
+            if (menuContainer) menuContainer.style.display = 'none';
         }
     }
 
