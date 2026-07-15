@@ -1,13 +1,32 @@
 
         /* --- CORE DESIGN ENGINE VARIABLES (Hydrated by JSON) --- */
         :root {
-            --color-espresso: #2C1A11;
-            --color-roast: #4A3525;
-            --color-latte: #8C6A50;
-            --color-cream-dark: #EADBC8;
-            --color-cream-light: #FAF6F0;
+
+            /* Brand Colors (The main thematic colors) */
+            --color-primary: #8C6A50;       /* Old: --color-primary (Main accent/brand color) */
+            --color-primary-dark: #4A3525;  /* Old: --color-primary-dark (Hover states/darker brand accents) */
+            --color-primary-light: #FAF6F0; /* Old: --color-primary-light (Very soft brand background tint) */
+
+            /* Neutrals (For structure, cards, borders, text, and backgrounds) */
+            --color-text-main: #2C1A11;     /* Old: --color-text-main (Dark body text/headings) */
+            --color-neutral-dark: #4A3525;  /* Secondary dark/muted text */
+            --color-neutral-mid: #EADBC8;   /* Old: --color-neutral-mid (Borders, dividers, card backdrops) */
+            --color-bg-main: #FAF6F0;       /* Old: --color-primary-light (Page background) */
+            
+            /* Utility & Highlights */
             --color-white: #FFFFFF;
-            --color-gold: #F1C40F;
+            --color-accent: #F1C40F;        /* Old: --color-accent (Highlights, stars, alerts) */
+
+
+            /* --color-text-main: #2C1A11;
+            --color-primary-dark: #4A3525;
+            --color-primary: #8C6A50;
+            --color-neutral-mid: #EADBC8;
+            --color-primary-light: #FAF6F0;
+            --color-white: #FFFFFF;
+            --color-accent: #F1C40F; */
+
+
             --font-display: 'Cormorant Garamond', serif;
             --font-body: 'Plus Jakarta Sans', sans-serif;
             --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -28,8 +47,8 @@
         html, body {
             overflow-x: hidden;
             scroll-behavior: smooth;
-            background-color: var(--color-cream-light);
-            color: var(--color-espresso);
+            background-color: var(--color-primary-light);
+            color: var(--color-text-main);
             font-family: var(--font-body);
             line-height: 1.6;
         }
@@ -51,14 +70,14 @@
         .section-title {
             font-family: var(--font-display);
             font-size: 3rem;
-            color: var(--color-espresso);
+            color: var(--color-text-main);
             margin-bottom: 1rem;
             font-weight: 700;
         }
 
         .section-subtitle {
             font-size: 1.1rem;
-            color: var(--color-latte);
+            color: var(--color-primary);
             max-width: 600px;
             margin: 0 auto 4rem auto;
             font-weight: 400;
@@ -81,25 +100,25 @@
         }
 
         .btn-primary {
-            background-color: var(--color-espresso);
-            color: var(--color-cream-light);
+            background-color: var(--color-text-main);
+            color: var(--color-primary-light);
         }
 
             .btn-primary:hover {
-                background-color: var(--color-latte);
+                background-color: var(--color-primary);
                 transform: translateY(-2px);
                 box-shadow: 0 10px 20px rgba(74, 53, 37, 0.15);
             }
 
         .btn-secondary {
             background-color: transparent;
-            color: var(--color-espresso);
-            border: 2px solid var(--color-espresso);
+            color: var(--color-text-main);
+            border: 2px solid var(--color-text-main);
         }
 
             .btn-secondary:hover {
-                background-color: var(--color-espresso);
-                color: var(--color-cream-light);
+                background-color: var(--color-text-main);
+                color: var(--color-primary-light);
                 transform: translateY(-2px);
             }
 
@@ -145,7 +164,7 @@
             font-family: 'Inter', sans-serif !important;
             font-size: 1.5rem !important;
             font-weight: 700 !important;
-            color: var(--color-roast) !important;
+            color: var(--color-primary-dark) !important;
             /*color: #2563EB !important; /* Electric Blue */
             text-transform: none !important;
             line-height: 1.1 !important;
@@ -155,7 +174,7 @@
             font-family: 'Inter', sans-serif !important;
             font-size: 0.8rem !important;
             font-weight: 500 !important;
-            color: var(--color-latte) !important;
+            color: var(--color-primary) !important;
             text-transform: none !important;
             margin-top: 1px !important;
         }
@@ -204,7 +223,7 @@
 
         .nav-link {
             text-decoration: none;
-            color: var(--color-roast);
+            color: var(--color-primary-dark);
             font-size: 0.95rem;
             font-weight: 500;
             position: relative;
@@ -213,7 +232,7 @@
         }
 
             .nav-link:hover {
-                color: var(--color-espresso);
+                color: var(--color-text-main);
             }
 
             .nav-link::after {
@@ -223,12 +242,12 @@
                 left: 0;
                 width: 0;
                 height: 2px;
-                background-color: var(--color-latte);
+                background-color: var(--color-primary);
                 transition: var(--transition-smooth);
             }
 
             .nav-link.active {
-                color: var(--color-espresso);
+                color: var(--color-text-main);
                 font-weight: 600;
             }
 
@@ -327,7 +346,7 @@
             }
 
                 .hero-logo-box .logo-text span {
-                    color: var(--color-cream-dark);
+                    color: var(--color-neutral-mid);
                 }
 
         /* --- CLEANED HERO TYPOGRAPHY TIMELINES --- */
@@ -364,7 +383,7 @@
 
                 .hero-actions .btn-secondary:hover {
                     background-color: var(--color-white);
-                    color: var(--color-espresso);
+                    color: var(--color-text-main);
                 }
 
 
@@ -374,7 +393,7 @@
 
         /* --- HIGHLIGHT ROW --- */
         .quick-highlights {
-            background-color: var(--color-cream-dark);
+            background-color: var(--color-neutral-mid);
             padding: 3rem 0;
         }
 
@@ -398,18 +417,18 @@
             align-items: center;
             justify-content: center;
             box-shadow: 0 4px 10px rgba(74, 53, 37, 0.05);
-            color: var(--color-espresso);
+            color: var(--color-text-main);
         }
 
         .highlight-text h4 {
             font-size: 1.1rem;
             margin-bottom: 0.25rem;
-            color: var(--color-espresso);
+            color: var(--color-text-main);
         }
 
         .highlight-text p {
             font-size: 0.9rem;
-            color: var(--color-roast);
+            color: var(--color-primary-dark);
         }
 
         /* --- SOCIAL PROOF REVIEWS ROW --- */
@@ -422,7 +441,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.75rem;
-            background: var(--color-cream-light);
+            background: var(--color-primary-light);
             padding: 0.75rem 1.5rem;
             border-radius: 50px;
             margin-bottom: 1.5rem;
@@ -435,7 +454,7 @@
         }
 
         .reviews-rating-stars {
-            color: var(--color-gold);
+            color: var(--color-accent);
             letter-spacing: 2px;
             font-weight: bold;
         }
@@ -448,7 +467,7 @@
         }
 
         .review-card {
-            background: var(--color-cream-light);
+            background: var(--color-primary-light);
             border-radius: 20px;
             padding: 2rem;
             border: 1px solid rgba(74, 53, 37, 0.04);
@@ -479,14 +498,14 @@
         .reviewer-avatar {
             width: 40px;
             height: 40px;
-            background: var(--color-cream-dark);
+            background: var(--color-neutral-mid);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
             font-size: 0.9rem;
-            color: var(--color-espresso);
+            color: var(--color-text-main);
         }
 
         .reviewer-name {
@@ -496,12 +515,12 @@
 
         .reviewer-meta {
             font-size: 0.75rem;
-            color: var(--color-latte);
+            color: var(--color-primary);
         }
 
         .review-text {
             font-size: 0.95rem;
-            color: var(--color-roast);
+            color: var(--color-primary-dark);
             font-style: italic;
             line-height: 1.5;
         }
@@ -542,7 +561,7 @@
 
         .about-p {
             margin-bottom: 1.5rem;
-            color: var(--color-roast);
+            color: var(--color-primary-dark);
         }
 
         .features-box {
@@ -571,12 +590,12 @@
         .feature-info h4 {
             font-size: 1.2rem;
             margin-bottom: 0.5rem;
-            color: var(--color-espresso);
+            color: var(--color-text-main);
         }
 
         .feature-info p {
             font-size: 0.95rem;
-            color: var(--color-roast);
+            color: var(--color-primary-dark);
         }
 
         /* --- GRID CONTAINER CARDS --- */
@@ -604,7 +623,7 @@
                 left: 0;
                 width: 100%;
                 height: 4px;
-                background-color: var(--color-cream-dark);
+                background-color: var(--color-neutral-mid);
                 transition: var(--transition-smooth);
             }
 
@@ -614,7 +633,7 @@
             }
 
                 .service-card:hover::before {
-                    background-color: var(--color-latte);
+                    background-color: var(--color-primary);
                 }
 
         .service-emoji {
@@ -630,7 +649,7 @@
 
         .service-card h3 {
             font-size: 1.25rem;
-            color: var(--color-espresso);
+            color: var(--color-text-main);
             font-weight: 600;
         }
 
@@ -649,13 +668,13 @@
         .contact-icon-wrap {
             width: 80px;
             height: 80px;
-            background-color: var(--color-cream-light);
+            background-color: var(--color-primary-light);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 2rem auto;
-            color: var(--color-latte);
+            color: var(--color-primary);
         }
 
         .contact-card h3 {
@@ -665,7 +684,7 @@
         }
 
         .contact-card p {
-            color: var(--color-roast);
+            color: var(--color-primary-dark);
             max-width: 480px;
             margin: 0 auto 2.5rem auto;
             font-size: 1.05rem;
@@ -684,21 +703,21 @@
             font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: var(--color-latte);
+            color: var(--color-primary);
             margin-bottom: 0.25rem;
         }
 
         .info-chunk p {
             font-size: 1rem;
-            color: var(--color-espresso);
+            color: var(--color-text-main);
             margin: 0;
             font-weight: 500;
         }
 
         /* --- FOOTER REGION --- */
         .footer {
-            background-color: var(--color-espresso);
-            color: var(--color-cream-light);
+            background-color: var(--color-text-main);
+            color: var(--color-primary-light);
             padding: 4rem 0 3rem 0;
             margin-top: auto;
             border-top: 1px solid rgba(255,255,255,0.05);
@@ -730,7 +749,7 @@
         }
 
             .footer-meta a {
-                color: var(--color-cream-dark);
+                color: var(--color-neutral-mid);
                 text-decoration: none;
                 transition: var(--transition-smooth);
             }
@@ -1139,4 +1158,77 @@
         border-color: #2bc48c !important;
         color: #000000 !important;
     }
-    
+
+    /* Strip interactive "button" behavior from services cards */
+    .service-card {
+        cursor: default !important; /* Removes the clickable hand pointer */
+        pointer-events: none;      /* Disables any click/tap states entirely */
+        transform: none !important; /* Stops the card from lifting up on hover */
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03) !important; /* Softens shadow so it doesn't look like a button */
+        transition: none !important; /* Removes transition animations */
+    }
+
+    /* --- Cinematic Splash Screen Blend --- */
+
+    /* 1. Ensure the splash screen is fully opaque and sits on top */
+    #site-splash-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 9999;
+        transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1), 
+                    visibility 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    /* 2. When the animation finishes, smoothly fade the whole splash out of existence */
+    #site-splash-screen.fade-out-splash {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    /* 3. Start the main page content as hidden and slightly blurred/scaled */
+    #main-content-wrapper {
+        opacity: 0;
+        filter: blur(15px);
+        transform: scale(0.96);
+        transition: opacity 1.8s cubic-bezier(0.25, 1, 0.5, 1), 
+                    filter 1.8s cubic-bezier(0.25, 1, 0.5, 1), 
+                    transform 1.8s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    /* 4. This class will trigger the smooth fade-and-focus blend */
+    #main-content-wrapper.reveal-site {
+        opacity: 1;
+        filter: blur(0);
+        transform: scale(1);
+    }
+
+    /* THE SKIP SPLASH SCREEN CODE below */
+    /* Instantly bypasses the splash screen if already seen in this session */
+    .skip-splash #site-splash-screen {
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transition: none !important;
+    }
+
+    /* Instantly reveals the main content when skipping the splash */
+    .skip-splash #main-content-wrapper {
+        opacity: 1 !important;
+        visibility: visible !important;
+        
+        /* 🎯 1. Kill any active filters (like blur) */
+        filter: none !important;
+        -webkit-filter: none !important;
+
+        /* 🎯 2. Completely reset transforms & hardware acceleration layers */
+        transform: none !important;
+        will-change: auto !important;
+
+        /* 🎯 3. Force the browser to render text razor-sharp */
+        -webkit-font-smoothing: subpixel-antialiased !important;
+        -moz-osx-font-smoothing: auto !important;
+    }
+    /* THE SKIP SPLASH SCREEN CODE above */

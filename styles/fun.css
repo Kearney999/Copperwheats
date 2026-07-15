@@ -11,8 +11,9 @@
     --color-latte: #A67C65;
     --color-cream-dark: #F7E6D4;
     --color-cream-light: #FFFBF7;
+
     --color-white: #FFFFFF;
-    --color-gold: #FFC93C;
+    --color-accent: #FFC93C;
     /* --color-accent-fun: #FF6F61; Vibrant playful coral popping accent */
     --color-accent-fun: #5d3167; /* Vibrant playful coral popping accent */
 
@@ -229,6 +230,8 @@ main-section {
     min-height: 750px;
     display: flex;
     align-items: center;
+    justify-content: center; /* 🎯 Centering engine */
+    text-align: center;      /* 🎯 Centering engine */
     color: var(--color-white);
     background-repeat: no-repeat;
     background-position: center center;
@@ -253,6 +256,13 @@ main-section {
 }
 
 .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;     /* 🎯 Centers title, description, and button container */
+    text-align: center;      /* 🎯 Centers the text wrapping */
+    width: 100%;
+    max-width: 800px;        /* Limits max horizontal spread on desktop */
+    padding: 0 20px;
     transition: opacity 1.0s ease-in-out, transform 1.0s ease-in-out;
     opacity: 1;
     z-index: 2;
@@ -285,10 +295,22 @@ main-section {
 }
 
 .hero-actions {
-    display: flex;
-    gap: 1.25rem;
-    justify-content: center;
-}
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;     /* Centers the buttons inside the container */
+        width: 100% !important;
+        max-width: 280px !important;
+        margin: 2rem auto 0 auto !important; /* Centers the container on the screen */
+        gap: 1rem !important;               /* Puts a clean gap between the stacked buttons */
+    }
+
+/* 🎯 THIS IS THE CRITICAL ADDITION: It forces the buttons to scale down */
+    .hero-actions .btn {
+        width: 100% !important;             /* Forces button to shrink to exactly 280px wide */
+        padding: 1.1rem 1rem !important;    /* Reduces left/right padding so text doesn't overflow */
+        text-align: center !important;      /* Centers the text inside the button */
+        margin: 0 !important;               /* Resets any conflicting margins */
+    }
 
 .hero-actions .btn-secondary {
     background-color: rgba(255, 255, 255, 0.2);
@@ -375,7 +397,7 @@ main-section {
 }
 
 .reviews-rating-stars {
-    color: var(--color-gold);
+    color: var(--color-accent);
     letter-spacing: 3px;
     font-size: 1.1rem;
 }
@@ -756,23 +778,88 @@ main-section {
 
     .nav-buffer { height: 150px !important; }
 
+    
+
+    /* 1. Force the hero parent to fit the screen and wrap content */
     .hero-section {
         padding: 3rem 0 4rem 0 !important;
         height: auto !important;
         min-height: auto !important;
         border-bottom-left-radius: 24px;
         border-bottom-right-radius: 24px;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        overflow: hidden !important;
     }
 
-    .hero-title { font-size: 2rem !important; margin-top: 8rem !important; }
-    .hero-desc { font-size: 1.05rem !important; }
-    
-    .hero-actions {
+    /* 1. Ensure the main content container respects mobile boundaries */
+    .hero-content {
+        display: flex !important;
         flex-direction: column !important;
-        max-width: 280px !important;
-        margin: 2rem auto 0 auto !important;
+        align-items: center !important;
+        text-align: center !important;
+        width: 100% !important;
+        max-width: 100vw !important;        /* 🎯 Limits container strictly to screen width */
+        padding: 0 1.25rem !important;      /* 🎯 Forces 20px of breathing room on the left/right */
+        box-sizing: border-box !important;  /* Includes padding inside width calculations */
     }
 
+    /* 2. Force the title to wrap neatly */
+    .hero-title { 
+        font-size: 1.85rem !important;      /* Sized perfectly for mobile screens */
+        margin-top: 8rem !important; 
+        width: 100% !important;
+        max-width: 100% !important;
+        display: block !important;          /* Switched to block to force wrapping behavior */
+        white-space: normal !important;     /* 🎯 Prevents browser from forcing one long line */
+        word-wrap: break-word !important;   /* Safely wraps long words */
+        overflow-wrap: break-word !important;
+    }
+    
+    /* 3. Force the description text to wrap neatly */
+    .hero-desc { 
+        font-size: 1rem !important; 
+        width: 100% !important;
+        max-width: 100% !important;
+        display: block !important;          /* Forces block layout */
+        white-space: normal !important;     /* 🎯 Breaks text onto new lines automatically */
+        word-wrap: break-word !important;
+        margin: 0 auto 1.5rem auto !important;
+    }
+    
+    /* 4. 🎯 THE BUTTON WIDTH FIX: Restrict the container and the buttons */
+    .hero-actions {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+        max-width: 220px !important;        /* Keeps the buttons neat and compact (like coffee.css) */
+        margin: 2rem auto 0 auto !important; /* Centers the button column */
+        gap: 0.75rem !important;
+    }
+
+    .hero-actions .btn {
+        width: 100% !important;             /* Fills the 220px container exactly */
+        max-width: 220px !important;
+        box-sizing: border-box !important;
+        padding: 1rem 1rem !important;      /* Cleans up padding so the buttons aren't bloated */
+        text-align: center !important;
+        margin: 0 !important;
+    }
+
+    /* 🎯 Shrink the logo box to absolutely nothing on mobile */
+    .hero-logo-box {
+        height: 0 !important;
+        width: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        border: none !important;
+        opacity: 0 !important;
+        overflow: hidden !important;
+        pointer-events: none !important;
+    }
+    
     .section-title { font-size: 2.5rem !important; }
     .highlights-grid { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
     .info-strip { flex-direction: column !important; gap: 1.5rem !important; }
@@ -796,3 +883,78 @@ main-section {
     transform: translateY(-4px) scale(1.03);
     color: #000000 !important;
 }
+
+/* Strip interactive "button" behavior from services cards */
+.service-card {
+    cursor: default !important; /* Removes the clickable hand pointer */
+    pointer-events: none;      /* Disables any click/tap states entirely */
+    transform: none !important; /* Stops the card from lifting up on hover */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03) !important; /* Softens shadow so it doesn't look like a button */
+    transition: none !important; /* Removes transition animations */
+}
+
+/* --- Cinematic Splash Screen Blend --- */
+
+    /* 1. Ensure the splash screen is fully opaque and sits on top */
+    #site-splash-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 9999;
+        transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1), 
+                    visibility 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    /* 2. When the animation finishes, smoothly fade the whole splash out of existence */
+    #site-splash-screen.fade-out-splash {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    /* 3. Start the main page content as hidden and slightly blurred/scaled */
+    #main-content-wrapper {
+        opacity: 0;
+        filter: blur(15px);
+        transform: scale(0.96);
+        transition: opacity 1.8s cubic-bezier(0.25, 1, 0.5, 1), 
+                    filter 1.8s cubic-bezier(0.25, 1, 0.5, 1), 
+                    transform 1.8s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    /* 4. This class will trigger the smooth fade-and-focus blend */
+    #main-content-wrapper.reveal-site {
+        opacity: 1;
+        filter: blur(0);
+        transform: scale(1);
+    }
+
+
+    /* THE SKIP SPLASH SCREEN CODE below */
+    /* Instantly bypasses the splash screen if already seen in this session */
+    .skip-splash #site-splash-screen {
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transition: none !important;
+    }
+
+    /* Instantly reveals the main content when skipping the splash */
+    .skip-splash #main-content-wrapper {
+        opacity: 1 !important;
+        visibility: visible !important;
+        
+        /* 🎯 1. Kill any active filters (like blur) */
+        filter: none !important;
+        -webkit-filter: none !important;
+
+        /* 🎯 2. Completely reset transforms & hardware acceleration layers */
+        transform: none !important;
+        will-change: auto !important;
+
+        /* 🎯 3. Force the browser to render text razor-sharp */
+        -webkit-font-smoothing: subpixel-antialiased !important;
+        -moz-osx-font-smoothing: auto !important;
+    }
+    /* THE SKIP SPLASH SCREEN CODE above */

@@ -22,6 +22,12 @@
     <link rel="stylesheet" id="theme-stylesheet" href="./styles/coffee.css">
 </head>
 <body>
+    <!-- We check to see if browser first time open. Simply setting a boolean value-->
+    <script>
+        if (sessionStorage.getItem('splashShown')) {
+            document.documentElement.classList.add('skip-splash');
+        }
+    </script>
 
     <!-- The Fullscreen Splash Screen Overlay -->
     <div id="site-splash-screen" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #0f172a; z-index: 99999; display: flex; align-items: center; justify-content: center; transition: background 0.8s ease, opacity 0.6s ease, visibility 0.8s ease;">
@@ -35,7 +41,7 @@
         </div>
     </div>
 
-    <header class="header-sticky">
+    <header class="header-sticky" id="main-content-wrapper">
         <div class="container nav-container">
 
 
