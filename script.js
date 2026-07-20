@@ -245,7 +245,16 @@ function hydrateTemplateEngine(config) {
             pound: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 7a4 4 0 0 0-7.75-1.38A4 4 0 0 0 7 9.5V19h11" /><path d="M5 14h11" /><path d="M5 19h14" /></svg>`,
             utensils: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path><path d="M7 2v20"></path><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path></svg>`,
             star: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>`,
-            martini: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"></path><path d="m21 3-9 9-9-9Z"></path><path d="M3 14h18"></path></svg>`
+            martini: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"></path><path d="m21 3-9 9-9-9Z"></path><path d="M3 14h18"></path></svg>`,
+        
+            //WEB DESIGN LOGOs
+            monitor: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>`,
+            smartphone: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>`,
+            trendingUp: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>`,
+            mapPin: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>`,
+            award: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>`,
+            search: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>`
+        
         };
         config.homePage.highlights.forEach(item => {
             highlightsContainer.innerHTML += `
@@ -425,6 +434,33 @@ function hydrateTemplateEngine(config) {
 
     const mapElement = document.getElementById('lbl-contact-map');
     if (mapElement) mapElement.src = config.contactPage.mapUrl;
+
+
+    // Target the 360 container and iframe
+    const photoSphereContainer = document.getElementById('container-photo-sphere');
+    const photoSphereElement = document.getElementById('lbl-photo-sphere');
+
+    if (photoSphereContainer) {
+        // Check if showPhotoSphere flag is explicitly true AND a URL exists
+        if (config.features.showPhotoSphere && config.contactPage.photoSphereUrl) {
+            // Show the container
+            photoSphereContainer.style.display = 'block';
+            
+            // Set the iframe source
+            if (photoSphereElement) {
+                photoSphereElement.src = config.contactPage.photoSphereUrl;
+            }
+        } else {
+            // Completely hide the container so no blank/empty space is left
+            photoSphereContainer.style.display = 'none';
+        }
+    }
+
+
+    // const photoSphereElement = document.getElementById('lbl-photo-sphere');
+    // if (photoSphereElement && config.contactPage.photoSphereUrl) {
+    //     photoSphereElement.src = config.contactPage.photoSphereUrl;
+    // }
 
     const lblContactTitle = document.getElementById('lbl-contact-title');
     if (lblContactTitle) lblContactTitle.innerText = config.contactPage.title;

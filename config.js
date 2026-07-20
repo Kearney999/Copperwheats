@@ -52,8 +52,18 @@ export const siteConfig =
 
         //Images
         showGoogleReviewsSummaryBoard: true,
+
+        // About Booleans
         showCompanyStoryboard: true,
-        showMenu: false // Set to false to instantly hide the menu across the site
+        
+        // Services Booleans
+        showMenu: false, // Set to false to instantly hide the menu across the site
+        
+        // Contact Booleans
+        showPhotoSphere: false, // Set to false to instantly hide the menu across the site
+
+        // Layout Controls
+        // useSplitHeroLayout: true,  // 🎯 SET TO: true for column layout, false for old layout
     },
 
 
@@ -95,13 +105,44 @@ export const siteConfig =
     heroTitle: "The picturesque Island and Copperwheats' welcome you.",
     heroDesc: "Coffee | Cafe : Top-rated true barrista poured speciality coffee shop near the Brodick Ferry, Isle of Arran. Enjoy premium coffee, fresh bakes, luxury cakes and convenient, secure, left luggage storage right by the Arran ferry.",
     highlights: [
-        { icon: "coffee", title: "Premium Coffee & Teas", desc: "Specialty brews, featuring the premium craft flavours of Myrtle alongside a rotating monthly guest coffee." },
-        { icon: "luggage", title: "Left Luggage", desc: "Secure bag storage so you can freely explore Brodick for one final time before that afternoon ferry." },
-        { icon: "users", title: "Everyone Welcome", desc: "A fully wheelchair-accessible cafe and spacious layout designed to easily accommodate families and groups." },
-        { icon: "sun", title: "Outdoor Patio Area", desc: "Take in the beautiful island views of Goat Fell across the bay whilst breath in that fresh sea air from our comfortable outdoor seating patio." },
-        { icon: "heart", title: "Dog Friendly", desc: "Four-legged friends are always welcome in our cafe with a warm smile, fresh water bowls, and of course those doggy treats." },
-        { icon: "wifi", title: "Free Wi-Fi", desc: "Stay connected while you relax; our cafe Wi-Fi network password is freely available with our compliments." },
-        { icon: "pound", title: "Payment", desc: "We take contactless payment, apple pay and of course notes and coins are more than welcome." }
+        { 
+            icon: "coffee", 
+            title: "Premium Coffee & Teas", 
+            desc: "Specialty brews, featuring the premium craft flavours of Myrtle alongside a rotating monthly guest coffee." 
+        },
+
+        { 
+            icon: "luggage",
+            title: "Left Luggage",
+            desc: "Secure bag storage so you can freely explore Brodick for one final time before that afternoon ferry." 
+        },
+
+        { 
+            icon: "users", 
+            title: "Everyone Welcome", 
+            desc: "A fully wheelchair-accessible cafe and spacious layout designed to easily accommodate families and groups." 
+        },
+        { 
+            icon: "sun", 
+            title: "Outdoor Patio Area", 
+            desc: "Take in the beautiful island views of Goat Fell across the bay whilst breath in that fresh sea air from our comfortable outdoor seating patio." 
+        },
+        { 
+            icon: "heart", 
+            title: "Dog Friendly", 
+            desc: "Four-legged friends are always welcome in our cafe with a warm smile, fresh water bowls, and of course those doggy treats." 
+        },
+        { 
+            icon: "wifi", 
+            title: "Free Wi-Fi", 
+            desc: "Stay connected while you relax; our cafe Wi-Fi network password is freely available with our compliments." 
+        },
+        { 
+            icon: "pound", 
+            title: "Payment", 
+            desc: "We take contactless payment, apple pay and of course notes and coins are more than welcome." 
+        }
+
     ],
         reviewsHeadline: "Loved by Travellers & Locals",
         reviewsSub: "Discover authentic guest insights with our Google Reviews",
@@ -181,6 +222,8 @@ export const siteConfig =
         servesCuisine: "Coffee, Cafe, Pastries, Bakery, Ice Cream, Sandwiches, Toasties, Light Bites, Scottish, British, Vegetarian options, Gluten-free options, Vegan options",
 
         mapUrl : "https://maps.google.com/maps?q=Copperwheats%20Coffee%20House,%20The%20Pier,%20Brodick,%20Isle%20of%20Arran&t=&z=16&ie=UTF8&iwloc=&output=embed",
+        photoSphereUrl : "https://www.google.com/maps/embed?pb=!1m0!4v1710000000000!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJQ0VzTHlvMlFF!2m2!1d55.793392!2d-4.868351!3f340.43!4f0!5f0.7820856972041195",
+        
         title: "Say Hello",
         desc: "Have questions about group bookings, dietary adjustments, or our left luggage storage? Drop us a line and we will get back to you within 48 hours. However, feel free to ring us if more urgent.",
         // The overview tab where people READ existing reviews
