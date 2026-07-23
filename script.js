@@ -16,7 +16,7 @@ function populateSchemaSEO(config) {
 
     const schemaData = {
         "@context": "https://schema.org",
-        "@type": "CafeOrCoffeeShop",
+        "@type": config.businessType || "LocalBusiness",
         "name": config.businessName || "Copperwheats",
         "description": config.homePage?.heroDesc || "Specialty coffee house.",
         "url": window.location.href,
@@ -564,7 +564,9 @@ function hydrateTemplateEngine(config) {
     }
 
     const lblFooterCopyright = document.getElementById('lbl-footer-copyright');
-    if (lblFooterCopyright) lblFooterCopyright.innerHTML = `&copy; 2026 ${config.businessName} ${config.businessSub}. All Rights Reserved. Built by Largs Web Design.`;
+    if (lblFooterCopyright) {
+        lblFooterCopyright.innerHTML = `&copy; 2026 ${config.businessName} ${config.businessSub}. All Rights Reserved. Built by <a href="https://www.largswebdesign.co.uk" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline;">Largs Web Design</a>.`;   
+    }
 
     // FAQ Grid Loop Accordions
     const faqTitle = document.getElementById('faq-title');
