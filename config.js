@@ -103,7 +103,7 @@ export const siteConfig =
 
     homePage: {
     heroTitle: "The picturesque Island and Copperwheats' welcome you.",
-    heroDesc: "Coffee | Cafe : Top-rated true barrista poured speciality coffee shop near the Brodick Ferry, Isle of Arran. Enjoy premium coffee, fresh bakes, luxury cakes and convenient, secure, left luggage storage right by the Arran ferry.",
+    heroDesc: "Coffee | Cafe : True barrista poured speciality coffee shop near the Brodick Ferry, Isle of Arran. Premium Coffee & Teas | Fresh Bakes | Luxury  Cakes | Left Luggage Service right by the Arran ferry.",
     highlights: [
         { 
             icon: "coffee", 
@@ -113,7 +113,7 @@ export const siteConfig =
 
         { 
             icon: "luggage",
-            title: "Left Luggage",
+            title: "Secure Left Luggage Service",
             desc: "Secure bag storage so you can freely explore Brodick for one final time before that afternoon ferry." 
         },
 
