@@ -15,8 +15,8 @@ export const siteConfig =
     customLogoUrl: "logo.png", // Points directly to your local coffee shop logo
     businessName: "Copperwheats",
     businessSub: "Brilliant hosts, premium roasts",
-    
-    metaTitle: "Copperwheats Coffee House | Brodick, Arran",
+    businessType: "CafeOrCoffeeShop",
+    metaTitle: "Copperwheats Coffee House & Cafe | Brodick | Isle Of Arran",
     contactEmail: "john.copperwheat69@gmail.com",
     contactEmailEncrypted: "4d2463d2c6d63e7e6405d18b973cb08c",
     locationShort: "near the Ferry Terminal",
