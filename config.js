@@ -1,45 +1,45 @@
-// config.js - Nardini's Coffee Shop Configuration
-export const siteConfig = 
-{
-    
-
-    navLabels: {
+// config.js - Sitting right next to index.html
+export const siteConfig = {
+	
+	navLabels: {
         "index.html": "Home",
-        "about.html": "Our Story",
-        "services.html": "The Cafe",
-        "contact.html": "Location"
+        "about.html": "About",
+        "services.html": "Services",
+        "contact.html": "Contact"
     },
 
     theme: "coffee.css",  //choices are found in the styles folder
-    
-    customLogoUrl: "logo.png", // Points directly to your local coffee shop logo
-    businessName: "Copperwheats",
-    businessSub: "Brilliant hosts, premium roasts",
-    businessType: "CafeOrCoffeeShop",
-    metaTitle: "Copperwheats Coffee House & Cafe | Brodick | Isle Of Arran",
-    contactEmail: "john.copperwheat69@gmail.com",
-    contactEmailEncrypted: "4d2463d2c6d63e7e6405d18b973cb08c",
-    locationShort: "near the Ferry Terminal",
-    locationFull: "Brodick Ferry Terminal",
+	
+	
+    customLogoUrl: "logo.png",
+    businessName: "Largs Web Design",
+    businessSub: "Design at the heart of Scotland",
+    businessType: "LocalBusiness",
+    metaTitle: "Largs Website Design | High-End justifiable Websites for Local Businesses",
+    contactEmail: "Kearney999@gmail.com",
+	contactEmailEncrypted: "9cb95059765cce543918ced446e22868",
+    locationShort: "Largs, Ayrshire",
+    locationFull: "Largs, North Ayrshire, Scotland",
     themeColors: {
-        textDark: "#2C1A11",
-        darkNeutral: "#4A3525",
-        midNeutral: "#8C6A50",
-        lightNeutral: "#EADBC8",
-        background: "#FAF6F0"
+        textDark: "#0F172A",
+        darkNeutral: "#1E293B",
+        midNeutral: "#2563EB",
+        lightNeutral: "#3B82F6",
+        background: "#F8FAFC"
     },
-
-    logoSettings: {
+	
+	
+	logoSettings: {
         showFrame: true,          /* Set to false to hide the background spotlight outline */
         frameWidth: "120px",      /* The width of the translucent wrapper */
         frameHeight: "120px",     /* The height of the translucent wrapper */
         frameRadius: "50%",       /* 50% for circle/ellipse, or use pixels like "12px" for squares */
         
-        imageWidth: "125px",      /* The width of the actual image logo inside */
-        imageHeight: "125px",      /* The height of the actual image logo inside */
+        imageWidth: "330px",      /* The width of the actual image logo inside */
+        imageHeight: "330px",      /* The height of the actual image logo inside */
         // 🌟 PRECISION NUDGING: Centering coordinates controlled by config
-        imageTop: "48%",
-        imageLeft: "49%"
+        imageTop: "68%",
+        imageLeft: "50%"
     },
 
     // =========================================================
@@ -47,225 +47,207 @@ export const siteConfig =
     // =========================================================
     features: {
         showGoogleReviews: true,
-        showTripAdvisor: true,
+        showTripAdvisor: false,
         showOpeningHours: true,
 
         //Images
-        showGoogleReviewsSummaryBoard: true,
-
-        // About Booleans
-        showCompanyStoryboard: true,
-        
-        // Services Booleans
-        showMenu: false, // Set to false to instantly hide the menu across the site
-        
-        // Contact Booleans
-        showPhotoSphere: false, // Set to false to instantly hide the menu across the site
-
-        // Layout Controls
-        // useSplitHeroLayout: true,  // 🎯 SET TO: true for column layout, false for old layout
+        showGoogleReviewsSummaryBoard: false,
+        showCompanyStoryboard: false,
+        showMenu: false // Set to false to instantly hide the menu across the site
     },
-
-
-
-
+	
+	
+	
+	
     heroSlides: [
-        
         {
-            imgUrl: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=1600&fit=crop&q=80",
-            title: "Premium coffee from Myrtle, est. 1984",
-            desc: "For 20 years, Myrtle has been our signature brand, defined by a single promise: procuring coffee of the highest quality."
+            imgUrl: "https://images.unsplash.com/photo-1575663620136-5ebbfcc2c597?w=1600&fit=crop&q=80",
+            title: "Websites are your modern shop window",
+            desc: "Give every visitor a polished brochure to your products and services."
         },
         {
-            // Magic Relative Path: Looks in the images folder right next door!
-            imgUrl: "./images/ArranIceCream_WithLogo.png", 
-            title: "Top awarding winning Arran Ice Cream",
-            desc: "What's your favourite? A choice of flavours from the old time favourites to the more exotic."
+            imgUrl: "https://images.unsplash.com/photo-1642052502978-b6c6ea3c3797?w=1600&fit=crop&q=80",
+            title: "Modern Websites Built for Local Businesses",
+            desc: "We transform slow, outdated layouts into polished, lightning-fast modern internet experiences."
         },
         {
-            imgUrl: "https://images.unsplash.com/photo-1498804103079-a6351b050096?w=1600&fit=crop&q=80",
-            title: "Choose your Coffee or Tea favourite",
-            desc: "Cappuccino, Latte, Flat White, Mocha, Espresso, Iced Coffee, Guest coffee, and 12 brands of tea."
+            imgUrl: "https://images.unsplash.com/photo-1657727534668-4104c475b292?w=1600&fit=crop&q=80",
+            title: "Dominate Local Google Search",
+            desc: "An incredible website is useless if no one can find it. We get you visible."
         },
         {
-            imgUrl: "./images/cookiesandcakes.jpg",
-            title: "Beautiful, freshly baked cakes, cookies, biscuits and pastries",
-            desc: "Enjoy your quality time with that perfect accompaniment."
+            imgUrl: "https://images.unsplash.com/photo-1703720074944-b60b730c7289?w=1600&fit=crop&q=80",
+            title: "Logo Design",
+            desc: "There are three responses to design, yes, no and WOW! Our preference is the latter."
         },
         {
-            imgUrl: "./images/coffeesyrups.jpg",
-            title: "Flavour with your favourite syrup",
-            desc: "Add a coffee syrup : Caramel, Coconut, Vanilla, Cinnamon, Honeycomb, Creme Brulee, Gingerbread, Butterscotch and Roasted Hazelnut"
+            imgUrl: "https://images.unsplash.com/photo-1751170360067-fbb998061d70?w=1600&fit=crop&q=80",
+            title: "Send a professional note",
+            desc: "Branded business emails (like info@yourbusiness.co.uk) to instantly win customer trust."
+        },
+        {
+            imgUrl: "https://images.unsplash.com/photo-1548345680-f5475ea5df84?w=1600&fit=crop&q=80",
+            title: "Google Maps marketing",
+            desc: "We can give you total exposure in the geographical area. Whether Largs or Ayrshire or combinations of, you'll be picked up."
+        },
+        {
+            imgUrl: "https://images.unsplash.com/photo-1550063873-ab792950096b?w=1600&fit=crop&q=80",
+            title: "A Seasoned industrial Software Developer with 26 years experience",
+            desc: "Are you a business with repeating processes that take valuable time. Anything can be automated."
         }
     ],
-
-    
-
     homePage: {
-    heroTitle: "The picturesque Island and Copperwheats' welcome you.",
-    heroDesc: "Coffee | Cafe : True barrista poured speciality coffee shop near the Brodick Ferry, Isle of Arran. Premium Coffee & Teas | Fresh Bakes | Luxury  Cakes | Left Luggage Service right by the Arran ferry.",
-    highlights: [
-        { 
-            icon: "coffee", 
-            title: "Premium Coffee & Teas", 
-            desc: "Specialty brews, featuring the premium craft flavours of Myrtle alongside a rotating monthly guest coffee." 
-        },
-
-        { 
-            icon: "luggage",
-            title: "Secure Left Luggage Service",
-            desc: "Secure bag storage so you can freely explore Brodick for one final time before that afternoon ferry." 
-        },
-
-        { 
-            icon: "users", 
-            title: "Everyone Welcome", 
-            desc: "A fully wheelchair-accessible cafe and spacious layout designed to easily accommodate families and groups." 
-        },
-        { 
-            icon: "sun", 
-            title: "Outdoor Patio Area", 
-            desc: "Take in the beautiful island views of Goat Fell across the bay whilst breath in that fresh sea air from our comfortable outdoor seating patio." 
-        },
-        { 
-            icon: "heart", 
-            title: "Dog Friendly", 
-            desc: "Four-legged friends are always welcome in our cafe with a warm smile, fresh water bowls, and of course those doggy treats." 
-        },
-        { 
-            icon: "wifi", 
-            title: "Free Wi-Fi", 
-            desc: "Stay connected while you relax; our cafe Wi-Fi network password is freely available with our compliments." 
-        },
-        { 
-            icon: "pound", 
-            title: "Payment", 
-            desc: "We take contactless payment, apple pay and of course notes and coins are more than welcome." 
-        }
-
-    ],
-        reviewsHeadline: "Loved by Travellers & Locals",
-        reviewsSub: "Discover authentic guest insights with our Google Reviews",
-        reviewsScoreText: "4.4 / 5.0 Rating (93)",
+        heroTitle: "Modern, cost effective Websites built to simply make websites justifiable to local small business",
+        heroDesc: "We transform slow, outdated layouts into high-end, lightning-fast online experiences. Convert Google searches into your profit.",
+        highlights: [
+            { 
+                icon: "monitor", 
+                title: "Polished Web Design", 
+                desc: "First impressions matter. We design stunning, premium websites that position your Largs business far ahead of the competition." 
+            },
+            { 
+                icon: "smartphone", 
+                title: "Mobile-First Architecture", 
+                desc: "Over 60% of Ayrshire customers look for services on their phones. Our responsive layouts look flawless and load instantly on every single screen." 
+            },
+            { 
+                icon: "award", 
+                title: "26 Years of Engineering Insights", 
+                desc: "Get institutional-grade expertise scaling systems across multiple industries, translated perfectly into high-performance web solutions for your business." 
+            },
+            { 
+                icon: "trendingUp", 
+                title: "Results & Revenue Focused", 
+                desc: "A great business website shouldn't just look pretty—it needs to convert traffic into real sales, bookings, and enquiries. We design with your bottom line in mind." 
+            },
+            { 
+                icon: "search", 
+                title: "Built-In Local SEO Support", 
+                desc: "We engineer high-impact SEO structures directly into your site layout, helping your brand climb straight to the top of Google Search and Maps rankings." 
+            },
+            { 
+                icon: "mapPin", 
+                title: "100% face to face Support", 
+                desc: "Proudly operating right here on the Clyde coast. No call centers or automated helplines—just quick, direct support from your local tech partner." 
+            }
+           
+            
+        ],
+        reviewsHeadline: "What Local Businesses Say",
+        reviewsSub: "We help independent hospitality, retail, and service providers upgrade their web presence to maximize local revenue.",
+        reviewsScoreText: "5.0 / 5.0",
         googleReviews: [
-            { initials: "JM", name: "James M.", "badge": "Local Guide", text: "\"The left luggage service here is a complete lifesaver! Dropped our heavy suitcases off secure and safe, allowing us to walk and enjoy Brodick hassle-free before our evening ferry home. Brilliant coffee too!\"" },
-            { initials: "SR", name: "Sarah R.", "badge": "Ferry Passenger", text: "\"Incredible oat milk cappuccino—easily the best speciality coffee I've had on Arran. The atmosphere is lovely and warm, and the staff are wonderfully helpful while you're waiting for boarding to open.\"" },
-            { initials: "DL", name: "David L.", "badge": "Family Traveller", text: "\"Very spacious, clean, and fully wheelchair accessible which made it so easy for our group. Great toasted sandwiches, delicious local ice cream, and exceptionally polite people behind the counter.\"" }
+            { initials: "JC", name: "Local Coffee Shop", badge: "Client Partner", text: "\"Designed and created our website into a beautiful, seamless experience. We've seen a big jump in tourists finding us at the ferry terminal since launching!\"" },
+            { initials: "SH", name: "Glendarroch Guest House", badge: "Hospitality Client", text: "\"We were recommended Stuart from another local business. He first visited our guest house Glendarroch in 2013. With his knowledge of how the internet sales systems worked and his software background, he earned £60,000 in revenue in the first year. Thank you.\"" },
+            { initials: "RD", name: "Retail Business Owner", badge: "Client Partner", text: "\"Fast, professional, and understood exactly what our business needed. Highly recommend if your current site hasn't been updated in years, or you simply cant justify at the ridiculous prices.\"" },
+            { initials: "ML", name: "Local Tradesman", badge: "Largs Independent", text: "\"The task was simple, we wanted advertisement in Glasgow to extend our brand. After 3 weeks, we were on the first page on Google, and the calls followed.\"" }
         ]
     },
     aboutPage: {
-        title: "Our Story",
-        subtitle: "What began as the simple dreams of a newly married couple, has blossomed into our family’s greatest pride and joy. We hope you grab a coffee, and wishfully invite you to read 'Our Story'...",
-        
+        title: "Our Mission",
+        subtitle: "Bringing premium web design to independent local brands at prices that are justifiable for small business.",
         storyParagraphs: [
-            "Our story began in the 1990s. As a young couple eager to start a family and a business of our own, we took a leap of faith and opened our very first cafe at Brodick Home Farm, nestled right by the castle.",
-            "It was there that we truly learned our trade, looking back now in awe at the fast-paced lessons and passion that fueled those early years.",
-            "That foundation eventually gave us the opportunity to design our flagship coffee shop at the Brodick Ferry Terminal.",
-            "Building it up from a bare, empty shell, we poured our hearts into creating more than just a café. We wanted a place where special memories are made, journeys begin, and travellers feel instantly at home.",
-            "With decades of hard work, persistence, and patience, we have watched our business and our family thrive together. We have been incredibly fortunate to cross paths with so many wonderful customers over the years.",
-            "Every year, we look forward to the magic of the summer months, welcoming back familiar faces to the beautiful island we get to call home."
+            "In the digital age, a business's website is its front window to the world. Yet, so many businesses in Largs are held back by no online presence at all due to cost, or slow, outdated, or non-mobile-friendly websites that actively drive customers away, and leave a negative impression.",
+            "Largs Web Design have focussed on what really matters to small business, removing those non value added technical aspects to a web site we know aren't really needed to your requirements, and focussing on ensuring you have a professional online presence that have the speed requirements and google rankings to match. All other techical overheads are removed to make it more cost effective and justifiable to you.",
+            "I branched into Web Development and Digital Marketing back in the 2010s in the local area, but had to give it up after being approached by a software company in Glasgow. It was impossible to maintain both, especially with travelling, but its always annoyed me how much web developers charge, and what they say you need, when you don't. So, after consideration, I have decided to return to my love, providing my inside knowledge to the small businesses locally that deserve it."
         ],
         features: [
-            { emoji: "🥪", title: "Food & Drinks", desc: "From artisan espresso to freshly pressed hot toasties, house-baked pastries, and authentic Arran ice cream flavours." },
-            { emoji: "🧳", title: "Convenient Services", desc: "Take advantage of our handy on-site left luggage service to enjoy the island without being weighed down." },
-            { emoji: "♿", title: "Accessibility For All", desc: "Thoughtfully equipped with complete wheelchair access across entries, seating layouts, and washrooms." },
-            { emoji: "🌞", title: "Outdoor balcony", desc: "Imagine sitting on a summers day, as the warm breeze blows, whilst having that morning coffee with views across the bay to Goat Fell, and wondering where it all went wrong! 😉"}
+            { emoji: "⚡", title: "Blazing Fast Performance", desc: "We removed those unnecessary features for your business meaning the site loads in milliseconds." },
+            { emoji: "🔒", title: "Modern Security (SSL)", desc: "We ensure every site features complete HTTPS security to protect guest data and boost Google search rankings." },
+            { emoji: "📧", title: "Professional Domains", desc: "We replace outdated @aol or @hotmail accounts with custom professional emails (e.g., info@yourbusiness.co.uk)." }
         ]
-        
     },
     servicesPage: {
-        headline: "What We Offer?",
-        sub: "We serve all types of Coffee from our signature coffee supplier 'Myrtle', 12 choices of tea, multiple flavoured ice creams, handmade biscuits, cookies, cakes and pastries.",
+        headline: "Our Production Capabilities",
+        sub: "Everything an independent business needs to dominate the local market online.",
         
-        openingHours: {
+		openingHours: {
 
         title: "Opening Times",
-        subtitle: "Pop in for that 'pick me up', right by the ferry terminal",
+        subtitle: "We have changes our working day to allow people to call outside business hours, allowing you to prioritise your customer calls, if needed. Give us a call to discuss.",
         // Or for a different client: "Our Operating Hours", "Drop by our showroom", etc.
         
-        monday: "10:00 AM – 4:30 PM",
-        tuesday: "10:00 AM – 4:30 PM",
-        wednesday: "10:00 AM – 4:30 PM",
-        thursday: "10:00 AM – 4:30 PM",
-        friday: "10:00 AM – 4:30 PM",
-        saturday: "10:00 AM – 4:30 PM",
-        sunday: "10:00 AM – 4:30 PM"
+        monday: "1:00 PM – 9:30 PM",
+        tuesday: "1:00 PM – 9:30 PM",
+        wednesday: "1:00 PM – 9:30 PM",
+        thursday: "1:00 PM – 9:30 PM",
+        friday: "1:00 PM – 9:30 PM",
+        saturday: "1:00 PM – 9:30 PM",
+        sunday: "1:00 PM – 9:30 PM"
         },
-        
-        
-        menuList: [
-            { emoji: "🍦", name: "Ice Cream" },
-            { emoji: "☕", name: "Coffee & Tea" },
-            { emoji: "🥪", name: "Toasties and Panini's" },
-            { emoji: "🍰", name: "Cakes" },
-            { emoji: "🍪", name: "Cookies"},
-            { emoji: "🥧", name: "Pastries & Sausage Rolls" }
-              
+		
+		
+		menuList: [
+            { emoji: "💻", name: "Web Design" },
+            { emoji: "📱", name: "Mobile Optimization" },
+            { emoji: "📧", name: "Business Email Setup" },
+            { emoji: "🔍", name: "Local SEO Optimization" },
+            { emoji: "🔒", name: "SSL & Security Auditing" },
+            { emoji: "🚀", name: "Ultra-Fast Hosting" },
+            { emoji: "🗺️", name: "Google Maps Integration" },
+            { emoji: "📈", name: "Conversion Strategy" }
         ]
     },
     contactPage: {
-        address : "📍 The Pier, Brodick, Isle of Arran",
+        address : "📍 3 Walkerston Avenue, Largs, Ayrshire",
         phoneIcon: "📞",  // Or whatever custom emoji/icon variable the client prefers
-        contactTelephone: "+44 1770 303522",
+        contactTelephone: "+44 7855 731298",
         
         // 🚀 NEW ADDITIONS FOR AUTOMATED RICH-SEO SCHEMA TRACKING
-        postalCode: "KA27 8AY",
-        locality: "Brodick",
-        region: "Isle of Arran",
+        postalCode: "KA30 8EP",
+        locality: "Largs",
+        region: "Ayrshire",
         countryCode: "GB",
         latitude: "55.5772",
         longitude: "-5.1385",
 
         // 🚀 NEW RICH RESULTS ADDITIONS
         featuredImage: "https://www.copperwheats.co.uk/images/CopperwheatCoffeeShop_Shopfront.jpg", // Update to a live full URL once deployed
-        priceRange: "£",
-        servesCuisine: "Coffee, Cafe, Pastries, Bakery, Ice Cream, Sandwiches, Toasties, Light Bites, Scottish, British, Vegetarian options, Gluten-free options, Vegan options",
+        priceRange: "££",
+        servesCuisine: "Website Design, local SEO, Graphic Design",
+        mapUrl: "https://maps.google.com/maps?cid=12668175174323628404&t=&z=16&ie=UTF8&iwloc=B&output=embed",
 
-        mapUrl : "https://maps.google.com/maps?q=Copperwheats%20Coffee%20House,%20The%20Pier,%20Brodick,%20Isle%20of%20Arran&t=&z=16&ie=UTF8&iwloc=&output=embed",
-        photoSphereUrl : "https://www.google.com/maps/embed?pb=!1m0!4v1710000000000!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJQ0VzTHlvMlFF!2m2!1d55.793392!2d-4.868351!3f340.43!4f0!5f0.7820856972041195",
-        
         title: "Say Hello",
-        desc: "Have questions about group bookings, dietary adjustments, or our left luggage storage? Drop us a line and we will get back to you within 48 hours. However, feel free to ring us if more urgent.",
+        desc: "Have questions about mobile friendly polished websites and digital marketing strategies? Drop us a line and we will get back to you within 24 hours. However, feel free to ring us if more urgent.",
+        
         // The overview tab where people READ existing reviews
 
-        googlePlaceId: "ChIJsR7E-07viUgRKh1IqQQ9mAc", // Copperwheats PlaceID
+        googlePlaceId: "ChIJr4OHxqq5iUgRdGn7wTNmzq8", // Largs Web Design PlaceID
         googleViewReviewsUrl: "https://search.google.com/local/reviews?placeid=",
         googleWriteReviewUrl: "https://search.google.com/local/writereview?placeid=",
-        tripAdvisorUrl: "https://www.tripadvisor.co.uk/UserReviewEdit-g551754-d3649538-Copperwheat_Coffee_House-Brodick_Isle_of_Arran_Scotland.html",
+        tripAdvisorUrl: "",
         
         faqSection: {
             title: "Questions and Answers",
-            subtitle: "Got questions? We've got answers. Here is everything you need to know before stepping off the ferry.",
+            subtitle: "Got questions? We've got answers. Here is everything you need to know about setting up your online business portal.",
             questions: [
                 {
-                    q: "Where is the best cafe near the Brodick Ferry Terminal?",
-                    a: "Copperwheats is located directly opposite the Brodick Ferry Terminal on the Isle of Arran. We are the perfect first stop for a coffee when you step off the boat, or a relaxing place to wait with a warm drink before heading back to the mainland."
-                    
+                    q: "Who is the best local web designer in Largs and Ayrshire?",
+                    a: "Largs Web Design is the premier local agency specializing in high-performance, mobile-first websites tailored for independent businesses across Largs, North Ayrshire, and the surrounding Clyde coast. We build custom sites that load in milliseconds and actively turn local search traffic into paying customers."
                 },
                 {
-                    q: "Do you offer dietary adjustments?",
-                    a: "Our menu gladly cater to everyone with dairy-free oat milk, small selection of gluten-free bakes and a vegan option is also available daily."
+                    q: "How can a local business improve its Google Search ranking in Ayrshire?",
+                    a: "We build advanced local SEO optimization directly into every website project. From mapping your business accurately on Google Maps to optimizing your landing page copy for regional searches, we ensure your services show up right at the top when local customers search for you."
                 },
                 {
-                    q: "How does your Brodick left luggage storage work?",
-                    a: "If you want to enjoy exploring Brodick or walking up Goat Fell without dragging your suitcases, you can safely store your bags and left luggage in our secure facility. Just drop them off, grab a coffee, and explore Arran worry-free."
+                    q: "How much does a new website cost for a small business in Largs?",
+                    a: "We believe in bringing high-end industrial software engineering and design capabilities to local brands at prices that make sense. We don't believe in steep agency overheads or lock-in monthly fees. Drop us a line for a 100% free, no-obligation visual concept preview and a clear, competitive quote tailored to your business needs."
                 },
                 {
-                    q: "Do you take group bookings?",
-                    a: "We do! Whether you are walking group conquering Goat Fell, a family gathering, or a tour group, drop us a line via our contact section or give us a call to arrange space for your party."
+                    q: "Can you help automate repeating, time-consuming business tasks?",
+                    a: "Absolutely. Backed by 26 years of industrial software development experience, we don't just build beautiful 'shop window' websites. If you have manual data entry, customer booking processes, or spreadsheet tasks that take up valuable hours, we can design custom software automation to run them for you on autopilot."
                 },
                 {
-                    q: "Are dogs allowed inside the cafe?",
-                    a: "Absolutely! We are a proud dog-friendly cafe. Your dogs are welcome to join you inside or on our outdoor seating area, where we always have fresh water bowls and free doggy treats ready."
+                    q: "How long does it take to design and launch a new business website?",
+                    a: "Most local business setups, conversions, and landing page designs are completed, search-engine-optimized (SEO) ready, secured with SSL, and live on the internet within 10 to 14 days. Because we are based right here in Largs, you get quick, direct support from a local partner without navigating automated helplines."
                 }
-                
             ]
         }
     }, // <-- Closes contactPage cleanly
-
-    // ☕ THE FIXED FOOTER BLOCK (Added at the main configuration level)
+	
+	// ☕ THE FIXED FOOTER BLOCK (Added at the main configuration level)
     footer: {
-        Tagline: "A warm welcome, friendly staff, and the perfect atmosphere, ",
-        
+        // Tagline: "Instantly showcase your brand to potential clients the exact moment they search for you.",
+        Tagline: "Put a high-impact digital brochure in front of customers actively searching for your services in real time.",
     }
 };
