@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9F1HF99BM"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-T9F1HF99BM');
+    </script>
+
     <!-- Put this near the top of your head section -->
-    <link rel="preload" href="logo.png" as="image" type="image/png">
+    <link rel="preload" href="logo.png" as="image" type="image/png" alt="Brand Emblem Logo" title="Brand Emblem Logo">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="meta-title">Loading...</title>
+    <title id="meta-title">Copperwheats Coffee House & Cafe | Brodick Ferry | Arran</title>
+    
+    <!-- Hardcoded Fallback for immediate crawling & audit tools -->
+    <meta name="description" content="Speciality premium coffee house and cafe near the Brodick Ferry Terminal, Isle of Arran. Barista coffee, fresh bakes, and secure left luggage storage.">
+    <link rel="canonical" href="https://www.copperwheats.co.uk/" />
 
     <!-- ☕ COPPERWHEATS CUSTOM FAVICON INJECTION -->
     <link rel="icon" type="image/png" href="./favicon.png" sizes="150x150">
@@ -22,6 +36,12 @@
     <link rel="stylesheet" id="theme-stylesheet" href="./styles/coffee.css">
 </head>
 <body>
+    <!-- We check to see if browser first time open. Simply setting a boolean value-->
+    <script>
+        if (sessionStorage.getItem('splashShown')) {
+            document.documentElement.classList.add('skip-splash');
+        }
+    </script>
 
     <!-- The Fullscreen Splash Screen Overlay -->
     <div id="site-splash-screen" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #0f172a; z-index: 99999; display: flex; align-items: center; justify-content: center; transition: background 0.8s ease, opacity 0.6s ease, visibility 0.8s ease;">
@@ -30,12 +50,12 @@
         <div id="splash-logo-frame" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0; position: relative; overflow: visible !important; width: 120px; height: 120px; border-radius: 50%; transform: scale(12.2); transition: transform 3.0s cubic-bezier(0.25, 1, 0.5, 1);">
             
             <!-- 🌟 PRE-SIZED IMAGE: Added fallback dimensions matching your config defaults -->
-            <img id="splash-logo-image" src="logo.png" alt="Brand Emblem" 
+            <img id="splash-logo-image" src="logo.png" alt="Brand Emblem Logo" title="Brand Emblem Logo"
                 style="display: block !important; width: 120px; height: 120px; max-width: none !important; object-fit: contain; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 10;">
         </div>
     </div>
 
-    <header class="header-sticky">
+    <header class="header-sticky" id="main-content-wrapper">
         <div class="container nav-container">
 
 
@@ -43,7 +63,7 @@
             <svg id="nav-logo-vector" class="logo-graphic" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: none;">
             </svg>
 
-            <img id="nav-logo-image" src="" alt="Logo" 
+            <img id="nav-logo-image" src="" alt="Logo" title="Brand Emblem Logo"
             style="display: none; height: 5em; width: auto; object-fit: contain; margin-bottom: 10px;">
     
         <div class="logo-text">
@@ -67,6 +87,7 @@
 
 
         <main-section id="section-home">
+            
             <section class="hero-section" id="hero-bg-primary">
             <div class="hero-bg-secondary" id="hero-bg-secondary"></div>
 
@@ -79,7 +100,7 @@
             <div id="hero-logo-frame" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0; position: relative; overflow: visible !important;">
                 
                 <!-- 🌟 Cleaned image element. Sizing & positioning will be handled by the engine -->
-                <img id="hero-logo-image" src="logo.png" alt="Brand Emblem" 
+                <img id="hero-logo-image" src="logo.png" alt="Brand Emblem Logo" title="Brand Emblem Logo"
                     style="display: block !important; max-width: none !important; object-fit: contain; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); mix-blend-mode: multiply !important; z-index: 10;">
             </div>
 
@@ -89,7 +110,7 @@
             </div>
             </div>
 
-                    <h1 class="hero-title" id="lbl-hero-title">Title</h1>
+                    <h1 class="hero-title" id="lbl-hero-title">Copperwheats Coffee Shop & Cafe at Brodick Ferry Terminal</h1>
                     <p class="hero-desc" id="lbl-hero-desc">Desc</p>
 
                     <div class="hero-actions">
@@ -132,7 +153,7 @@
                                 For a quick overview of our most common visitor buzzwords we provide a Summary Board
                             </p>
                             
-                            <img src="./images/GoogleReviews_SummaryBoard.png" alt="Google Review Summary Board of Copperwheats Coffee Shop in Brodick" 
+                            <img src="./images/GoogleReviews_SummaryBoard.png" alt="Google Review Summary Board" title="Google Review Summary Board" 
                                 style="display: block !important; width: 100% !important; height: auto !important; border-radius: 12px !important; box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important; object-fit: cover !important;">
                         </div>
                     </div>
