@@ -15,11 +15,11 @@ export const siteConfig =
     customLogoUrl: "logo.png", // Points directly to your local coffee shop logo
     businessName: "Copperwheats",
     businessSub: "Brilliant hosts, premium roasts",
-    businessType: "CafeOrCoffeeShop",
-    metaTitle: "Copperwheats Coffee House & Cafe | Brodick | Isle Of Arran",
+    
+    metaTitle: "Copperwheats Coffee House | Brodick, Arran",
     contactEmail: "john.copperwheat69@gmail.com",
     contactEmailEncrypted: "4d2463d2c6d63e7e6405d18b973cb08c",
-    locationShort: "near the Ferry Terminal",
+    locationShort: "just opposite from the Ferry Terminal",
     locationFull: "Brodick Ferry Terminal",
     themeColors: {
         textDark: "#2C1A11",
@@ -52,18 +52,8 @@ export const siteConfig =
 
         //Images
         showGoogleReviewsSummaryBoard: true,
-
-        // About Booleans
         showCompanyStoryboard: true,
-        
-        // Services Booleans
-        showMenu: false, // Set to false to instantly hide the menu across the site
-        
-        // Contact Booleans
-        showPhotoSphere: false, // Set to false to instantly hide the menu across the site
-
-        // Layout Controls
-        // useSplitHeroLayout: true,  // 🎯 SET TO: true for column layout, false for old layout
+        showMenu: false // Set to false to instantly hide the menu across the site
     },
 
 
@@ -103,53 +93,22 @@ export const siteConfig =
 
     homePage: {
     heroTitle: "The picturesque Island and Copperwheats' welcome you.",
-    heroDesc: "Coffee | Cafe : True barrista poured speciality coffee shop near the Brodick Ferry, Isle of Arran. Premium Coffee & Teas | Fresh Bakes | Luxury  Cakes | Left Luggage Service right by the Arran ferry.",
+    heroDesc: "Coffee | Cafe : Top-rated true barrista poured speciality coffee shop by the Brodick Ferry, Isle of Arran. Enjoy premium coffee, fresh bakes, luxury cakes and convenient, secure, left luggage storage right by the Arran ferry.",
     highlights: [
-        { 
-            icon: "coffee", 
-            title: "Premium Coffee & Teas", 
-            desc: "Specialty brews, featuring the premium craft flavours of Myrtle alongside a rotating monthly guest coffee." 
-        },
-
-        { 
-            icon: "luggage",
-            title: "Secure Left Luggage Service",
-            desc: "Secure bag storage so you can freely explore Brodick for one final time before that afternoon ferry." 
-        },
-
-        { 
-            icon: "users", 
-            title: "Everyone Welcome", 
-            desc: "A fully wheelchair-accessible cafe and spacious layout designed to easily accommodate families and groups." 
-        },
-        { 
-            icon: "sun", 
-            title: "Outdoor Patio Area", 
-            desc: "Take in the beautiful island views of Goat Fell across the bay whilst breath in that fresh sea air from our comfortable outdoor seating patio." 
-        },
-        { 
-            icon: "heart", 
-            title: "Dog Friendly", 
-            desc: "Four-legged friends are always welcome in our cafe with a warm smile, fresh water bowls, and of course those doggy treats." 
-        },
-        { 
-            icon: "wifi", 
-            title: "Free Wi-Fi", 
-            desc: "Stay connected while you relax; our cafe Wi-Fi network password is freely available with our compliments." 
-        },
-        { 
-            icon: "pound", 
-            title: "Payment", 
-            desc: "We take contactless payment, apple pay and of course notes and coins are more than welcome." 
-        }
-
+        { icon: "coffee", title: "Premium Coffee & Teas", desc: "Specialty brews, featuring the premium craft flavours of Myrtle alongside a rotating monthly guest coffee." },
+        { icon: "luggage", title: "Left Luggage", desc: "Secure bag storage so you can freely explore Brodick without being weighed down." },
+        { icon: "users", title: "Everyone Welcome", desc: "A fully wheelchair-accessible cafe and spacious layout designed to easily accommodate families and groups." },
+        { icon: "sun", title: "Outdoor Patio Area", desc: "Take in the beautiful island views of Goat Fell across the bay whilst breath in that fresh sea air from our comfortable outdoor seating patio." },
+        { icon: "heart", title: "Dog Friendly", desc: "Four-legged friends are always welcome in our cafe with a warm smile, fresh water bowls, and of course those doggy treats." },
+        { icon: "wifi", title: "Free Wi-Fi", desc: "Stay connected while you relax; our cafe Wi-Fi network password is freely available with our compliments." },
+        { icon: "pound", title: "Payment", desc: "We take contactless payment, apple pay and of course notes and coins are more than welcome." }
     ],
         reviewsHeadline: "Loved by Travellers & Locals",
         reviewsSub: "Discover authentic guest insights with our Google Reviews",
         reviewsScoreText: "4.4 / 5.0 Rating (93)",
         googleReviews: [
             { initials: "JM", name: "James M.", "badge": "Local Guide", text: "\"The left luggage service here is a complete lifesaver! Dropped our heavy suitcases off secure and safe, allowing us to walk and enjoy Brodick hassle-free before our evening ferry home. Brilliant coffee too!\"" },
-            { initials: "SR", name: "Sarah R.", "badge": "Ferry Passenger", text: "\"Incredible oat milk cappuccino—easily the best speciality coffee I've had on Arran. The atmosphere is lovely and warm, and the staff are wonderfully helpful while you're waiting for boarding to open.\"" },
+            { initials: "SR", name: "Sarah R.", "badge": "Ferry Passenger", text: "\"Incredible oat milk cappuccino—easily the best specialty coffee I've had on Arran. The atmosphere is lovely and warm, and the staff are wonderfully helpful while you're waiting for boarding to open.\"" },
             { initials: "DL", name: "David L.", "badge": "Family Traveller", text: "\"Very spacious, clean, and fully wheelchair accessible which made it so easy for our group. Great toasted sandwiches, delicious local ice cream, and exceptionally polite people behind the counter.\"" }
         ]
     },
@@ -222,8 +181,6 @@ export const siteConfig =
         servesCuisine: "Coffee, Cafe, Pastries, Bakery, Ice Cream, Sandwiches, Toasties, Light Bites, Scottish, British, Vegetarian options, Gluten-free options, Vegan options",
 
         mapUrl : "https://maps.google.com/maps?q=Copperwheats%20Coffee%20House,%20The%20Pier,%20Brodick,%20Isle%20of%20Arran&t=&z=16&ie=UTF8&iwloc=&output=embed",
-        photoSphereUrl : "https://www.google.com/maps/embed?pb=!1m0!4v1710000000000!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJQ0VzTHlvMlFF!2m2!1d55.793392!2d-4.868351!3f340.43!4f0!5f0.7820856972041195",
-        
         title: "Say Hello",
         desc: "Have questions about group bookings, dietary adjustments, or our left luggage storage? Drop us a line and we will get back to you within 48 hours. However, feel free to ring us if more urgent.",
         // The overview tab where people READ existing reviews
@@ -238,34 +195,27 @@ export const siteConfig =
             subtitle: "Got questions? We've got answers. Here is everything you need to know before stepping off the ferry.",
             questions: [
                 {
-                    q: "Where is the best cafe near the Brodick Ferry Terminal?",
-                    a: "Copperwheats is located directly opposite the Brodick Ferry Terminal on the Isle of Arran. We are the perfect first stop for a coffee when you step off the boat, or a relaxing place to wait with a warm drink before heading back to the mainland."
-                    
+                    q: "Where exactly are you located?",
+                    a: "We are located directly by the Brodick Ferry Terminal on the Isle of Arran. It's the perfect first stop for a coffee when you step off the boat, or a comforting treat while you wait to head back to the mainland."
                 },
                 {
                     q: "Do you offer dietary adjustments?",
-                    a: "Our menu gladly cater to everyone with dairy-free oat milk, small selection of gluten-free bakes and a vegan option is also available daily."
+                    a: "We gladly cater to everyone with dairy-free oat milk, small selection of gluten-free bakes and a vegan option is also available daily."
                 },
                 {
-                    q: "How does your Brodick left luggage storage work?",
-                    a: "If you want to enjoy exploring Brodick or walking up Goat Fell without dragging your suitcases, you can safely store your bags and left luggage in our secure facility. Just drop them off, grab a coffee, and explore Arran worry-free."
+                    q: "Can we store our left luggage with you?",
+                    a: "Yes! If you are exploring the island before checking into your accommodation or waiting for the ferry after checking out, you can safely leave your bags and luggage with us while you wander."
                 },
                 {
                     q: "Do you take group bookings?",
                     a: "We do! Whether you are walking group conquering Goat Fell, a family gathering, or a tour group, drop us a line via our contact section or give us a call to arrange space for your party."
-                },
-                {
-                    q: "Are dogs allowed inside the cafe?",
-                    a: "Absolutely! We are a proud dog-friendly cafe. Your dogs are welcome to join you inside or on our outdoor seating area, where we always have fresh water bowls and free doggy treats ready."
                 }
-                
             ]
         }
     }, // <-- Closes contactPage cleanly
 
     // ☕ THE FIXED FOOTER BLOCK (Added at the main configuration level)
     footer: {
-        Tagline: "A warm welcome, friendly staff, and the perfect atmosphere, ",
-        
+        Tagline: "Relax in a great atmosphere, with friendly staff, "
     }
 };

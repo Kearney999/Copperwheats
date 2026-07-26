@@ -16,7 +16,7 @@ function populateSchemaSEO(config) {
 
     const schemaData = {
         "@context": "https://schema.org",
-        "@type": config.businessType || "LocalBusiness",
+        "@type": "CafeOrCoffeeShop",
         "name": config.businessName || "Copperwheats",
         "description": config.homePage?.heroDesc || "Specialty coffee house.",
         "url": window.location.href,
@@ -85,9 +85,12 @@ function hydrateTemplateEngine(config) {
     if (config.theme) {
         const themeLink = document.getElementById('theme-stylesheet');
         if (themeLink) {
+            // Updated to point directly inside the new styles/ subfolder
             themeLink.setAttribute('href', `./styles/${config.theme}`);
         }
     }
+
+
 
     // Apply Custom Stylesheets dynamically via CSS variables
     const root = document.documentElement;
@@ -145,18 +148,27 @@ function hydrateTemplateEngine(config) {
     try {
         const logoFrame = document.getElementById('hero-logo-frame');
         const logoImg = document.getElementById('hero-logo-image');
+        
+        // Target your imported configuration object directly
         const settings = siteConfig?.logoSettings;
 
         if (logoFrame && logoImg && settings) {
+            
+            // 1. Process the Backdrop Frame Blueprint
             if (settings.showFrame) {
                 logoFrame.style.display = "flex";
+
+                
                 logoFrame.style.setProperty('width', settings.frameWidth, 'important');
                 logoFrame.style.setProperty('height', settings.frameHeight, 'important');
                 logoFrame.style.setProperty('border-radius', settings.frameRadius, 'important');
+                
+                // Re-apply core translucent appearance rules
                 logoFrame.style.background = "rgba(255, 255, 255, 0.05)";
                 logoFrame.style.border = "1px solid rgba(255, 255, 255, 0.2)";
                 logoFrame.style.boxShadow = "0 8px 32px 0 rgba(0, 0, 0, 0.4)";
             } else {
+                // Completely strip visual frame rules if toggled off
                 logoFrame.style.background = "transparent";
                 logoFrame.style.border = "none";
                 logoFrame.style.boxShadow = "none";
@@ -164,8 +176,10 @@ function hydrateTemplateEngine(config) {
                 logoFrame.style.setProperty('height', 'auto', 'important');
             }
 
+            // 2. Process the Inner Image Dimensions
             logoImg.style.setProperty('width', settings.imageWidth, 'important');
             logoImg.style.setProperty('height', settings.imageHeight, 'important');
+            // 🌟 Dynamic centering rules driven entirely by the configuration file
             logoImg.style.top = settings.imageTop || "50%";
             logoImg.style.left = settings.imageLeft || "50%";
         }
@@ -177,16 +191,10 @@ function hydrateTemplateEngine(config) {
         const splashScreen = document.getElementById('site-splash-screen');
         const splashFrame = document.getElementById('splash-logo-frame');
         const splashImg = document.getElementById('splash-logo-image');
-        const mainContent = document.getElementById('main-content-wrapper');
         const settings = siteConfig?.logoSettings;
 
-
-        // const HideSplash = document.getElementById('skip-splash');
-
-
         if (splashFrame && splashImg && settings) {
-
-
+            // 1. Anchor the base sizes to your config layout rules
             splashFrame.style.setProperty('width', settings.frameWidth, 'important');
             splashFrame.style.setProperty('height', settings.frameHeight, 'important');
             splashFrame.style.setProperty('border-radius', settings.frameRadius, 'important');
@@ -195,41 +203,44 @@ function hydrateTemplateEngine(config) {
             splashImg.style.setProperty('height', settings.imageHeight, 'important');
             splashImg.style.top = settings.imageTop || "50%";
             splashImg.style.left = settings.imageLeft || "50%";
+
+            // 2. 🌟 INITIAL IMPACT: Force the logo to start massive when the page instantly loads
             splashFrame.style.transform = "scale(5.0)"; 
         }
 
+        // 3. THE GRAND REVEAL: Smoothly shrink the logo and cross-dissolve into the website
         if (splashScreen && splashFrame && splashImg) {
-            // Step 1: Shrink the logo down immediately on load
+            
+            // 🌟 THE STUTTER CURE: Wait for the browser to fully paint the massive initial state 
+            // before changing the transform value, guaranteeing a buttery-smooth start.
             requestAnimationFrame(() => {
                 requestAnimationFrame(() => {
                     splashFrame.style.transform = "scale(0.3)"; 
                 });
             });
 
-            // Step 2: Mid-animation (at 1.6 seconds), start bringing the website in
+            // STEP A: Drop the dark background wall first to reveal the website underneath.
             setTimeout(() => {
-                if (mainContent) {
-                    mainContent.classList.add('reveal-site');
-                }
-            }, 1600); 
+                splashScreen.style.background = "transparent";
+            }, 2200); 
 
-            // Step 3: At 2.0 seconds, fade out the entire splash container (and its blueish background)
+            // STEP B: Melt the full-color splash logo into the website logo hiding directly behind it
             setTimeout(() => {
-                splashScreen.classList.add('fade-out-splash');
-                
-                // Keep the logo fading out naturally into the background
-                splashFrame.style.transition = "opacity 1.0s ease, transform 2.5s cubic-bezier(0.25, 1, 0.5, 1)";
+                splashFrame.style.transition = "opacity 0.6s ease, transform 3.0s cubic-bezier(0.25, 1, 0.5, 1)";
                 splashFrame.style.opacity = "0";
+            }, 2300); 
 
-
-                // 🎯 THE FIXED KEY: Save to sessionStorage here!
-                // Since the splash screen is now dismissed, mark it as shown.
-                sessionStorage.setItem('splashShown', 'true');
-            }, 2000); 
+            // STEP C: Completely vanish the container from the workspace so it doesn't block clicks
+            setTimeout(() => {
+                splashScreen.style.visibility = "hidden";
+            }, 2900); 
         }
     } catch (e) {
-        console.error("Splash scale/blend routine failed:", e);
+        console.error("Splash scale routine failed:", e);
     }
+
+
+
 
     // Highlights Generator
     const highlightsContainer = document.getElementById('container-highlights');
@@ -243,18 +254,11 @@ function hydrateTemplateEngine(config) {
             heart: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>`,
             wifi: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.94 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>`,
             pound: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 7a4 4 0 0 0-7.75-1.38A4 4 0 0 0 7 9.5V19h11" /><path d="M5 14h11" /><path d="M5 19h14" /></svg>`,
+        
+            // --- NEW PUB-SPECIFIC ADDITIONS ---
             utensils: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path><path d="M7 2v20"></path><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path></svg>`,
             star: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>`,
-            martini: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"></path><path d="m21 3-9 9-9-9Z"></path><path d="M3 14h18"></path></svg>`,
-        
-            //WEB DESIGN LOGOs
-            monitor: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>`,
-            smartphone: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>`,
-            trendingUp: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>`,
-            mapPin: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>`,
-            award: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>`,
-            search: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>`
-        
+            martini: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"></path><path d="m21 3-9 9-9-9Z"></path><path d="M3 14h18"></path></svg>`
         };
         config.homePage.highlights.forEach(item => {
             highlightsContainer.innerHTML += `
@@ -370,14 +374,17 @@ function hydrateTemplateEngine(config) {
                 </div>`;
         });
 
+        // Inject dynamic relative PDF Menu button right inside the layout if turned on
         if (config.features && config.features.showMenu) {
             const menuContainer = document.querySelector('.menu-download-container');
             if (menuContainer) {
                 menuContainer.style.display = 'block';
+                // Safe relative path pointing directly to your images root asset directory
                 const pdfLink = menuContainer.querySelector('a');
                 if (pdfLink) pdfLink.setAttribute('href', './images/menu.pdf');
             }
         } else {
+            // Optional: hides the container if showMenu is turned off in config
             const menuContainer = document.querySelector('.menu-download-container');
             if (menuContainer) menuContainer.style.display = 'none';
         }
@@ -434,33 +441,6 @@ function hydrateTemplateEngine(config) {
 
     const mapElement = document.getElementById('lbl-contact-map');
     if (mapElement) mapElement.src = config.contactPage.mapUrl;
-
-
-    // Target the 360 container and iframe
-    const photoSphereContainer = document.getElementById('container-photo-sphere');
-    const photoSphereElement = document.getElementById('lbl-photo-sphere');
-
-    if (photoSphereContainer) {
-        // Check if showPhotoSphere flag is explicitly true AND a URL exists
-        if (config.features.showPhotoSphere && config.contactPage.photoSphereUrl) {
-            // Show the container
-            photoSphereContainer.style.display = 'block';
-            
-            // Set the iframe source
-            if (photoSphereElement) {
-                photoSphereElement.src = config.contactPage.photoSphereUrl;
-            }
-        } else {
-            // Completely hide the container so no blank/empty space is left
-            photoSphereContainer.style.display = 'none';
-        }
-    }
-
-
-    // const photoSphereElement = document.getElementById('lbl-photo-sphere');
-    // if (photoSphereElement && config.contactPage.photoSphereUrl) {
-    //     photoSphereElement.src = config.contactPage.photoSphereUrl;
-    // }
 
     const lblContactTitle = document.getElementById('lbl-contact-title');
     if (lblContactTitle) lblContactTitle.innerText = config.contactPage.title;
@@ -564,9 +544,7 @@ function hydrateTemplateEngine(config) {
     }
 
     const lblFooterCopyright = document.getElementById('lbl-footer-copyright');
-    if (lblFooterCopyright) {
-        lblFooterCopyright.innerHTML = `&copy; 2026 ${config.businessName} ${config.businessSub}. All Rights Reserved. Built by <a href="https://www.largswebdesign.co.uk" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline;">Largs Web Design</a>.`;   
-    }
+    if (lblFooterCopyright) lblFooterCopyright.innerHTML = `&copy; 2026 ${config.businessName} ${config.businessSub}. All Rights Reserved. Built by Largs Web Design.`;
 
     // FAQ Grid Loop Accordions
     const faqTitle = document.getElementById('faq-title');
@@ -593,12 +571,9 @@ function hydrateTemplateEngine(config) {
         });
     }
 
-    // =========================================================================
-    // --- CINEMATIC MULTI-MEDIA TEXT & BACKGROUND CROSS-FADER SLIDER ENGINE ---
-    // =========================================================================
+    // --- CINEMATIC TEXT & BACKGROUND CROSS-FADER SLIDER ---
     const bgPrimary = document.getElementById('hero-bg-primary');
     const bgSecondary = document.getElementById('hero-bg-secondary');
-    const heroVideo = document.getElementById('hero-bg-video');
     const heroContentBox = document.querySelector('.hero-content');
 
     const slides = config.heroSlides && config.heroSlides.length > 0 ? config.heroSlides : [];
@@ -608,78 +583,26 @@ function hydrateTemplateEngine(config) {
         return `linear-gradient(rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.7)), url('${url}')`;
     }
 
-    // Helper to test if a slide URL is a video
-    function isVideoSource(url) {
-        return url.includes('video') || url.includes('.mp4');
-    }
-
-    // Handler to toggle video stream state cleanly
-    function handleVideoPlayback(url) {
-        if (!heroVideo) return;
-        
-        if (isVideoSource(url)) {
-            heroVideo.style.display = "block";
-            heroVideo.src = url;
-            heroVideo.load();
-            heroVideo.play().catch(error => {
-                console.log("Autoplay context initialization notice:", error);
-            });
-        } else {
-            heroVideo.style.display = "none";
-            heroVideo.pause();
-            heroVideo.removeAttribute('src'); // Free memory allocation
-            heroVideo.load();
-        }
-    }
-
-    // Hydrate Slide Zero immediately
-    if (slides.length > 0 && bgPrimary) {
-        const initialSlide = slides[currentSlideIndex];
-        
-        // Handle background switch
-        if (isVideoSource(initialSlide.imgUrl)) {
-            handleVideoPlayback(initialSlide.imgUrl);
-        } else {
-            if (heroVideo) heroVideo.style.display = "none";
-            bgPrimary.style.backgroundImage = getBgString(initialSlide.imgUrl);
-        }
-
-        if (lblHeroTitle) lblHeroTitle.innerText = initialSlide.title;
-        if (lblHeroDesc) lblHeroDesc.innerText = initialSlide.desc;
+    if (slides.length > 0 && bgPrimary && bgSecondary) {
+        bgPrimary.style.backgroundImage = getBgString(slides[currentSlideIndex].imgUrl);
+        if (lblHeroTitle) lblHeroTitle.innerText = slides[currentSlideIndex].title;
+        if (lblHeroDesc) lblHeroDesc.innerText = slides[currentSlideIndex].desc;
 
         // Auto-scroll loop interval execution
         setInterval(() => {
             const nextSlideIndex = (currentSlideIndex + 1) % slides.length;
             const nextSlide = slides[nextSlideIndex];
 
-            // 1. Gently fade content elements out
             if (heroContentBox) heroContentBox.classList.add('fade-out');
-
-            // 2. Queue up the next background media layer
-            const isNextVideo = isVideoSource(nextSlide.imgUrl);
-            if (!isNextVideo) {
-                bgSecondary.style.backgroundImage = getBgString(nextSlide.imgUrl);
-            }
+            bgSecondary.style.backgroundImage = getBgString(nextSlide.imgUrl);
 
             setTimeout(() => {
-                // Cross-fade background images if standard slide
-                if (!isNextVideo) {
-                    bgSecondary.style.opacity = "1";
-                }
-                
-                // Swap Text Labels mid-fade
+                bgSecondary.style.opacity = "1";
                 if (lblHeroTitle) lblHeroTitle.innerText = nextSlide.title;
                 if (lblHeroDesc) lblHeroDesc.innerText = nextSlide.desc;
 
                 setTimeout(() => {
-                    // Update main layers and reset cross-fade styles
-                    if (isNextVideo) {
-                        handleVideoPlayback(nextSlide.imgUrl);
-                    } else {
-                        handleVideoPlayback(""); // Clear video layer
-                        bgPrimary.style.backgroundImage = getBgString(nextSlide.imgUrl);
-                    }
-                    
+                    bgPrimary.style.backgroundImage = getBgString(nextSlide.imgUrl);
                     bgSecondary.style.opacity = "0";
                     if (heroContentBox) heroContentBox.classList.remove('fade-out');
                     currentSlideIndex = nextSlideIndex;
@@ -699,6 +622,7 @@ document.addEventListener('DOMContentLoaded', () => {
     hydrateTemplateEngine(siteConfig);
 
     // 2. Multi-Page Active Highlighting Engine
+    // Isolates the exact HTML file name currently on screen (e.g., "about.html")
     const currentFileName = window.location.pathname.split('/').pop() || 'index.html';
     
     document.querySelectorAll('.nav-link').forEach(link => {
@@ -711,14 +635,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 3. SCALABLE NAVIGATION LABEL TRANSLATION ENGINE
+    // Checks your config.js and automatically swaps out labels for main nav AND hero buttons
     if (siteConfig.navLabels) {
+        // Target BOTH main navbar links and buttons inside the hero container
         document.querySelectorAll('.nav-link, .hero-actions .btn').forEach(link => {
             const href = link.getAttribute('href') || '';
+            // Extract the filename from the link (e.g., "./services.html" becomes "services.html")
             const fileName = href.split('/').pop(); 
             
+            // If this file name exists in your config settings, rewrite the text dynamically!
             if (fileName && siteConfig.navLabels[fileName]) {
                 link.innerText = siteConfig.navLabels[fileName];
             }
         });
     }
+
+    
 });
