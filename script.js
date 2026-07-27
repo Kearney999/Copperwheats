@@ -441,38 +441,34 @@ function hydrateTemplateEngine(config) {
     if (mapElement) mapElement.src = config.contactPage.mapUrl;
 
 
-
     // 2. Build and set up the Directions Button
     const directionsBtn = document.getElementById('lbl-contact-directions-btn');
     const directionsText = document.getElementById('lbl-contact-directions-text');
 
-    // 2. Safe property checks without optional chaining (?.)
-    var showDirectionButton = false;
-    if (config && config.features && config.features.showDirectionButton === true) {
-        showDirectionButton = true;
-    }
+    // 3. Safely read feature flag (handles boolean false, missing object, or string "false")
+    const isDirectionsEnabled = config 
+        && config.features 
+        && config.features.showDirectionButton === true;
 
-    // 3. Toggle Visibility & Build Link
+    // 4. Toggle Visibility & Build Link
     if (directionsBtn) {
-        if (showDirectionButton && placeId) {
-            // Show the button
-            directionsBtn.style.display = 'flex';
+        if (isDirectionsEnabled && typeof placeId !== 'undefined' && placeId) {
+            // Show button
+            directionsBtn.style.setProperty('display', 'flex', 'important');
 
-            var bizName = (config && config.businessName) ? config.businessName : 'us';
-            var encodedName = encodeURIComponent(bizName);
-            var generatedDirectionsUrl = 'https://www.google.com/maps/dir/?api=1&destination=' + encodedName + '&destination_place_id=' + placeId;
-
-            directionsBtn.href = generatedDirectionsUrl;
+            const bizName = (config && config.businessName) ? config.businessName : '';
+            const encodedName = encodeURIComponent(bizName);
+            
+            directionsBtn.href = `https://www.google.com/maps/dir/?api=1&destination=${encodedName}&destination_place_id=${placeId}`;
 
             if (directionsText) {
-                directionsText.textContent = 'Get Directions to ' + bizName;
+                directionsText.textContent = bizName ? `Get Directions to ${bizName}` : 'Get Directions';
             }
         } else {
-            // Hide the button cleanly
-            directionsBtn.style.display = 'none';
+            // Force hide button when showDirectionButton is false
+            directionsBtn.style.setProperty('display', 'none', 'important');
         }
     }
-
 
     // Target the 360 container and iframe
     const photoSphereContainer = document.getElementById('container-photo-sphere');
