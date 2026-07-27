@@ -440,7 +440,6 @@ function hydrateTemplateEngine(config) {
     const mapElement = document.getElementById('lbl-contact-map');
     if (mapElement) mapElement.src = config.contactPage.mapUrl;
 
-
     // 2. Build and set up the Directions Button
     const directionsBtn = document.getElementById('lbl-contact-directions-btn');
     const directionsText = document.getElementById('lbl-contact-directions-text');
