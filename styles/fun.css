@@ -866,7 +866,10 @@ main-section {
     .footer-grid { flex-direction: column !important; gap: 2rem !important; }
     .contact-grid-container { flex-direction: column !important; text-align: center !important; }
     .contact-details-col, .contact-map-col { width: 100% !important; }
-    .contact-details-col a.btn { margin-left: auto !important; margin-right: auto !important; }
+    .contact-details-col a.btn 
+    {   margin-left: auto !important; 
+        margin-right: auto !important;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -958,3 +961,43 @@ main-section {
         -moz-osx-font-smoothing: auto !important;
     }
     /* THE SKIP SPLASH SCREEN CODE above */
+
+
+    /* The Direction button on Contacts page */
+    /* Container layout */
+    .contact-map-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%; /* Ensures container fills available column space */
+    }
+
+    /* Full-width justified button */
+    .directions-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Space between icon and text */
+    width: 100%; /* Spans exact width of the map above */
+    box-sizing: border-box; /* Prevents border padding overflow */
+    padding: 12px 16px;
+    
+    /* Theme matching style */
+    background-color: transparent;
+    color: #1a1a1a;
+    border: 2px solid #1a1a1a;
+    border-radius: 50px;
+    
+    font-weight: bold;
+    font-size: 15px;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    transition: all 0.2s ease-in-out;
+    }
+
+    /* Optional hover state */
+    .directions-btn:hover {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    }

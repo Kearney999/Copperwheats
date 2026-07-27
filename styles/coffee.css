@@ -1232,3 +1232,44 @@
         -moz-osx-font-smoothing: auto !important;
     }
     /* THE SKIP SPLASH SCREEN CODE above */
+
+    /* The Direction button on Contacts page */
+    /* Matching the phone/review button theme */
+    /* Container layout */
+.contact-map-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%; /* Ensures container fills available column space */
+}
+
+/* Full-width justified button */
+.directions-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Space between icon and text */
+  width: 100%; /* Spans exact width of the map above */
+  box-sizing: border-box; /* Prevents border padding overflow */
+  padding: 12px 16px;
+  
+  /* Theme matching style */
+  background-color: transparent;
+  color: #1a1a1a;
+  border: 2px solid #1a1a1a;
+  border-radius: 50px;
+  
+  font-weight: bold;
+  font-size: 15px;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease-in-out;
+}
+
+/* Optional hover state */
+.directions-btn:hover {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+    
