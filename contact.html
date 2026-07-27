@@ -94,6 +94,9 @@
                     </div>
                 </div>
 
+
+                
+
                 <!-- RIGHT COLUMN: Standard Google Map -->
                 <div class="contact-map-col">
                     <iframe 
@@ -102,9 +105,27 @@
                         height="300" 
                         style="border:0; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06);" 
                         allowfullscreen="" 
-                        loading="lazy">
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
+
+                    <!-- Get Directions Button Stacked Below -->
+                    <a 
+                        id="lbl-contact-directions-btn"
+                        href="#" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        class="directions-btn">
+                        
+                        <svg class="directions-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                            <path d="M22.43 10.59l-9.01-9.01c-.78-.78-2.05-.78-2.83 0l-9.01 9.01c-.78.78-.78 2.05 0 2.83l9.01 9.01c.78.78 2.05.78 2.83 0l9.01-9.01c.79-.78.79-2.05 0-2.83zm-8.93 2.91v-2.5h-4v3h-2v-4c0-.55.45-1 1-1h5v-2.5l3.5 3.5-3.5 3.5z"/>
+                        </svg>
+
+                        <span id="lbl-contact-directions-text">Get Directions</span>
+                    </a>
                 </div>
+
+                
 
             </div> <!-- / .contact-grid-container -->
 

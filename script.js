@@ -436,8 +436,32 @@ function hydrateTemplateEngine(config) {
         if (phoneLinkElement) phoneLinkElement.setAttribute('href', `tel:${cleanPhone}`);
     }
 
+    // 1. Set up the iframe map
     const mapElement = document.getElementById('lbl-contact-map');
     if (mapElement) mapElement.src = config.contactPage.mapUrl;
+
+    // 2. Build and set up the Directions Button
+    const directionsBtn = document.getElementById('lbl-contact-directions-btn');
+    const directionsText = document.getElementById('lbl-contact-directions-text');
+
+    if (config.contactPage.googlePlaceId) {
+        // Safely encode business name and place ID for the URL
+        const encodedName = encodeURIComponent(config.businessName);
+        const placeId = config.contactPage.googlePlaceId;
+
+        // Dynamically construct the directions URL
+        const generatedDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodedName}&destination_place_id=${placeId}`;
+
+        // Apply URL to the button link
+        if (directionsBtn) {
+            directionsBtn.href = generatedDirectionsUrl;
+        }
+
+        // Update button text
+        if (directionsText) {
+            directionsText.textContent = `Get Directions to ${config.businessName}`;
+        }
+    }
 
 
     // Target the 360 container and iframe
