@@ -211,7 +211,7 @@ export const siteConfig =
         ]
     },
     contactPage: {
-        address : "📍 The Pier, Brodick, Isle of Arran",
+        address : "📍 The Pier, Brodick, Isle of Arran, KA27 8AX",
         phoneIcon: "📞",  // Or whatever custom emoji/icon variable the client prefers
         contactTelephone: "+44 1770 303522",
         
