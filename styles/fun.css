@@ -982,22 +982,4 @@ main-section {
     box-sizing: border-box; /* Prevents border padding overflow */
     padding: 12px 16px;
     
-    /* Theme matching style */
-    background-color: transparent;
-    color: #1a1a1a;
-    border: 2px solid #1a1a1a;
-    border-radius: 50px;
-    
-    font-weight: bold;
-    font-size: 15px;
-    text-decoration: none;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-    transition: all 0.2s ease-in-out;
-    }
-
-    /* Optional hover state */
-    .directions-btn:hover {
-    background-color: #1a1a1a;
-    color: #ffffff;
     }
