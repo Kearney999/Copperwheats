@@ -59,8 +59,13 @@ export const siteConfig =
         
         // Services Booleans
         showMenu: false, // Set to false to instantly hide the menu across the site
+
         
+
+
+
         // Contact Booleans
+        showDirectionButton: true,
         showPhotoSphere: false, // Set to false to instantly hide the menu across the site
 
         // Layout Controls

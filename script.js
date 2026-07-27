@@ -440,26 +440,36 @@ function hydrateTemplateEngine(config) {
     const mapElement = document.getElementById('lbl-contact-map');
     if (mapElement) mapElement.src = config.contactPage.mapUrl;
 
+
+
     // 2. Build and set up the Directions Button
     const directionsBtn = document.getElementById('lbl-contact-directions-btn');
     const directionsText = document.getElementById('lbl-contact-directions-text');
 
-    if (config.contactPage.googlePlaceId) {
-        // Safely encode business name and place ID for the URL
-        const encodedName = encodeURIComponent(config.businessName);
-        const placeId = config.contactPage.googlePlaceId;
+    // 2. Safe property checks without optional chaining (?.)
+    var showDirectionButton = false;
+    if (config && config.features && config.features.showDirectionButton === true) {
+        showDirectionButton = true;
+    }
 
-        // Dynamically construct the directions URL
-        const generatedDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodedName}&destination_place_id=${placeId}`;
+    // 3. Toggle Visibility & Build Link
+    if (directionsBtn) {
+        if (showDirectionButton && placeId) {
+            // Show the button
+            directionsBtn.style.display = 'flex';
 
-        // Apply URL to the button link
-        if (directionsBtn) {
+            var bizName = (config && config.businessName) ? config.businessName : 'us';
+            var encodedName = encodeURIComponent(bizName);
+            var generatedDirectionsUrl = 'https://www.google.com/maps/dir/?api=1&destination=' + encodedName + '&destination_place_id=' + placeId;
+
             directionsBtn.href = generatedDirectionsUrl;
-        }
 
-        // Update button text
-        if (directionsText) {
-            directionsText.textContent = `Get Directions to ${config.businessName}`;
+            if (directionsText) {
+                directionsText.textContent = 'Get Directions to ' + bizName;
+            }
+        } else {
+            // Hide the button cleanly
+            directionsBtn.style.display = 'none';
         }
     }
 
