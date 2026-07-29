@@ -727,8 +727,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-bottom: 2.5rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: none !important;
+            padding-bottom: 0 !important;
             margin-bottom: 2.5rem;
         }
 
@@ -1252,6 +1252,185 @@
     box-sizing: border-box; /* Prevents border padding overflow */
     padding: 12px 16px;
     
-    
     }
+  
     
+
+
+    /* Container for copyright + ad */
+    .footer-ad-container {
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.2rem;
+    }
+
+    .footer-copyright-text {
+        font-size: 0.85rem;
+        opacity: 0.75;
+    }
+
+
+
+
+
+    /* ################################################# */
+    /* ####### BEGINNING OF Promotional Ad Card ######## */
+    /* ################################################# */
+    .largs-ad-banner {
+        width: 100%;
+        max-width: 850px;
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 12px;
+        padding: 10px 18px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .largs-ad-banner:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+    }
+
+    .largs-ad-link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-decoration: none;
+        color: #ffffff;
+        gap: 0px;
+        flex-wrap: wrap;
+    }
+
+    /* Logo Styling */
+    .largs-logo {
+        height: 140px;
+        width: auto;
+        object-fit: contain;
+        margin-bottom: 0px; /* Negative margin pulls the text UP towards the icon */
+        margin-right: -80px;  /* Pulls text horizontally closer on desktop */
+        display: block;
+    }
+
+    /* Optional: Slight zoom effect on hover */
+    .largs-ad-banner:hover .largs-logo {
+        transform: scale(1.15);
+    }
+
+    /* Text Block */
+    .largs-ad-text {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        min-width: 180px;
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+    .largs-tag {
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        color: #3b82f6; /* Accent blue */
+        font-weight: 700;
+        margin-bottom: 2px; /* Keeps tag right next to title */
+    }
+
+    .largs-title {
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-top: 0;
+    }
+
+    /* Price Badge */
+    .largs-price-tag {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .largs-price-tag strong {
+        color: #22c55e; /* Green price text */
+        font-size: 1rem;
+    }
+
+    /* Stacked Action Group Container */
+    .largs-action-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px; /* 6px vertical gap between price and button */
+    }
+
+    /* CTA Button */
+    .largs-btn {
+        background: #2563eb;
+        color: #ffffff;
+        padding: 6px 14px;
+        border-radius: 6px;
+        font-size: 0.82rem;
+        font-weight: 600;
+        margin-top: 2px;
+        display: inline-block;
+        transition: background 0.2s;
+    }
+
+    .largs-ad-banner:hover .largs-price-tag {
+        background: #1d4ed8;
+    }
+
+    .copyright,
+    .footer-ad-container,
+    #lbl-footer-copyright {
+        border-top: none !important;
+        border-bottom: none !important;
+        padding-top: 1rem !important; /* Adjust padding for clean spacing */
+    }
+
+
+    /* Mobile Responsive Styling for Largs Web Design Ad */
+    @media (max-width: 768px) {
+        .largs-ad-link {
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            gap: 0px; /* Reduced from 14px to eliminate mobile gap */
+        }
+
+        .largs-logo {
+            height: 110px; /* Scaled down slightly on mobile so it doesn't overpower */
+            margin-bottom: -10px; /* Negative margin to pull mobile text right up under the thistle */
+            margin-right: 0;
+        }
+
+        .largs-ad-text {
+            align-items: center;
+            text-align: center;
+            margin-bottom: 12px; /* Adds space before the price tag */
+        }
+
+        .largs-action-group {
+            width: 100%;
+            max-width: 220px;
+            align-items: center;
+        }
+
+        .largs-price-tag {
+            width: 100%;
+            text-align: center;
+        }
+
+        .largs-btn {
+            width: 100%;
+        }
+    }
+
+    /* ########################################### */
+    /* ####### END OF Promotional Ad Card ######## */
+    /* ########################################### */

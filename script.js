@@ -598,7 +598,29 @@ function hydrateTemplateEngine(config) {
 
     const lblFooterCopyright = document.getElementById('lbl-footer-copyright');
     if (lblFooterCopyright) {
-        lblFooterCopyright.innerHTML = `&copy; 2026 ${config.businessName} ${config.businessSub}. All Rights Reserved. Built by <a href="https://www.largswebdesign.co.uk" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline;">Largs Web Design</a>.`;   
+        lblFooterCopyright.innerHTML = `
+            <div class="footer-copyright-text">
+                &copy; 2026 ${config.businessName}. All Rights Reserved.
+            </div>
+            
+            <div class="largs-ad-banner">
+                <a href="https://www.largswebdesign.co.uk" target="_blank" rel="noopener" class="largs-ad-link">
+                    <!-- Largs Web Design Logo -->
+                    <img src="./images/largs-web-design-logo.png" alt="Largs Web Design Logo" class="largs-logo" />
+                    
+                    <div class="largs-ad-text">
+                        <span class="largs-tag">Created by Largs Web Design</span>
+                        <span class="largs-title">Design at the heart of Scotland</span>
+                    </div>
+
+                    <div class="largs-action-group">
+                        <div class="largs-price-tag">
+                            Get a similar website for <strong>£360</strong>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        `;
     }
 
     // FAQ Grid Loop Accordions
@@ -754,4 +776,34 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+
+
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+    // ... other checks ...
+
+    // ARRAN HERO SHAPE CHECK
+    const arranHeroEl = document.getElementById('dynamic-hero-arran');
+    if (arranHeroEl && config.heroSection) {
+        if (config.heroSection.useArranShape) {
+            arranHeroEl.classList.add('hero-arran-shape');
+            
+            // Allow setting background dynamically too
+            if (config.heroSection.backgroundImageUrl) {
+                arranHeroEl.style.backgroundImage = `url(${config.heroSection.backgroundImageUrl})`;
+            }
+        } else {
+            // Remove mask and just show a full rectangle image/color
+            arranHeroEl.classList.remove('hero-arran-shape');
+            arranHeroEl.style.maskImage = 'none';
+            arranHeroEl.style.webkitMaskImage = 'none';
+            arranHeroEl.style.transform = 'none';
+            arranHeroEl.style.width = '100%';
+            arranHeroEl.style.height = '100%';
+        }
+    }
+});
+
 });
