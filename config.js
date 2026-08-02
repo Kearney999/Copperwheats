@@ -10,7 +10,7 @@ export const siteConfig =
         "contact.html": "Location"
     },
 
-    theme: "fun.css",  //choices are found in the styles folder
+    theme: "coffee.css",  //choices are found in the styles folder
     
     customLogoUrl: "logo.png", // Points directly to your local coffee shop logo
     businessName: "Copperwheats",
