@@ -896,71 +896,7 @@ main-section {
     transition: none !important; /* Removes transition animations */
 }
 
-/* --- Cinematic Splash Screen Blend --- */
 
-    /* 1. Ensure the splash screen is fully opaque and sits on top */
-    #site-splash-screen {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        z-index: 9999;
-        transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1), 
-                    visibility 1.2s cubic-bezier(0.25, 1, 0.5, 1);
-    }
-
-    /* 2. When the animation finishes, smoothly fade the whole splash out of existence */
-    #site-splash-screen.fade-out-splash {
-        opacity: 0;
-        visibility: hidden;
-    }
-
-    /* 3. Start the main page content as hidden and slightly blurred/scaled */
-    #main-content-wrapper {
-        opacity: 0;
-        filter: blur(15px);
-        transform: scale(0.96);
-        transition: opacity 1.8s cubic-bezier(0.25, 1, 0.5, 1), 
-                    filter 1.8s cubic-bezier(0.25, 1, 0.5, 1), 
-                    transform 1.8s cubic-bezier(0.25, 1, 0.5, 1);
-    }
-
-    /* 4. This class will trigger the smooth fade-and-focus blend */
-    #main-content-wrapper.reveal-site {
-        opacity: 1;
-        filter: blur(0);
-        transform: scale(1);
-    }
-
-
-    /* THE SKIP SPLASH SCREEN CODE below */
-    /* Instantly bypasses the splash screen if already seen in this session */
-    .skip-splash #site-splash-screen {
-        display: none !important;
-        opacity: 0 !important;
-        visibility: hidden !important;
-        transition: none !important;
-    }
-
-    /* Instantly reveals the main content when skipping the splash */
-    .skip-splash #main-content-wrapper {
-        opacity: 1 !important;
-        visibility: visible !important;
-        
-        /* 🎯 1. Kill any active filters (like blur) */
-        filter: none !important;
-        -webkit-filter: none !important;
-
-        /* 🎯 2. Completely reset transforms & hardware acceleration layers */
-        transform: none !important;
-        will-change: auto !important;
-
-        /* 🎯 3. Force the browser to render text razor-sharp */
-        -webkit-font-smoothing: subpixel-antialiased !important;
-        -moz-osx-font-smoothing: auto !important;
-    }
-    /* THE SKIP SPLASH SCREEN CODE above */
 
 
     /* The Direction button on Contacts page */

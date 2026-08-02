@@ -1168,70 +1168,9 @@
         transition: none !important; /* Removes transition animations */
     }
 
-    /* --- Cinematic Splash Screen Blend --- */
+    
 
-    /* 1. Ensure the splash screen is fully opaque and sits on top */
-    #site-splash-screen {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        z-index: 9999;
-        transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1), 
-                    visibility 1.2s cubic-bezier(0.25, 1, 0.5, 1);
-    }
-
-    /* 2. When the animation finishes, smoothly fade the whole splash out of existence */
-    #site-splash-screen.fade-out-splash {
-        opacity: 0;
-        visibility: hidden;
-    }
-
-    /* 3. Start the main page content as hidden and slightly blurred/scaled */
-    #main-content-wrapper {
-        opacity: 0;
-        filter: blur(15px);
-        transform: scale(0.96);
-        transition: opacity 1.8s cubic-bezier(0.25, 1, 0.5, 1), 
-                    filter 1.8s cubic-bezier(0.25, 1, 0.5, 1), 
-                    transform 1.8s cubic-bezier(0.25, 1, 0.5, 1);
-    }
-
-    /* 4. This class will trigger the smooth fade-and-focus blend */
-    #main-content-wrapper.reveal-site {
-        opacity: 1;
-        filter: blur(0);
-        transform: scale(1);
-    }
-
-    /* THE SKIP SPLASH SCREEN CODE below */
-    /* Instantly bypasses the splash screen if already seen in this session */
-    .skip-splash #site-splash-screen {
-        display: none !important;
-        opacity: 0 !important;
-        visibility: hidden !important;
-        transition: none !important;
-    }
-
-    /* Instantly reveals the main content when skipping the splash */
-    .skip-splash #main-content-wrapper {
-        opacity: 1 !important;
-        visibility: visible !important;
-        
-        /* 🎯 1. Kill any active filters (like blur) */
-        filter: none !important;
-        -webkit-filter: none !important;
-
-        /* 🎯 2. Completely reset transforms & hardware acceleration layers */
-        transform: none !important;
-        will-change: auto !important;
-
-        /* 🎯 3. Force the browser to render text razor-sharp */
-        -webkit-font-smoothing: subpixel-antialiased !important;
-        -moz-osx-font-smoothing: auto !important;
-    }
-    /* THE SKIP SPLASH SCREEN CODE above */
+    
 
     /* The Direction button on Contacts page */
     /* Container layout */
@@ -1433,4 +1372,131 @@
 
     /* ########################################### */
     /* ####### END OF Promotional Ad Card ######## */
+    /* ########################################### */
+
+
+
+
+    /* =========================================================================
+    +++++++++++ Beginning of COPPERWHEATS GIFTS & SOUVENIRS GRID +++++++++++++++
+    ========================================================================== */
+
+.gifts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.gift-card {
+    background: var(--color-white);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(74, 53, 37, 0.06);
+    box-shadow: 0 4px 12px rgba(74, 53, 37, 0.04);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gift-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(74, 53, 37, 0.1);
+}
+
+/* Image Wrapper & Zoom Effect */
+.gift-image-wrap {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    background-color: var(--color-neutral-mid);
+    overflow: hidden;
+}
+
+.gift-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gift-card:hover .gift-image {
+    transform: scale(1.06);
+}
+
+/* Optional Badge Tag */
+.gift-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--color-text-main);
+    color: var(--color-primary-light);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    z-index: 2;
+}
+
+/* Card Body Content */
+.gift-details {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.gift-title {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    color: var(--color-text-main);
+    margin-bottom: 0.5rem;
+}
+
+.gift-desc {
+    font-size: 0.9rem;
+    color: var(--color-primary-dark);
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+}
+
+/* Card Footer: Price & Action */
+.gift-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(74, 53, 37, 0.08);
+}
+
+.gift-price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+}
+
+.gift-buy-btn {
+    padding: 0.6rem 1.25rem !important;
+    font-size: 0.85rem !important;
+    border-radius: 25px !important;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .gifts-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .gift-image-wrap {
+        height: 200px;
+    }
+}
+
+    /* ########################################### */
+    /* ######### END OF Gifts Page CSS ########### */
     /* ########################################### */

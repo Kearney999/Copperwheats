@@ -10,7 +10,7 @@ export const siteConfig =
         "contact.html": "Location"
     },
 
-    theme: "coffee.css",  //choices are found in the styles folder
+    theme: "fun.css",  //choices are found in the styles folder
     
     customLogoUrl: "logo.png", // Points directly to your local coffee shop logo
     businessName: "Copperwheats",
@@ -47,6 +47,11 @@ export const siteConfig =
     // FEATURE SWITCHES (Turn sections ON [true] or OFF [false])
     // =========================================================
     features: {
+
+        // Show or hide tabs
+        showGiftsTab: true,
+
+
         showGoogleReviews: true,
         showTripAdvisor: true,
         showOpeningHours: true,
@@ -110,7 +115,7 @@ export const siteConfig =
 
     homePage: {
     heroTitle: "Copperwheats Coffee Shop & Cafe at Brodick Ferry Terminal",
-    heroDesc: "Coffee | Cafe : True barrista poured speciality coffee shop near the Brodick Ferry, Isle of Arran. Premium Coffee & Teas | Fresh Bakes | Luxury  Cakes | Left Luggage Service right by the Arran ferry.",
+    heroDesc: "Coffee | Cafe | Cakes | Toasties : A barrista poured speciality cafe in Brodick, Isle of Arran. Secure Left Luggage right by the Arran ferry | Premium Coffee & Teas | Fresh Bakes | Luxury Cakes",
     highlights: [
         { 
             icon: "coffee", 
@@ -123,12 +128,6 @@ export const siteConfig =
             title: "Secure Left Luggage Service",
             desc: "Secure bag storage so you can freely explore Brodick for one final time before that afternoon ferry." 
         },
-
-        { 
-            icon: "users", 
-            title: "Everyone Welcome", 
-            desc: "A fully wheelchair-accessible cafe and spacious layout designed to easily accommodate families and groups." 
-        },
         { 
             icon: "sun", 
             title: "Outdoor Patio Area", 
@@ -139,10 +138,17 @@ export const siteConfig =
             title: "Dog Friendly", 
             desc: "Four-legged friends are always welcome in our cafe with a warm smile, fresh water bowls, and of course those doggy treats." 
         },
+
+        { 
+            icon: "users", 
+            title: "Everyone Welcome", 
+            desc: "A fully wheelchair-accessible cafe and spacious layout designed to easily accommodate families and groups." 
+        },
+        
         { 
             icon: "wifi", 
             title: "Free Wi-Fi", 
-            desc: "Stay connected while you relax; our cafe Wi-Fi network password is freely available with our compliments." 
+            desc: "Stay connected while you relax; our cafes Wi-Fi network password is freely available with our compliments." 
         },
         { 
             icon: "pound", 
@@ -203,9 +209,9 @@ export const siteConfig =
         menuList: [
             { emoji: "🍦", name: "Ice Cream" },
             { emoji: "☕", name: "Coffee & Tea" },
-            { emoji: "🥪", name: "Toasties and Panini's" },
-            { emoji: "🍰", name: "Cakes" },
-            { emoji: "🍪", name: "Cookies"},
+            { emoji: "🥪", name: "Toasties & Panini's" },
+            { emoji: "🍰", name: "Cakes & Muffins" },
+            { emoji: "🍪", name: "Cookies & Biscuits"},
             { emoji: "🥧", name: "Pastries & Sausage Rolls" }
               
         ]
@@ -226,7 +232,7 @@ export const siteConfig =
         // 🚀 NEW RICH RESULTS ADDITIONS
         featuredImage: "https://www.copperwheats.co.uk/images/CopperwheatCoffeeShop_Shopfront.jpg", // Update to a live full URL once deployed
         priceRange: "£",
-        servesCuisine: "Coffee, Cafe, Pastries, Bakery, Ice Cream, Sandwiches, Toasties, Light Bites, Scottish, British, Vegetarian options, Gluten-free options, Vegan options",
+        servesCuisine: "Coffee, Cafe, Tea, Green Tea, Herbal Tea, Muffins, Pastries, Bakery, Ice Cream, Sandwiches, Toasties, Light Bites, Scottish, British, Vegetarian options, Gluten-free options, Vegan options",
 
         mapUrl : "https://maps.google.com/maps?q=Copperwheats%20Coffee%20House,%20The%20Pier,%20Brodick,%20Isle%20of%20Arran&t=&z=16&ie=UTF8&iwloc=&output=embed",
         photoSphereUrl : "https://www.google.com/maps/embed?pb=!1m0!4v1710000000000!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJQ0VzTHlvMlFF!2m2!1d55.793392!2d-4.868351!3f340.43!4f0!5f0.7820856972041195",
@@ -275,4 +281,6 @@ export const siteConfig =
         Tagline: "A warm welcome, friendly staff, and the perfect atmosphere, ",
         
     }
+
+
 };

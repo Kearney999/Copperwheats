@@ -177,63 +177,7 @@ function hydrateTemplateEngine(config) {
         console.error("Layout engine encountered a brand asset configuration error:", e);
     }
 
-    try {
-        const splashScreen = document.getElementById('site-splash-screen');
-        const splashFrame = document.getElementById('splash-logo-frame');
-        const splashImg = document.getElementById('splash-logo-image');
-        const mainContent = document.getElementById('main-content-wrapper');
-        const settings = siteConfig?.logoSettings;
-
-
-        // const HideSplash = document.getElementById('skip-splash');
-
-
-        if (splashFrame && splashImg && settings) {
-
-
-            splashFrame.style.setProperty('width', settings.frameWidth, 'important');
-            splashFrame.style.setProperty('height', settings.frameHeight, 'important');
-            splashFrame.style.setProperty('border-radius', settings.frameRadius, 'important');
-            
-            splashImg.style.setProperty('width', settings.imageWidth, 'important');
-            splashImg.style.setProperty('height', settings.imageHeight, 'important');
-            splashImg.style.top = settings.imageTop || "50%";
-            splashImg.style.left = settings.imageLeft || "50%";
-            splashFrame.style.transform = "scale(5.0)"; 
-        }
-
-        if (splashScreen && splashFrame && splashImg) {
-            // Step 1: Shrink the logo down immediately on load
-            requestAnimationFrame(() => {
-                requestAnimationFrame(() => {
-                    splashFrame.style.transform = "scale(0.3)"; 
-                });
-            });
-
-            // Step 2: Mid-animation (at 1.6 seconds), start bringing the website in
-            setTimeout(() => {
-                if (mainContent) {
-                    mainContent.classList.add('reveal-site');
-                }
-            }, 1600); 
-
-            // Step 3: At 2.0 seconds, fade out the entire splash container (and its blueish background)
-            setTimeout(() => {
-                splashScreen.classList.add('fade-out-splash');
-                
-                // Keep the logo fading out naturally into the background
-                splashFrame.style.transition = "opacity 1.0s ease, transform 2.5s cubic-bezier(0.25, 1, 0.5, 1)";
-                splashFrame.style.opacity = "0";
-
-
-                // 🎯 THE FIXED KEY: Save to sessionStorage here!
-                // Since the splash screen is now dismissed, mark it as shown.
-                sessionStorage.setItem('splashShown', 'true');
-            }, 2000); 
-        }
-    } catch (e) {
-        console.error("Splash scale/blend routine failed:", e);
-    }
+    
 
     // Highlights Generator
     const highlightsContainer = document.getElementById('container-highlights');
@@ -257,8 +201,8 @@ function hydrateTemplateEngine(config) {
             trendingUp: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>`,
             mapPin: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>`,
             award: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>`,
-            search: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>`
-        
+            search: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>`,
+            shield: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-icon lucide-shield"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>',
         };
         config.homePage.highlights.forEach(item => {
             highlightsContainer.innerHTML += `
@@ -777,33 +721,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-
-
-
-
-    document.addEventListener('DOMContentLoaded', () => {
-    // ... other checks ...
-
-    // ARRAN HERO SHAPE CHECK
-    const arranHeroEl = document.getElementById('dynamic-hero-arran');
-    if (arranHeroEl && config.heroSection) {
-        if (config.heroSection.useArranShape) {
-            arranHeroEl.classList.add('hero-arran-shape');
-            
-            // Allow setting background dynamically too
-            if (config.heroSection.backgroundImageUrl) {
-                arranHeroEl.style.backgroundImage = `url(${config.heroSection.backgroundImageUrl})`;
-            }
-        } else {
-            // Remove mask and just show a full rectangle image/color
-            arranHeroEl.classList.remove('hero-arran-shape');
-            arranHeroEl.style.maskImage = 'none';
-            arranHeroEl.style.webkitMaskImage = 'none';
-            arranHeroEl.style.transform = 'none';
-            arranHeroEl.style.width = '100%';
-            arranHeroEl.style.height = '100%';
-        }
-    }
-});
 
 });

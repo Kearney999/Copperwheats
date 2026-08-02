@@ -38,25 +38,15 @@
 </head>
 <body>
     <!-- We check to see if browser first time open. Simply setting a boolean value-->
-    <script>
+    <!-- <script>
         if (sessionStorage.getItem('splashShown')) {
             document.documentElement.classList.add('skip-splash');
         }
-    </script>
+    </script> -->
 
-    <!-- The Fullscreen Splash Screen Overlay -->
-    <div id="site-splash-screen" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #0f172a; z-index: 99999; display: flex; align-items: center; justify-content: center; transition: background 0.8s ease, opacity 0.6s ease, visibility 0.8s ease;">
-        
-        <!-- 🌟 PRE-SIZED ANCHOR: Added a default fallback width/height matching your 120px frame so it doesn't flicker while JS fires -->
-        <div id="splash-logo-frame" style="display: flex; align-items: center; justify-content: center; flex-shrink: 0; position: relative; overflow: visible !important; width: 120px; height: 120px; border-radius: 50%; transform: scale(12.2); transition: transform 3.0s cubic-bezier(0.25, 1, 0.5, 1);">
-            
-            <!-- 🌟 PRE-SIZED IMAGE: Added fallback dimensions matching your config defaults -->
-            <img id="splash-logo-image" src="logo.png" alt="Brand Emblem Logo" title="Brand Emblem Logo"
-                style="display: block !important; width: 120px; height: 120px; max-width: none !important; object-fit: contain; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 10;">
-        </div>
-    </div>
+    
 
-    <header class="header-sticky" id="main-content-wrapper">
+    <header class="header-sticky">
         <div class="container nav-container">
 
 
@@ -64,8 +54,8 @@
             <svg id="nav-logo-vector" class="logo-graphic" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: none;">
             </svg>
 
-            <img id="nav-logo-image" src="" alt="Logo" title="Brand Emblem Logo"
-            style="display: none; height: 5em; width: auto; object-fit: contain; margin-bottom: 10px;">
+            <img id="nav-logo-image" src="logo.png" alt="Logo" title="Brand Emblem Logo"
+            style="display: block; height: 5em; width: auto; object-fit: contain; margin-bottom: 10px;">
     
         <div class="logo-text">
             <span id="lbl-logo-main">Logo Main</span>
