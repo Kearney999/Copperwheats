@@ -1405,41 +1405,66 @@
     box-shadow: 0 12px 24px rgba(74, 53, 37, 0.1);
 }
 
+
+
+
+
 /* Image Wrapper & Zoom Effect */
+/* 1. Outer container: holds the white space and centers content */
 .gift-image-wrap {
-    position: relative;
-    width: 100%;
-    height: 220px;
-    background-color: var(--color-neutral-mid);
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 250px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Keeps the photo centered in the card */
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
 }
 
+/* 2. Inner wrapper: MUST shrink-wrap to the image width */
+.img-badge-box {
+  position: relative;
+  display: inline-block; /* 🌟 Crucial: shrink-wraps horizontally to exact photo width */
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto;        /* Ensures it centers inside flex container */
+}
+
+/* 3. Image inside */
 .gift-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
+  display: block;        /* Removes inline space under images */
+  max-width: 100%;
+  max-height: 250px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* 4. Badge pinned relative to .img-badge-box */
+.gift-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;            /* Locks to 8px inside the top-left corner of the photo */
+  z-index: 5;
+  
+  /* Styling */
+  background: var(--color-text-main);
+  color: var(--color-primary-light);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  padding: 4px 10px;
+  border-radius: 30px;
+  pointer-events: none;
 }
 
 .gift-card:hover .gift-image {
     transform: scale(1.06);
 }
 
-/* Optional Badge Tag */
-.gift-badge {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    background: var(--color-text-main);
-    color: var(--color-primary-light);
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    padding: 4px 10px;
-    border-radius: 20px;
-    z-index: 2;
-}
 
 /* Card Body Content */
 .gift-details {
@@ -1495,8 +1520,211 @@
     .gift-image-wrap {
         height: 200px;
     }
+
+
+    
+}
+
+
+/* --- IMAGE LIGHTBOX MODAL --- */
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(5px);
+  z-index: 999999; /* Sit on top of everything */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.modal-content {
+  /* 🌟 Tell it to stretch to 70% of the screen width/height, but max out at 85% */
+  width: 70vw; 
+  height: auto;
+  max-width: 85vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  cursor: default;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: var(--color-white);
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+}
+
+.modal-close:hover {
+  color: #dddddd;
 }
 
     /* ########################################### */
     /* ######### END OF Gifts Page CSS ########### */
+    /* ########################################### */
+
+
+
+
+
+    /* ########################################### */
+    /* ######## BEGIN OF Gifts Summary Bar CSS ######### */
+    /* ########################################### */
+    /* Floating Bottom Summary Bar */
+    /* Ensure the bar floats fixed above all other page layers */
+    /* Base floating bar styles */
+    #reservation-summary-bar {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 600px;
+        background-color: #ffffff;
+        color: #222222;
+        border-radius: 12px;
+        padding: 16px 24px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        z-index: 99999;
+        
+        /* Smooth visibility transitions */
+        display: block; 
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+    }
+
+    /* Hidden state: Hide gracefully using opacity & pointer-events */
+    #reservation-summary-bar.hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translate(-50%, 20px); /* Slightly slides down when hiding */
+    }
+
+    /* Flex layout for the content inside */
+    .reservation-bar-content {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 15px !important;
+    }
+
+    /* Info Section */
+    .reservation-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    }
+
+    .reservation-badge {
+    background-color: var(--color-text-main, #222);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.9rem;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+    .reservation-text {
+    display: flex;
+    flex-direction: column;
+    }
+
+    .reservation-title {
+    font-size: 0.95rem;
+    color: var(--color-text-main, #222);
+    }
+
+    .reservation-subtitle {
+    font-size: 0.75rem;
+    color: #666;
+    }
+
+    /* Actions Section */
+    .reservation-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    }
+
+    .reservation-total-box {
+    text-align: right;
+    }
+
+    .total-label {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #777;
+    }
+
+    .total-amount {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--color-text-main, #222);
+    }
+
+    /* Itemized Preview List */
+    .reservation-items-preview {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #eee;
+    max-height: 180px;
+    overflow-y: auto;
+    }
+
+    /* .reservation-items-preview.hidden {
+    display: none;
+    } */
+
+    .reserved-list {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0 0 0;
+    }
+
+    /* List preview styling */
+    #reserved-items-list {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 10px 0 0 0 !important;
+    }
+
+    .reserved-item-row {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 6px 0 !important;
+    border-bottom: 1px solid #eee !important;
+    }
+
+    .remove-item-btn {
+    background: none;
+    border: none;
+    color: #d9534f;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0 5px;
+    }
+
+    
+
+
+    /* ########################################### */
+    /* ######## END OF Gift Summary Bar CSS ######### */
     /* ########################################### */
