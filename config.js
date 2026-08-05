@@ -20,6 +20,8 @@ export const siteConfig =
     metaTitle: "Copperwheats Coffee House & Cafe | Brodick | Isle Of Arran",
     contactEmail: "john.copperwheat69@gmail.com",
     contactEmailEncrypted: "4d2463d2c6d63e7e6405d18b973cb08c",
+    contactCC: "Kearney999@gmail.com",
+    contactCCEncrypted: "",
     locationShort: "near the Ferry Terminal",
     locationFull: "Brodick Ferry Terminal",
     themeColors: {
@@ -275,6 +277,95 @@ export const siteConfig =
             ]
         }
     }, // <-- Closes contactPage cleanly
+
+
+    giftsPage: {
+        buttontext: "Keep aside",
+        // 🌟 NEW: Dynamic Gift Products for this specific business
+        gifts: [
+            {
+            id: "Arran Mirror",
+            name: "The Arran Mirror",
+            desc: "The sought after Arran-Shaped Mirrors, made from acrylic, so more resilient than glass.",
+            price: "25.00",
+            image: "images/Gifts/800x800/ArranMirror.jpg",
+            badge: "2 Left!" // Optional
+            },
+            {
+            id: "Arran Keyring",
+            name: "Arran Keyring",
+            desc: "The Arran Keyring. All Colours",
+            price: "5.00",
+            image: "images/Gifts/800x800/ArranKeyrings.png"
+            // No badge needed here
+            }
+            ,
+            {
+            id: "Arran Underground",
+            name: "Arran Underground",
+            desc: "Famous Arran Underground map",
+            price: "14.00",
+            image: "images/Gifts/800x800/ArranUnderground.jpg",
+            badge: "Back in stock"
+            }
+            ,
+            {
+            id: "Route Map",
+            name: "Route Map",
+            desc: "Gloss-laminated A2 poster",
+            price: "14.00",
+            image: "images/Gifts/800x800/ArranMap.jpg",
+            // badge: "Generic Placeholder"
+            }
+            ,
+            {
+            id: "Arran Journal",
+            name: "Arran Journal",
+            desc: "A seriously smart turquoise A5 journal with lined pages, bookmark, pen and pen holder.",
+            price: "14.00",
+            image: "images/Gifts/800x800/ArranJournal.jpg",
+            // badge: "Generic Placeholder"
+            }
+            // ,
+            // {
+            // id: "Item To Be Added",
+            // name: "New Item Here",
+            // desc: "A Placeholder for a new item",
+            // price: "0.00",
+            // image: "images/Gifts/800x800/ItemToBeAdded.png",
+            // badge: "Generic Placeholder"
+            // }
+            // ,
+            // {
+            // id: "Item To Be Added",
+            // name: "New Item Here",
+            // desc: "A Placeholder for a new item",
+            // price: "0.00",
+            // image: "images/Gifts/800x800/ItemToBeAdded.png",
+            // badge: "Generic Placeholder"
+            // }
+            // ,
+            // {
+            // id: "Item To Be Added",
+            // name: "New Item Here",
+            // desc: "A Placeholder for a new item",
+            // price: "0.00",
+            // image: "images/Gifts/800x800/ItemToBeAdded.png",
+            // badge: "Generic Placeholder"
+            // }
+            // ,
+            // {
+            // id: "Item To Be Added",
+            // name: "New Item Here",
+            // desc: "A Placeholder for a new item",
+            // price: "0.00",
+            // image: "images/Gifts/800x800/ItemToBeAdded.png",
+            // badge: "Generic Placeholder"
+            // }
+            
+        ]
+    },
+
 
     // ☕ THE FIXED FOOTER BLOCK (Added at the main configuration level)
     footer: {

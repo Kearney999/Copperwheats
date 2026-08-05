@@ -80,6 +80,12 @@ function populateSchemaSEO(config) {
     }
 }
 
+
+
+
+
+
+
 // =========================================================================
 // CONFIGURATION ENGINE CORE (Hydrates active DOM elements safely)
 // =========================================================================
@@ -91,6 +97,16 @@ function hydrateTemplateEngine(config) {
         if (themeLink) {
             themeLink.setAttribute('href', `./styles/${config.theme}`);
         }
+    }
+
+    // --- TABS HIDING OR SHOWING ---
+    const giftsNavItem = document.querySelector('li[data-nav="gifts"]');
+    
+    if (giftsNavItem) {
+        // 🌟 Use "config" instead of "siteConfig" + optional chaining to avoid breaks
+        const isGiftsEnabled = config?.features?.showGiftsTab ?? config?.showGiftsTab ?? false;
+
+        giftsNavItem.style.display = isGiftsEnabled ? 'inline-block' : 'none';
     }
 
     // Apply Custom Stylesheets dynamically via CSS variables
@@ -434,10 +450,7 @@ function hydrateTemplateEngine(config) {
     }
 
 
-    // const photoSphereElement = document.getElementById('lbl-photo-sphere');
-    // if (photoSphereElement && config.contactPage.photoSphereUrl) {
-    //     photoSphereElement.src = config.contactPage.photoSphereUrl;
-    // }
+
 
     const lblContactTitle = document.getElementById('lbl-contact-title');
     if (lblContactTitle) lblContactTitle.innerText = config.contactPage.title;
