@@ -174,8 +174,8 @@
 
       <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
         <div style="flex: 1; min-width: 200px;">
-          <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.25rem;">Surname *</label>
-          <input type="text" id="res-surname" name="surname" placeholder="e.g. Smith" required 
+          <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.25rem;">Surname</label>
+          <input type="text" id="res-surname" name="surname" placeholder="e.g. Smith"
                  style="width: 100%; padding: 0.85rem 1rem; border-radius: 8px; border: 1px solid var(--color-cream-dark); font-family: var(--font-body); font-size: 1rem; box-sizing: border-box; background-color: var(--color-cream-light);">
         </div>
         
@@ -188,9 +188,16 @@
 
       <div style="width: 100%;">
         <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.25rem;">Email Address *</label>
-        <input type="email" id="res-email" name="email" placeholder="Email Address" required 
+        <input type="email" id="res-email" name="email" placeholder="Genuine email required to prevent spam." required 
                style="width: 100%; padding: 0.85rem 1rem; border-radius: 8px; border: 1px solid var(--color-cream-dark); font-family: var(--font-body); font-size: 1rem; box-sizing: border-box; background-color: var(--color-cream-light);">
       </div>
+
+      <div style="width: 100%;">
+        <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.25rem;">Special Request</label>
+        <input type="text" id="res-request" name="request" placeholder="Any special requests or notes?" 
+               style="width: 100%; padding: 0.85rem 1rem; border-radius: 8px; border: 1px solid var(--color-cream-dark); font-family: var(--font-body); font-size: 1rem; box-sizing: border-box; background-color: var(--color-cream-light);">
+      </div>
+
 
       <!-- Hidden Message field populated via JavaScript before posting -->
       <textarea id="res-compiled-message" name="message" style="display: none;"></textarea>
@@ -224,7 +231,7 @@
     <div style="background-color: var(--color-cream-light); padding: 1.25rem; border-radius: 12px; text-align: left; font-size: 0.95rem; font-family: var(--font-body); color: var(--color-espresso);">
         <div style="margin-bottom: 0.5rem;"><strong>Collection Date:</strong> <span id="summary-res-date"></span></div>
         <div style="margin-bottom: 0.75rem;"><strong>Surname:</strong> <span id="summary-res-name"></span></div>
-        
+        <div style="margin-bottom: 0.75rem;"><strong>Special Request:</strong> <span id="summary-res-request"></span></div>
         <div style="border-top: 1px dashed var(--color-cream-dark); border-bottom: 1px dashed var(--color-cream-dark); padding: 0.75rem 0; margin-bottom: 0.75rem;">
         <strong style="display: block; margin-bottom: 0.5rem;">Items Reserved:</strong>
         <ul id="summary-res-items" style="margin: 0; padding-left: 1.25rem; line-height: 1.6;"></ul>
@@ -236,9 +243,7 @@
         </div>
     </div>
 
-    <!-- <button type="button" id="close-done-btn" onclick="closeReservationModal()" class="btn btn-primary" style="margin-top: 1.5rem; width: 100%;">
-        Done
-    </button> -->
+
     </div>
 
   </div>
