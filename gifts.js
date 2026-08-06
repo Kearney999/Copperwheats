@@ -217,6 +217,25 @@ if (document.readyState === 'loading') {
 /////////////////////// Start of ORDER FORM /////////////////
 /////////////////////////////////////////////////////////////
 
+function setDateLimits() {
+  const datePicker = document.getElementById('res-date');
+  if (!datePicker) return;
+
+  const today = new Date();
+  
+  // Calculate date 14 days in the future
+  const maxDate = new Date();
+  maxDate.setDate(today.getDate() + 14);
+
+  // Format dates to YYYY-MM-DD required by HTML5 date input
+  const formatDate = (date) => date.toISOString().split('T')[0];
+
+  datePicker.min = formatDate(today);
+  datePicker.max = formatDate(maxDate);
+}
+
+
+
 // 1. Pre-fill form action URL from your site dynamic config
 document.addEventListener('DOMContentLoaded', () => {
   const reservationForm = document.getElementById('reservation-form-submit');
@@ -227,11 +246,13 @@ document.addEventListener('DOMContentLoaded', () => {
     reservationForm.action = contactForm.action;
   }
 
+  setDateLimits();
+
   // Prevent selecting past dates
-  const dateInput = document.getElementById('res-date');
-  if (dateInput) {
-    dateInput.min = new Date().toISOString().split('T')[0];
-  }
+  // const dateInput = document.getElementById('res-date');
+  // if (dateInput) {
+  //   dateInput.min = new Date().toISOString().split('T')[0];
+  // }
 });
 
 // 2. Control Modal Display Logic
@@ -270,6 +291,7 @@ if (reservationForm) {
     const submitBtn = document.getElementById('res-submit-btn');
     const successMsg = document.getElementById('res-success-message');
     const surname = document.getElementById('res-surname').value;
+    const request = document.getElementById('res-request').value;
     const pickupDate = document.getElementById('res-date').value;
     const customerEmail = document.getElementById('res-email').value;
 
@@ -298,8 +320,10 @@ if (reservationForm) {
       subject: ` ${config.businessName} Reservation - ${surname} (${pickupDate})`,
       surname: surname,
       collection_date: pickupDate,
+      request: request,
       total_amount: `£${totalPrice.toFixed(2)}`,
-      message: `RESERVATION DETAILS:\n\nSurname: ${surname}\nCollection Date: ${pickupDate}\nTotal: £${totalPrice.toFixed(2)}\n\nItems Reserved:\n${itemListText}`
+      message: `RESERVATION DETAILS:\n\nSurname: ${surname}\nCollection Date: ${pickupDate}\nSpecial Requests: ${request}\nTotal: £${totalPrice.toFixed(2)}\n\nItems Reserved:\n${itemListText}`
+      // message: `RESERVATION DETAILS:\n\nSurname: ${surname}\nCollection Date: ${pickupDate}\nTotal: £${totalPrice.toFixed(2)}\n\nItems Reserved:\n${itemListText}`
     };
 
     // UI Loading state
@@ -327,6 +351,7 @@ if (reservationForm) {
           // 1. Populate screen summary details
           document.getElementById('summary-res-name').textContent = surname;
           document.getElementById('summary-res-date').textContent = pickupDate;
+          document.getElementById('summary-res-request').textContent = request;
           document.getElementById('summary-res-total').textContent = `£${totalPrice.toFixed(2)}`;
 
           // 2. Render reserved items list
