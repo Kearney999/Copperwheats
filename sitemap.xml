@@ -3,7 +3,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://www.copperwheats.co.uk/</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -11,15 +11,15 @@
   <!-- About Page -->
   <url>
     <loc>https://www.copperwheats.co.uk/about.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <!-- Services / Menu Page -->
   <url>
-    <loc>https://www.copperwheats.co.uk//services.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <loc>https://www.copperwheats.co.uk/services.html</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -27,7 +27,7 @@
   <!-- Gifts Page -->
   <url>
     <loc>https://www.copperwheats.co.uk/gifts.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -35,7 +35,7 @@
   <!-- Contact / Find Us Page -->
   <url>
     <loc>https://www.copperwheats.co.uk/contact.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
