@@ -30,9 +30,13 @@
             // 1. Create the canonical link element
             const canonicalLink = document.createElement('link');
             canonicalLink.setAttribute('rel', 'canonical');
-            // 2. Grab current clean URL (strips query parameters/hashes like ?ref=123 or #about)
+
+            // 2. Clean pathname by stripping /index.html if present at the end
+            const cleanPath = window.location.pathname.replace(/\/index\.html$/i, '/');
+
+            // 3. Grab current clean URL (strips query parameters/hashes like ?ref=123 or #about)
             const currentUrl = window.location.protocol + '//' + window.location.host + window.location.pathname;
-            // 3. Set href and append to <head>
+            // 4. Set href and append to <head>
             canonicalLink.setAttribute('href', currentUrl);
             document.head.appendChild(canonicalLink);
         })();
