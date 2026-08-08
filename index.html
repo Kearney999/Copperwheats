@@ -20,7 +20,23 @@
     
     <!-- Hardcoded Fallback for immediate crawling & audit tools -->
     <meta name="description" content="Speciality premium coffee house and cafe near the Brodick Ferry Terminal, Isle of Arran. Barista coffee, fresh bakes, and secure left luggage storage.">
-    <link rel="canonical" href="https://www.copperwheats.co.uk/" />
+    
+    <!-- This script puts the exact canonical URL of the page into the <head> dynamically, 
+    so that it is always correct, even if the page is accessed with query parameters or hash fragments. 
+    This is important for SEO and to avoid duplicate content issues. -->
+    <!-- <link rel="canonical" href="https://www.copperwheats.co.uk/index.html" /> -->
+    <script>
+        (function() {
+            // 1. Create the canonical link element
+            const canonicalLink = document.createElement('link');
+            canonicalLink.setAttribute('rel', 'canonical');
+            // 2. Grab current clean URL (strips query parameters/hashes like ?ref=123 or #about)
+            const currentUrl = window.location.protocol + '//' + window.location.host + window.location.pathname;
+            // 3. Set href and append to <head>
+            canonicalLink.setAttribute('href', currentUrl);
+            document.head.appendChild(canonicalLink);
+        })();
+    </script>
 
     <!-- ☕ COPPERWHEATS CUSTOM FAVICON INJECTION -->
     <link rel="icon" type="image/png" href="./favicon.png" sizes="150x150">
@@ -69,6 +85,7 @@
                     <li><a href="./about.html" class="nav-link">About</a></li>
                     <li><a href="./services.html" class="nav-link">Services</a></li>
                     <li data-nav="gifts"><a href="./gifts.html" class="nav-link">Gifts</a></li>
+                    <li data-nav="gallery"><a href="./gallery.html" class="nav-link">Gallery</a></li>
                     <li><a href="./contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
@@ -189,6 +206,6 @@
         </div>
     </footer>
 
-    <script type="module" src="./script.js"></script>
+    <script type="module" src="./js/script.js"></script>
 </body>
 </html>
