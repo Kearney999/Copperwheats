@@ -52,7 +52,7 @@ export const siteConfig =
 
         // Show or hide tabs
         showGiftsTab: true,
-        showGalleryTab: true, // Set to false to instantly hide the gallery across the site
+        showGalleryTab: false, // Set to false to instantly hide the gallery across the site
 
         showGoogleReviews: true,
         showTripAdvisor: true,
