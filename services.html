@@ -25,18 +25,22 @@
     <!-- <link rel="canonical" href="https://www.copperwheats.co.uk/services.html" /> -->
     <script>
         (function() {
-            // 1. Create the canonical link element
-            const canonicalLink = document.createElement('link');
+            // 1. Check for an existing canonical tag, or create one if missing
+            let canonicalLink = document.querySelector('link[rel="canonical"]');
+            if (!canonicalLink) {
+            canonicalLink = document.createElement('link');
             canonicalLink.setAttribute('rel', 'canonical');
-
+            document.head.appendChild(canonicalLink);
+            }
+            
             // 2. Clean pathname by stripping /index.html if present at the end
             const cleanPath = window.location.pathname.replace(/\/index\.html$/i, '/');
-
-            // 3. Grab current clean URL (strips query parameters/hashes like ?ref=123 or #about)
-            const currentUrl = window.location.protocol + '//' + window.location.host + window.location.pathname;
-            // 4. Set href and append to <head>
+            
+            // 3. Construct clean URL
+            const currentUrl = window.location.protocol + '//' + window.location.host + cleanPath;
+            
+            // 4. Update the href attribute
             canonicalLink.setAttribute('href', currentUrl);
-            document.head.appendChild(canonicalLink);
         })();
     </script>
 
