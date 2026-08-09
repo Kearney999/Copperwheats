@@ -14,7 +14,6 @@ const siteConfig = config;
 // #####################################################################
 
 // gallery.js
-// gallery.js
 function renderGallery() {
   console.log("1. renderGallery started execution");
   
