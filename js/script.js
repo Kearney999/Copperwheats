@@ -114,7 +114,12 @@ function hydrateTemplateEngine(config) {
         galleryNavItem.style.display = isGalleryEnabled ? 'inline-block' : 'none';
     }
 
-
+    const pricesNavItem = document.querySelector('li[data-nav="prices"]');
+    if (pricesNavItem) {
+        // 🌟 Use "config" instead of "siteConfig" + optional chaining to avoid breaks
+        const isPricesEnabled = config?.features?.showPricesTab ?? config?.showPricesTab ?? false;
+        pricesNavItem.style.display = isPricesEnabled ? 'inline-block' : 'none';
+    }
 
     // Apply Custom Stylesheets dynamically via CSS variables
     const root = document.documentElement;
