@@ -371,12 +371,12 @@ export const siteConfig =
             {
             src: "images/MyrtleOro.png",
             alt: "Myrtle Coffee Oro is our singature coffee brand",
-            caption: "Our signature Myrtle Oro beans"
+            caption: "Our Myrtle Oro signature brand"
             },
             {
             src: "images/CoffeeBeans.jpg",
             alt: "We use premium coffee beans for our coffee and espresso",
-            caption: "Coffee Beans are our base!"
+            caption: "Coffee Beans are our expresso base!"
             }
             ,
             {
