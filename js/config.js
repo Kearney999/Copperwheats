@@ -393,19 +393,19 @@ export const siteConfig =
             ,
             {
             src: "images/logo_Big.png",
-            alt: "The Copperwheats Coffee House logo",
-            caption: "Our Copperwheats Coffee House logo"
+            alt: "The Copperwheats Coffee Shop logo",
+            caption: "Our Copperwheats Coffee Shop logo"
             }
             ,
             {
             src: "images/cookiesandcakes.jpg",
-            alt: "Cookies and cakes freshly baked",
-            caption: "Cookies, Muffins and Cakes"
+            alt: "Cookies and cakes, freshly baked",
+            caption: "Fresh Cookies, Muffins and Cakes"
             },
             {
             src: "images/coffeesyrups.jpg",
             alt: "Syrups for your coffee by the ferry in Brodick, Isle of Arran",
-            caption: "Various Syrups for your Coffee"
+            caption: "Various Flavoured Syrups available"
             }
 
         ]
