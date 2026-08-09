@@ -9,9 +9,7 @@
 
             /* Neutrals (For structure, cards, borders, text, and backgrounds) */
             --color-text-main: #2C1A11;     /* Old: --color-text-main (Dark body text/headings) */
-            --color-neutral-dark: #4A3525;  /* Secondary dark/muted text */
             --color-neutral-mid: #EADBC8;   /* Old: --color-neutral-mid (Borders, dividers, card backdrops) */
-            --color-bg-main: #FAF6F0;       /* Old: --color-primary-light (Page background) */
             
             /* Utility & Highlights */
             --color-white: #FFFFFF;
@@ -1722,9 +1720,232 @@
     padding: 0 5px;
     }
 
-    
-
-
     /* ########################################### */
     /* ######## END OF Gift Summary Bar CSS ######### */
     /* ########################################### */
+
+
+
+
+
+
+    /* ####################################### */
+    /* ######## begin Of Gallery CSS ######### */
+    /* ####################################### */
+
+    /* Gallery Container */
+    .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem 0;
+    }
+
+    /* Individual Image Cards */
+    .gallery-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--color-neutral-mid, #EADBC8);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; /* Keeps image ratios proportional without distortion */
+    display: block;
+    }
+
+    /* Hover Caption Styling */
+    .gallery-caption {
+    padding: 0.75rem 1rem;
+    background-color: var(--color-bg-main, #FAF6F0);
+    color: var(--color-text-main, #2C1A11);
+    font-weight: 600;
+    text-align: center;
+    }
+
+
+
+
+
+    /* This is the modal code for the gallery images. 
+    It creates a full-screen overlay with a centered image and caption, 
+    along with a close button to exit the modal view. */
+        /* Gallery Modal Overlay */
+    .modal-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    }
+
+    /* Modal Open State */
+    .modal-overlay.is-open {
+    display: flex;
+    }
+
+    /* Modal Content Card */
+    .modal-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    background-color: var(--color-bg-main, #FAF6F0);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+    .modal-content img {
+    max-width: 100%;
+    max-height: 75vh;
+    object-fit: contain;
+    display: block;
+    }
+
+    .modal-caption {
+    padding: 1rem;
+    color: var(--color-text-main, #2C1A11);
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+    }
+
+    /* Close Button (X) */
+    .modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    border: none;
+    font-size: 2rem;
+    line-height: 1;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1010;
+    transition: background 0.2s ease;
+    }
+
+    .modal-close:hover {
+    background: rgba(0, 0, 0, 0.9);
+    }
+
+    @media (max-width: 768px) {
+    .page-title {
+        margin-top: 3rem;
+    }
+    }
+
+
+
+    /* ##################################### */
+    /* ######## End Of Gallery CSS ######### */
+    /* ##################################### */
+
+
+
+    /* ##################################### */
+    /* ######## Start Of Prices CSS ######## */
+    /* ##################################### */
+
+    /* Price List Container */
+    .prices-container {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    }
+
+    .price-category {
+    margin-bottom: 2.5rem;
+    }
+
+    .price-category-title {
+    color: var(--color-darkNeutral, #4A3525);
+    border-bottom: 2px solid var(--color-lightNeutral, #EADBC8);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.25rem;
+    font-size: 1.5rem;
+    }
+
+    /* Price Item Row */
+    .price-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+    }
+
+    .price-item:hover {
+    background-color: rgba(234, 219, 200, 0.25);
+    }
+
+    /* Highlight Favorite / Featured Items */
+    .price-item.is-favorite {
+    border-left: 4px solid var(--color-midNeutral, #8C6A50);
+    background-color: rgba(234, 219, 200, 0.4);
+    }
+
+    .price-item-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    color: var(--color-textDark, #2C1A11);
+    }
+
+    .price-dots {
+    flex: 1;
+    border-bottom: 2px dotted var(--color-midNeutral, #8C6A50);
+    margin: 0 0.75rem;
+    opacity: 0.4;
+    }
+
+    .price-value {
+    font-weight: 700;
+    color: var(--color-textDark, #2C1A11);
+    font-size: 1.1rem;
+    }
+
+    .price-item-description {
+    font-size: 0.875rem;
+    color: #666;
+    margin-top: 0.25rem;
+    font-weight: 400;
+    }
+
+    /* Badge for Popular Offerings */
+    .price-badge-fav {
+    font-size: 0.65rem;
+    background-color: var(--color-midNeutral, #8C6A50);
+    color: #ffffff;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    }
+
+    /* ##################################### */
+    /* ######## End Of Prices CSS ######## */
+    /* ##################################### */
