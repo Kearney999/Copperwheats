@@ -14,15 +14,15 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="meta-title">Cafe & Coffee House | Copperwheats | Brodick | Isle of Arran</title>
+    <title id="meta-title">Cafe & Coffee House | Copperwheats | Brodick | Arran | Our Gallery</title>
     
     <!-- Hardcoded Fallback for immediate crawling & audit tools -->
-    <meta name="description" content="The Cafe called Copperwheats, is situated right by the Ferry terminal. This page explains our Story">
+    <meta name="description" content="Cafe & Coffee House called Copperwheats, is situated right by the Ferry terminal. This page showcases our Gallery of images and videos">
     
     <!-- This script puts the exact canonical URL of the page into the <head> dynamically, 
     so that it is always correct, even if the page is accessed with query parameters or hash fragments. 
     This is important for SEO and to avoid duplicate content issues. -->
-    <!-- <link rel="canonical" href="https://www.copperwheats.co.uk/about.html" /> -->
+    <!-- <link rel="canonical" href="https://www.copperwheats.co.uk/gallery.html" /> -->
     <script>
         (function() {
             // 1. Check for an existing canonical tag, or create one if missing
@@ -91,36 +91,17 @@
         </div>
     </header>
 
-    <main>
+    <main class="container">
+        <main-section id="section-gallery">
+            <div class="nav-buffer"></div>
+                <h1 class="page-title">Our Gallery</h1>
+                <p class="subtitle">A peek inside our coffee house, bakes, and surroundings.</p>
 
 
-        
+                <!-- Empty container populated dynamically by JS -->
+                <div id="gallery-grid" class="gallery-grid">Boilerplate Code here</div>
+        </main-section>
 
-        <main-section id="section-about">
-    <div class="nav-buffer"></div>
-    
-    <div class="about-static-media-box" style="width: 100%; padding: 2rem 0 0 0; text-align: center;">
-        <!-- 1. Changed bottom margin from 1.5rem to 0 -->
-        <div class="about-image-wrapper" style="margin: 0 auto 0 auto !important; max-width: 1000px !important; width: 90% !important;">
-            <img src="./images/Storyboard.png" alt="Storyboard of business" 
-                style="display: block !important; width: 100% !important; height: auto !important; border-radius: 12px !important; box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important; object-fit: cover !important;">
-        </div>
-    </div>
-
-    <!-- 2. Added inline style to override/reduce the heavy top padding from 'section-padding' -->
-    <section class="container section-padding" style="padding-top: 1rem !important;">
-        <div class="text-center">
-            <h2 class="section-title" id="lbl-about-title">Title</h2>
-            <p class="section-subtitle" id="lbl-about-subtitle">Subtitle</p>
-        </div>
-        <div class="about-layout">
-            <div class="about-story" id="container-about-paragraphs"></div>
-            <div class="features-box" id="container-about-features"></div>
-        </div>
-    </section>
-</main-section>
-
-        
     </main>
 
         <footer class="footer">
@@ -145,6 +126,26 @@
         </div>
     </footer>
 
+
+    <!-- #This is the modal overlay for the gallery images. 
+    It is hidden by default and will be displayed when an image is clicked. 
+    The modal contains a close button, an image element to display the clicked image, 
+    and a caption element to show the image description. -->
+    <!-- Lightbox Modal -->
+    <div id="gallery-modal" class="modal-overlay" aria-hidden="true">
+        <div class="modal-content">
+            <button id="modal-close" class="modal-close" aria-label="Close modal">&times;</button>
+            <img id="modal-img" src="" alt="">
+            <p id="modal-caption" class="modal-caption"></p>
+        </div>
+    </div>
+
+
+    <!-- Load Config and Gallery Script -->
+    <script type="module" src="config.js"></script>
+    <script type="module" src="./js/gallery.js"></script>
     <script type="module" src="./js/script.js"></script>
+
+
 </body>
 </html>
