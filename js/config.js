@@ -1,4 +1,4 @@
-// config.js - Nardini's Coffee Shop Configuration
+// config.js - Coffee Shop Configuration
 export const siteConfig = 
 {
     
@@ -7,6 +7,9 @@ export const siteConfig =
         "index.html": "Home",
         "about.html": "Our Story",
         "services.html": "The Cafe",
+        "prices.html": "Menu",
+        "gifts.html": "Gifts",
+        "gallery.html": "Gallery",
         "contact.html": "Location"
     },
 
@@ -52,7 +55,8 @@ export const siteConfig =
 
         // Show or hide tabs
         showGiftsTab: true,
-        showGalleryTab: false, // Set to false to instantly hide the gallery across the site
+        showGalleryTab: true, // Set to false to instantly hide the gallery across the site
+        showPricesTab: false, // Set to false to instantly hide the prices across the site
 
         showGoogleReviews: true,
         showTripAdvisor: true,
@@ -335,34 +339,7 @@ export const siteConfig =
             // image: "images/Gifts/800x800/ItemToBeAdded.png",
             // badge: "Generic Placeholder"
             // }
-            // ,
-            // {
-            // id: "Item To Be Added",
-            // name: "New Item Here",
-            // desc: "A Placeholder for a new item",
-            // price: "0.00",
-            // image: "images/Gifts/800x800/ItemToBeAdded.png",
-            // badge: "Generic Placeholder"
-            // }
-            // ,
-            // {
-            // id: "Item To Be Added",
-            // name: "New Item Here",
-            // desc: "A Placeholder for a new item",
-            // price: "0.00",
-            // image: "images/Gifts/800x800/ItemToBeAdded.png",
-            // badge: "Generic Placeholder"
-            // }
-            // ,
-            // {
-            // id: "Item To Be Added",
-            // name: "New Item Here",
-            // desc: "A Placeholder for a new item",
-            // price: "0.00",
-            // image: "images/Gifts/800x800/ItemToBeAdded.png",
-            // badge: "Generic Placeholder"
-            // }
-            
+               
         ]
     },
 
@@ -372,22 +349,91 @@ export const siteConfig =
         title: "Our Coffee House & Cafe Gallery on the beautiful Isle of Arran",
         subtitle: "Feel free to browse our photos of this cafes products and its surroundings.",
         images:[
-            {
-            src: "images/cookiesandcakes.jpg",
-            alt: "Cookies and cakes freshly baked",
-            caption: "Cookies and Cakes"
-            },
-            {
-            src: "images/coffeesyrups.jpg",
-            alt: "Syrups for your coffee by the ferry in Brodick, Isle of Arran",
-            caption: "Various Syrups for your Coffee"
-            },
+            
             {
             src: "images/CopperwheatCoffeeShop_Shopfront.jpg",
             alt: "Exterior view of Copperwheats Coffee House front",
             caption: "Coffee House & Cafe Shop Front"
             }
+            ,
+            {
+            src: "images/ArranArtwork.jpg",
+            alt: "Arran Artwork in the cafe",
+            caption: "Arran Artwork in the Cafe"
+            }
+            ,
+
+            {
+            src: "images/LeftLugguageOnTable.jpg",
+            alt: "Secure Left Luggage Service at Copperwheats Coffee House",
+            caption: "Secure Left Luggage Service"
+            },
+            {
+            src: "images/MyrtleOro.png",
+            alt: "Myrtle Coffee Oro is our singature coffee brand",
+            caption: "Our signature Myrtle Oro beans"
+            },
+            {
+            src: "images/CoffeeBeans.jpg",
+            alt: "We use premium coffee beans for our coffee and espresso",
+            caption: "Coffee Beans are our base!"
+            }
+            ,
+            {
+            src: "images/ArranMirror.jpg",
+            alt: "The Arran Mirror is a popular gift item at Copperwheats Coffee House",
+            caption: "The sought after Arran Mirror"
+            }
+            ,
+            {
+            src: "images/scones.jpg",
+            alt: "The highly praised homemade scones at Copperwheats Coffee House",
+            caption: "The highly praised homemade scones"
+            }
+            ,
+            {
+            src: "images/logo_Big.png",
+            alt: "The Copperwheats Coffee House logo",
+            caption: "Our Copperwheats Coffee House logo"
+            }
+            ,
+            {
+            src: "images/cookiesandcakes.jpg",
+            alt: "Cookies and cakes freshly baked",
+            caption: "Cookies, Muffins and Cakes"
+            },
+            {
+            src: "images/coffeesyrups.jpg",
+            alt: "Syrups for your coffee by the ferry in Brodick, Isle of Arran",
+            caption: "Various Syrups for your Coffee"
+            }
+
         ]
+    },
+
+    // Prices Page
+    pricesPage: {
+    title: "Prices & Products at Copperwheats Arran Cafe",
+    subtitle: "Handcrafted coffee, fresh bakes, cookies, toasties, mutliple flavoured ice cream and daily specials.",
+    categories: [
+        {
+        name: "Hot Drinks",
+        id: "hot-drinks",
+        items: [
+            { name: "Espresso", price: "£2.60", description: "Rich double shot of our house roast", favorite: false },
+            { name: "Flat White", price: "£3.40", description: "Steamed silky milk over double espresso", favorite: true },
+            { name: "Cappuccino", price: "£3.50", description: "Topped with organic chocolate dust", favorite: false }
+        ]
+        },
+        {
+        name: "Fresh Bakes",
+        id: "bakes",
+        items: [
+            { name: "Homemade Scone", price: "£3.20", description: "Served with clotted cream and local jam", favorite: true, tags: ["V"] },
+            { name: "Artisan Cinnamon Roll", price: "£3.80", description: "Freshly baked daily in-house", favorite: false }
+        ]
+        }
+    ]
     },
 
 
