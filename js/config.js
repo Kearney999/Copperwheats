@@ -357,12 +357,25 @@ export const siteConfig =
             }
             ,
             {
-            src: "images/ArranArtwork.jpg",
-            alt: "Arran Artwork in the cafe",
-            caption: "Arran Artwork in the Cafe"
+            src: "images/lemonandblueberrymuffins.jpg",
+            alt: "Lemon and Blueberry Muffins are freshly baked daily at Copperwheats Coffee House",
+            caption: "Fresh baked Blueberry and Lemon Muffins"
             }
             ,
+            {
+            src: "images/scones.jpg",
+            alt: "The highly praised homemade scones at Copperwheats Coffee House",
+            caption: "The highly praised homemade scones"
+            }
+            ,
+            {
+            src: "images/CarrottCake.jpg",
+            alt: "Carrot Cake is a popular item at Copperwheats Coffee House",
+            caption: "Carrot Cake is a fav!"
+            }
 
+            ,
+            
             {
             src: "images/LeftLugguageOnTable.jpg",
             alt: "Secure Left Luggage Service at Copperwheats Coffee House",
@@ -383,29 +396,17 @@ export const siteConfig =
             src: "images/ArranMirror.jpg",
             alt: "The Arran Mirror is a popular gift item at Copperwheats Coffee House",
             caption: "The sought after Arran Mirror"
-            }
-            ,
-            {
-            src: "images/scones.jpg",
-            alt: "The highly praised homemade scones at Copperwheats Coffee House",
-            caption: "The highly praised homemade scones"
-            }
-            ,
-            {
-            src: "images/logo_Big.png",
-            alt: "The Copperwheats Coffee Shop logo",
-            caption: "Our Copperwheats Coffee Shop logo"
-            }
-            ,
-            {
-            src: "images/cookiesandcakes.jpg",
-            alt: "Cookies and cakes, freshly baked",
-            caption: "Fresh Cookies, Muffins and Cakes"
             },
             {
-            src: "images/coffeesyrups.jpg",
-            alt: "Syrups for your coffee by the ferry in Brodick, Isle of Arran",
-            caption: "Various Flavoured Syrups available"
+            src: "images/ArranArtwork.jpg",
+            alt: "Arran Artwork in the cafe",
+            caption: "Arran Artwork in the Cafe"
+            }
+            ,
+            {
+            src: "images/DogTreats.jpg",
+            alt: "Dog friendly cafe with doggy treats and water bowls",
+            caption: "In dogs we love!"
             }
 
         ]
