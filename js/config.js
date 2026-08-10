@@ -353,7 +353,7 @@ export const siteConfig =
             {
             src: "images/CopperwheatCoffeeShop_Shopfront.jpg",
             alt: "Exterior view of Copperwheats Coffee House front",
-            caption: "Coffee House & Cafe Shop Front"
+            caption: "Our Shopfront opposite the Arran Ferry"
             }
             ,
             {
@@ -371,7 +371,7 @@ export const siteConfig =
             {
             src: "images/CarrottCake.jpg",
             alt: "Carrot Cake is a popular item at Copperwheats Coffee House",
-            caption: "Carrot Cake is a fav!"
+            caption: "Carrot Cake, so nice to eat!"
             }
 
             ,
@@ -405,7 +405,7 @@ export const siteConfig =
             ,
             {
             src: "images/DogTreats.jpg",
-            alt: "Dog friendly cafe with doggy treats and water bowls",
+            alt: "Dog friendly cafe with doggy eats and water bowls",
             caption: "In dogs we love!"
             }
 
