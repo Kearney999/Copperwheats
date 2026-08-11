@@ -364,8 +364,8 @@ export const siteConfig =
             ,
             {
             src: "images/CopperwheatsCoffeeCups.jpg",
-            alt: "Branded Copperwheats Cups for takeaway coffee and tea",
-            caption: "Branded Coffee, Vegan and Iced Coffee takeaway cups"
+            alt: "Bio degradable and compostable coffee cups at Copperwheats Coffee House",
+            caption: "Our cups are bio degradable and compostable, and are made from renewable resources."
             }
             ,
             
