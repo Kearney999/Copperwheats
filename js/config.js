@@ -121,7 +121,7 @@ export const siteConfig =
 
     homePage: {
     heroTitle: "Copperwheats Coffee Shop & Cafe at Brodick Ferry Terminal",
-    heroDesc: "Coffee | Cafe | Cakes | Toasties : A barrista poured speciality cafe in Brodick, Isle of Arran. Secure Left Luggage right by the Arran ferry | Premium Coffee & Teas | Fresh Bakes | Luxury Cakes",
+    heroDesc: "Cafes | Coffee | Cafe | Cakes | Toasties : A barrista poured speciality cafe in Brodick, Isle of Arran. Secure Left Luggage right by the Arran ferry | Premium Coffee & Teas | Fresh Bakes | Luxury Cakes",
     highlights: [
         { 
             icon: "coffee", 
@@ -142,7 +142,7 @@ export const siteConfig =
         { 
             icon: "heart", 
             title: "Dog Friendly", 
-            desc: "Four-legged friends are always welcome in our cafe with a warm smile, fresh water bowls, and of course those doggy treats." 
+            desc: "The four-legged kind are always welcome in our arran cafe with a warm smile, fresh water bowls, and of course those doggy treats." 
         },
 
         { 
@@ -173,7 +173,7 @@ export const siteConfig =
         ]
     },
     aboutPage: {
-        title: "Our Story",
+        title: "Our Cafes Story",
         subtitle: "What began as the simple dreams of a newly married couple, has blossomed into our family’s greatest pride and joy. We hope you grab a coffee, and wishfully invite you to read 'Our Story'...",
         
         storyParagraphs: [
@@ -353,54 +353,73 @@ export const siteConfig =
             {
             src: "images/CopperwheatCoffeeShop_Shopfront.jpg",
             alt: "Exterior view of Copperwheats Coffee House front",
-            caption: "Our Shopfront opposite the Arran Ferry"
+            caption: "Our Brodick Coffee shop front opposite the Arran Ferry"
             }
             ,
             {
             src: "images/lemonandblueberrymuffins.jpg",
-            alt: "Lemon and Blueberry Muffins are freshly baked daily at Copperwheats Coffee House",
-            caption: "Fresh baked Blueberry and Lemon Muffins"
+            alt: "Lemon and Blueberry Muffins at Copperwheats Coffee Shop",
+            caption: "Deliciously moist Lemon and Blueberry Muffins"
             }
             ,
             {
+            src: "images/CopperwheatsCoffeeCups.jpg",
+            alt: "Branded Copperwheats Cups for takeaway coffee and tea",
+            caption: "Branded Coffee, Vegan and Iced Coffee takeaway cups"
+            }
+            ,
+            
+            {
             src: "images/scones.jpg",
             alt: "The highly praised homemade scones at Copperwheats Coffee House",
-            caption: "The highly praised homemade scones"
+            caption: "The highly praised homemade scones. Just like granny's!"
+            }
+            ,
+            
+            {
+            src: "images/GoatFellViewAtCopperwheats2.jpg",
+            alt: "The outdoor patio area with views of Goat Fell",
+            caption: "Our cafes outdoor patio area with just stunning views of Goat Fell"
+            }
+            ,
+            
+            {
+            src: "images/ArranFerryView_AtCopperwheats.jpg",
+            alt: "Copperwheats Arran cafes just opposite the Brodick Ferry Terminal",
+            caption: "Just a short walk to the Arran Ferry Terminal"
             }
             ,
             {
             src: "images/CarrottCake.jpg",
             alt: "Carrot Cake is a popular item at Copperwheats Coffee House",
-            caption: "Carrot Cake, so nice to eat!"
+            caption: "Carrot Cake, so nice to eat with a Cappuccino!"
             }
-
             ,
-            
             {
             src: "images/LeftLugguageOnTable.jpg",
             alt: "Secure Left Luggage Service at Copperwheats Coffee House",
-            caption: "Secure Left Luggage Service"
+            caption: "Our ticketed and secure Left Luggage Service."
             },
             {
             src: "images/MyrtleOro.png",
             alt: "Myrtle Coffee Oro is our singature coffee brand",
-            caption: "Our Myrtle Oro signature brand"
+            caption: "Our signature Myrtle Oro coffee blend, roasted in Scotland."
             },
             {
             src: "images/CoffeeBeans.jpg",
             alt: "We use premium coffee beans for our coffee and espresso",
-            caption: "Coffee Beans are our expresso base!"
+            caption: "The finest coffee beans for our premium coffee and espresso."
             }
             ,
             {
             src: "images/ArranMirror.jpg",
             alt: "The Arran Mirror is a popular gift item at Copperwheats Coffee House",
-            caption: "The sought after Arran Mirror"
+            caption: "The sought after and exclusive Arran Mirror"
             },
             {
             src: "images/ArranArtwork.jpg",
             alt: "Arran Artwork in the cafe",
-            caption: "Arran Artwork in the Cafe"
+            caption: "Arran Artwork on the cafes walls. Available for purchase."
             }
             ,
             {
