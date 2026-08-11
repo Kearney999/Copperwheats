@@ -386,7 +386,7 @@ export const siteConfig =
             {
             src: "images/ArranFerryView_AtCopperwheats.jpg",
             alt: "Copperwheats Arran cafes just opposite the Brodick Ferry Terminal",
-            caption: "Just a short walk to the Arran Ferry Terminal"
+            caption: "Near to/from the Arran Ferry Terminal"
             }
             ,
             {
