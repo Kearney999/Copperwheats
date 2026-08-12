@@ -1965,3 +1965,20 @@
     /* ##################################### */
     /* ######## End Of Prices CSS ######## */
     /* ##################################### */
+
+
+    /* Start of Social media alignment css */
+
+    .social-links {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; /* Controls the space between text and icon */
+    margin-top: 8px;
+    }
+
+    .social-links a {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    /* End of Social media alignment css */
