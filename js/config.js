@@ -223,17 +223,17 @@ export const siteConfig =
         ]
     },
     contactPage: {
-        address : "📍 The Pier, Brodick, Isle of Arran, KA27 8AX",
+        address : "📍 The Pier, Brodick, Isle of Arran",
         phoneIcon: "📞",  // Or whatever custom emoji/icon variable the client prefers
         contactTelephone: "+44 1770 303522",
         
         // 🚀 NEW ADDITIONS FOR AUTOMATED RICH-SEO SCHEMA TRACKING
-        postalCode: "KA27 8AY",
+        postalCode: "KA27 8AX",
         locality: "Brodick",
         region: "Isle of Arran",
         countryCode: "GB",
-        latitude: "55.5772",
-        longitude: "-5.1385",
+        latitude: 55.5772,
+        longitude: -5.1385,
 
         // 🚀 NEW RICH RESULTS ADDITIONS
         featuredImage: "https://www.copperwheats.co.uk/images/CopperwheatCoffeeShop_Shopfront.jpg", // Update to a live full URL once deployed
@@ -250,8 +250,12 @@ export const siteConfig =
         googlePlaceId: "ChIJsR7E-07viUgRKh1IqQQ9mAc", // Copperwheats PlaceID
         googleViewReviewsUrl: "https://search.google.com/local/reviews?placeid=",
         googleWriteReviewUrl: "https://search.google.com/local/writereview?placeid=",
-        tripAdvisorUrl: "https://www.tripadvisor.co.uk/UserReviewEdit-g551754-d3649538-Copperwheat_Coffee_House-Brodick_Isle_of_Arran_Scotland.html",
-        
+        tripAdvisorViewReviewsUrl: "https://www.tripadvisor.co.uk/Restaurant_Review-g551754-d3649538-Reviews-Copperwheat_Coffee_House-Brodick_Isle_of_Arran_Scotland.html",
+        tripAdvisorWriteReviewUrl: "https://www.tripadvisor.co.uk/UserReviewEdit-g551754-d3649538-Copperwheat_Coffee_House-Brodick_Isle_of_Arran_Scotland.html",
+        facebookUrl: "https://www.facebook.com/Copperwheats",
+
+
+
         faqSection: {
             title: "Questions and Answers",
             subtitle: "Got questions? We've got answers. Here is everything you need to know before stepping off the ferry.",
