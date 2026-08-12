@@ -95,7 +95,7 @@ export const siteConfig =
         },
         {
             imgUrl: "./images/CopperwheatsCoffeeCups.jpg", 
-            title: "Our bamboo cups are bio degradable and compostable",
+            title: "Our cups are bio degradable and compostable",
             desc: "The greatest threat to our planet is the belief that someone else will save it."
         },
         {
