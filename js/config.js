@@ -100,9 +100,9 @@ export const siteConfig =
         },
         {
             // Magic Relative Path: Looks in the images folder right next door!
-            imgUrl: "./images/ArranIceCream_WithLogo.png", 
+            imgUrl: "./images/CopperwheatsCoffeeCups.jpg", 
             title: "Top awarding winning Arran Ice Cream",
-            desc: "What's your favourite? A choice of flavours from the old time favourites to the more exotic."
+            desc: "Our takeaway cups are bio degradable and compostable, and are made from renewable resources."
         },
         
         {
@@ -369,7 +369,7 @@ export const siteConfig =
             {
             src: "images/CopperwheatsCoffeeCups.jpg",
             alt: "Bio degradable and compostable coffee cups at Copperwheats Coffee House",
-            caption: "Our cups are bio degradable and compostable, and are made from renewable resources."
+            caption: "Our takeaway cups are bio degradable and compostable, and are made from renewable resources."
             }
             ,
             
