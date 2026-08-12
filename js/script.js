@@ -18,7 +18,7 @@ function populateSchemaSEO(config) {
         "@context": "https://schema.org",
         "@type": config.businessType || "LocalBusiness",
         "name": config.businessName || "Copperwheats",
-        "description": config.homePage?.heroDesc || "Specialty coffee house.",
+        "description": config.homePage?.heroDesc || "Speciality coffee house.",
         "url": config.siteUrl || window.location.origin, //SKSK25/07/26 REPLACED "url": window.location.href,
         "telephone": cp.contactTelephone || "",
         "image": cp.featuredImage || "",
@@ -71,7 +71,14 @@ function populateSchemaSEO(config) {
             "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
             "opens": opens,
             "closes": closes
-        }];
+        }]
+        ;
+
+        schemaData.sameAs = [
+        `https://www.google.com/maps/place/?q=place_id:${cp.googlePlaceId}`,
+        cp.facebookUrl,
+        cp.tripAdvisorViewReviewsUrl
+    ].filter(Boolean);
     }
 
     const schemaElement = document.getElementById('seo-schema');
@@ -393,7 +400,9 @@ function hydrateTemplateEngine(config) {
 
     // --- CONTACT PAGE SPECIFIC ELEMENT HYDRATION ---
     const lblContactAddress = document.getElementById('lbl-contact-address');
-    if (lblContactAddress) lblContactAddress.innerText = config.contactPage.address;
+    if (lblContactAddress) {
+        lblContactAddress.innerText = `${config.contactPage.address}, ${config.contactPage.postalCode}`;
+    }
 
     if (config.contactPage && config.contactPage.contactTelephone) {
         const phoneNum = config.contactPage.contactTelephone;
@@ -542,9 +551,9 @@ function hydrateTemplateEngine(config) {
         document.getElementById('btn-tripadvisor-review-contact')?.remove();
     } else {
         const taHome = document.getElementById('btn-tripadvisor-review-home');
-        if (taHome && config.contactPage.tripAdvisorUrl) taHome.setAttribute('href', config.contactPage.tripAdvisorUrl);
+        if (taHome && config.contactPage.tripAdvisorWriteReviewUrl) taHome.setAttribute('href', config.contactPage.tripAdvisorWriteReviewUrl);
         const taContact = document.getElementById('btn-tripadvisor-review-contact');
-        if (taContact && config.contactPage.tripAdvisorUrl) taContact.setAttribute('href', config.contactPage.tripAdvisorUrl);
+        if (taContact && config.contactPage.tripAdvisorWriteReviewUrl) taContact.setAttribute('href', config.contactPage.tripAdvisorWriteReviewUrl);
     }
 
     if (!config.features.showGoogleReviews && !config.features.showTripAdvisor) {
