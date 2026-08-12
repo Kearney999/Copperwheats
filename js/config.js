@@ -94,16 +94,16 @@ export const siteConfig =
             desc: "Our signature and branding is defined by a single promise: procuring coffee of the highest quality."
         },
         {
-            imgUrl: "https://images.unsplash.com/photo-1498804103079-a6351b050096?w=1600&fit=crop&q=80",
-            title: "Choose your Coffee or Tea favourite",
-            desc: "Cappuccino, Latte, Flat White, Mocha, Espresso, Iced Coffee, Guest coffee, and 12 brands of tea, including green and herbal."
+            imgUrl: "./images/CopperwheatsCoffeeCups.jpg", 
+            title: "Our bamboo cups are bio degradable and compostable",
+            desc: "The greatest threat to our planet is the belief that someone else will save it."
         },
         {
-            // Magic Relative Path: Looks in the images folder right next door!
-            imgUrl: "./images/CopperwheatsCoffeeCups.jpg", 
-            title: "Top awarding winning Arran Ice Cream",
-            desc: "Our takeaway cups are bio degradable and compostable, and are made from renewable resources."
+            imgUrl: "https://images.unsplash.com/photo-1498804103079-a6351b050096?w=1600&fit=crop&q=80",
+            title: "We'll have your favourite!",
+            desc: "Cappuccino, Latte, Flat White, Mocha, Espresso, Iced Coffee, Guest coffee, and 12 brands of tea, including green and herbal."
         },
+        
         
         {
             imgUrl: "./images/cookiesandcakes.jpg",
@@ -386,11 +386,16 @@ export const siteConfig =
             caption: "Our cafes outdoor patio area with just stunning views of Goat Fell"
             }
             ,
-            
             {
-            src: "images/ArranFerryView_AtCopperwheats.jpg",
+            src: "images/ArranIceCream_WithLogo.png",
+            alt: "Multi flavoured Arran Ice Cream",
+            caption: "Multi flavoured Arran Ice Creams, perfect for that double cone."
+            }
+            ,
+            {
+            src: "images/FerryViewAtCopperwheats2.jpg",
             alt: "Copperwheats Arran cafes just opposite the Brodick Ferry Terminal",
-            caption: "Near to/from the Arran Ferry Terminal"
+            caption: "We are near to the Arran Ferry Terminal"
             }
             ,
             {
