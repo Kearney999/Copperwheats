@@ -111,17 +111,18 @@ export const siteConfig =
             desc: "Enjoy your quality time with that perfect accompaniment."
         },
         {
-            imgUrl: "./images/coffeesyrups.jpg",
-            title: "Flavour with your favourite syrup",
-            desc: "Add a coffee syrup : Caramel, Coconut, Vanilla, Cinnamon, Honeycomb, Creme Brulee, Gingerbread, Butterscotch and Roasted Hazelnut"
+            imgUrl: "./images/FerryViewAtCopperwheats2.jpg",
+            title: "Conveniently located by the Ferry.",
+            desc: "Very conveniently located for secure left luggage, just opposite the Brodick Ferry & Bus Terminal."
         }
     ],
 
     
 
     homePage: {
-    heroTitle: "Copperwheats Coffee Shop & Cafe at Brodick Ferry Terminal",
-    heroDesc: "Cafes | Coffee | Cafe | Cakes | Toasties : A barrista poured speciality cafe in Brodick, Isle of Arran. Secure Left Luggage right by the Arran ferry | Premium Coffee & Teas | Fresh Bakes | Luxury Cakes",
+        
+    heroTitle: "Copperwheats | Brodick Cafe, Bakery & Left Luggage| by Ferry",
+    heroDesc: "Brodick cafe serving premium coffee, tea, hot panini's, daily bakes, cracking cakes, Arran ice cream. Also has secure left luggage by the ferry & bus stop!",
     highlights: [
         { 
             icon: "coffee", 
@@ -143,6 +144,12 @@ export const siteConfig =
             icon: "heart", 
             title: "Dog Friendly", 
             desc: "The four-legged kind are always welcome in our arran cafe with a warm smile, fresh water bowls, and of course those doggy treats." 
+        },
+
+        { 
+             icon: "sprout", 
+             title: "Eco Friendly", 
+             desc: "Our cups are made from renewable and bio degradable resources" 
         },
 
         { 
