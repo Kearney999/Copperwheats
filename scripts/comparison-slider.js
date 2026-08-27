@@ -161,11 +161,21 @@ class ComparisonSlider extends HTMLElement {
         }
 
         /* Discrete Credit Badge */
+        .slider-header,
         .slider-footer {
           margin-top: 0px;
           margin-bottom: 0px;
           text-align: center;
           width: 100%;
+        }
+
+        /* ADD THIS STYLING FOR THE HEADER TEXT */
+        .slider-header {
+          color: #475569;             /* Visible dark gray text */
+          font-size: 0.85rem;          /* Readable size */
+          font-weight: 500;
+          margin-bottom: 8px;          /* Adds space between text and the image */
+          font-family: inherit;
         }
 
         .credit-link {
@@ -185,6 +195,7 @@ class ComparisonSlider extends HTMLElement {
       </style>
 
       <div class="slider-card">
+        <div class="slider-header">Simply drag the slider left or right</div>
         <div class="image-slider-container" style="--slider-pos: ${startPosition}%;">
           <span class="badge badge-before">Before</span>
           <span class="badge badge-after">After</span>
